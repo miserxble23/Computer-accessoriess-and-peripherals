@@ -223,6 +223,7 @@
             DeleteButton.TabIndex = 18;
             DeleteButton.Text = "Удалить";
             DeleteButton.UseVisualStyleBackColor = false;
+            DeleteButton.Click += DeleteButton_Click;
             // 
             // ChangeButton
             // 
@@ -237,6 +238,7 @@
             ChangeButton.TabIndex = 19;
             ChangeButton.Text = "Изменить";
             ChangeButton.UseVisualStyleBackColor = false;
+            ChangeButton.Click += ChangeButton_Click;
             // 
             // CardAdmin
             // 

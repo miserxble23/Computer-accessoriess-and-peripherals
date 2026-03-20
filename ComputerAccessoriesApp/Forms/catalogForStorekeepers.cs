@@ -49,7 +49,7 @@ namespace ComputerAccessoriesApp
             if (e.RowIndex < 0) return;
             var row = ProductsGridViewStorekep.Rows[e.RowIndex]; //[e.RowIndex] — берём строку по которой кликнули
             CardStorekep form = new CardStorekep(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString(), row.Cells[4].Value.ToString(), row.Cells[5].Value.ToString());  //Cells - это ячейки строки
-            form.ShowDialog();
+            form.Show();
         }
         private void SearchButtonStorekep_Click(object sender, EventArgs e)
         {

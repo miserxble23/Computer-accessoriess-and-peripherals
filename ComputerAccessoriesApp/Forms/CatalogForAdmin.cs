@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using ComputerAccessoriesApp.Forms;
+using System.Data;
 namespace ComputerAccessoriesApp
 {
     public partial class CatalogForAdmin : Form
@@ -49,7 +50,7 @@ namespace ComputerAccessoriesApp
             if (e.RowIndex < 0) return;
             var row = ProductsGridViewAdmin.Rows[e.RowIndex]; //[e.RowIndex] — берём строку по которой кликнули
             CardAdmin form = new CardAdmin(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString(), row.Cells[4].Value.ToString(), row.Cells[5].Value.ToString()); //Cells - это ячейки строки
-            form.ShowDialog();
+            form.Show();
         }
         private void SearchButtonAdmin_Click(object sender, EventArgs e)
         {
@@ -73,6 +74,12 @@ namespace ComputerAccessoriesApp
         {
             DispatchForm disp = new DispatchForm(this);
             disp.Show();
+            this.Hide();
+        }
+        private void NewCardButton_Click(object sender, EventArgs e)
+        {
+            CreateProduct crPr=new CreateProduct();
+            crPr.Show();
             this.Hide();
         }
     }

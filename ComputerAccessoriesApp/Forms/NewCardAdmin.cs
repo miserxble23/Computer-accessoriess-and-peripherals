@@ -1,4 +1,6 @@
-﻿namespace ComputerAccessoriesApp
+﻿using ComputerAccessoriesApp.Forms;
+
+namespace ComputerAccessoriesApp
 {
     public partial class CardAdmin : Form
     {
@@ -32,6 +34,27 @@
                 this.Left += e.X - LastPoint.X;
                 this.Top += e.Y - LastPoint.Y;
             }
+        }
+        private void ChangeButton_Click(object sender, EventArgs e)
+        {
+            EditProduct edPr = new EditProduct();
+            edPr.Show();
+            this.Close();
+        }
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(IDBox.Text, out int id))
+            {
+                MessageBox.Show("Некорректный ID");
+                return;
+            }
+            using (var db = new ProductsDbContext())
+            {
+                var product = db.Products.FirstOrDefault(p => p.id == id);
+                db.Products.Remove(product);
+                db.SaveChanges();
+            }
+            this.Close();
         }
     }
 }

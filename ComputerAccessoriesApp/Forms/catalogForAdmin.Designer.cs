@@ -36,13 +36,13 @@
             ExitButton = new Button();
             DispatchButton = new Button();
             ProductsGridViewAdmin = new DataGridView();
-            NewCardButton = new Button();
             ID = new DataGridViewTextBoxColumn();
             ProductName = new DataGridViewTextBoxColumn();
             Category = new DataGridViewTextBoxColumn();
             Quantity = new DataGridViewTextBoxColumn();
             Unit = new DataGridViewTextBoxColumn();
             Price = new DataGridViewTextBoxColumn();
+            NewCardButton = new Button();
             ((System.ComponentModel.ISupportInitialize)ProductsGridViewAdmin).BeginInit();
             SuspendLayout();
             // 
@@ -144,20 +144,6 @@
             ProductsGridViewAdmin.TabIndex = 8;
             ProductsGridViewAdmin.CellDoubleClick += ProductsGridViewAdmin_CellDoubleClick;
             // 
-            // NewCardButton
-            // 
-            NewCardButton.BackColor = Color.DarkOliveGreen;
-            NewCardButton.Cursor = Cursors.Hand;
-            NewCardButton.FlatStyle = FlatStyle.Popup;
-            NewCardButton.Font = new Font("Candara", 12.1846151F);
-            NewCardButton.ForeColor = Color.White;
-            NewCardButton.Location = new Point(332, 24);
-            NewCardButton.Name = "NewCardButton";
-            NewCardButton.Size = new Size(196, 34);
-            NewCardButton.TabIndex = 9;
-            NewCardButton.Text = "Новая карточка";
-            NewCardButton.UseVisualStyleBackColor = false;
-            // 
             // ID
             // 
             ID.DataPropertyName = "id";
@@ -217,6 +203,21 @@
             Price.Name = "Price";
             Price.ReadOnly = true;
             Price.Width = 123;
+            // 
+            // NewCardButton
+            // 
+            NewCardButton.BackColor = Color.DarkOliveGreen;
+            NewCardButton.Cursor = Cursors.Hand;
+            NewCardButton.FlatStyle = FlatStyle.Popup;
+            NewCardButton.Font = new Font("Candara", 12.1846151F);
+            NewCardButton.ForeColor = Color.White;
+            NewCardButton.Location = new Point(332, 24);
+            NewCardButton.Name = "NewCardButton";
+            NewCardButton.Size = new Size(196, 34);
+            NewCardButton.TabIndex = 9;
+            NewCardButton.Text = "Новая карточка";
+            NewCardButton.UseVisualStyleBackColor = false;
+            NewCardButton.Click += NewCardButton_Click;
             // 
             // CatalogForAdmin
             // 
