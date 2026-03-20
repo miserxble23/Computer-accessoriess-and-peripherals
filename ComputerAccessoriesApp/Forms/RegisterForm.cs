@@ -44,7 +44,7 @@ namespace ComputerAccessoriesApp
                 MessageBox.Show("Введите ФИО!");
                 return;
             }
-            if(!string.IsNullOrEmpty(code))
+            if (!string.IsNullOrEmpty(code))
             {
                 if (code == adminCode)
                 {
@@ -90,6 +90,10 @@ namespace ComputerAccessoriesApp
                 var form = new CatalogForStorekeepers();
                 form.Show();
             }
+        }
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

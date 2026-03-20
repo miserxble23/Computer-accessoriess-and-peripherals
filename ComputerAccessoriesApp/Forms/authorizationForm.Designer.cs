@@ -33,6 +33,7 @@
             PasswordBoxAutho = new TextBox();
             EnterButtonAutho = new Button();
             RegisterButtonAutho = new Button();
+            ExitButton = new Button();
             SuspendLayout();
             // 
             // authorizationLabel
@@ -101,12 +102,29 @@
             RegisterButtonAutho.UseVisualStyleBackColor = false;
             RegisterButtonAutho.Click += RegisterButton_Click;
             // 
+            // ExitButton
+            // 
+            ExitButton.BackColor = Color.DarkOliveGreen;
+            ExitButton.Cursor = Cursors.Hand;
+            ExitButton.FlatAppearance.BorderColor = Color.Black;
+            ExitButton.FlatStyle = FlatStyle.Popup;
+            ExitButton.Font = new Font("Candara", 16.0615387F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ExitButton.ForeColor = Color.White;
+            ExitButton.Location = new Point(345, 0);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(46, 44);
+            ExitButton.TabIndex = 5;
+            ExitButton.Text = "X";
+            ExitButton.UseVisualStyleBackColor = false;
+            ExitButton.Click += ExitButton_Click;
+            // 
             // AuthorizationForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
             ClientSize = new Size(391, 483);
+            Controls.Add(ExitButton);
             Controls.Add(RegisterButtonAutho);
             Controls.Add(EnterButtonAutho);
             Controls.Add(PasswordBoxAutho);
@@ -127,5 +145,6 @@
         private TextBox PasswordBoxAutho;
         private Button EnterButtonAutho;
         private Button RegisterButtonAutho;
+        private Button ExitButton;
     }
 }

@@ -197,7 +197,7 @@
             // 
             Price.DataPropertyName = "price";
             Price.FillWeight = 112F;
-            Price.HeaderText = "Цена(руб.)";
+            Price.HeaderText = "Цена";
             Price.MinimumWidth = 7;
             Price.Name = "Price";
             Price.ReadOnly = true;

@@ -34,6 +34,7 @@
             CodeBoxReg = new TextBox();
             RegisterButtonReg = new Button();
             AuthorizationButtonReg = new Button();
+            ExitButton = new Button();
             SuspendLayout();
             // 
             // RegisterLabel
@@ -111,12 +112,29 @@
             AuthorizationButtonReg.UseVisualStyleBackColor = false;
             AuthorizationButtonReg.Click += AuthorizationButtonReg_Click;
             // 
+            // ExitButton
+            // 
+            ExitButton.BackColor = Color.DarkOliveGreen;
+            ExitButton.Cursor = Cursors.Hand;
+            ExitButton.FlatAppearance.BorderColor = Color.Black;
+            ExitButton.FlatStyle = FlatStyle.Popup;
+            ExitButton.Font = new Font("Candara", 16.0615387F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ExitButton.ForeColor = Color.White;
+            ExitButton.Location = new Point(345, 0);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(46, 44);
+            ExitButton.TabIndex = 7;
+            ExitButton.Text = "X";
+            ExitButton.UseVisualStyleBackColor = false;
+            ExitButton.Click += ExitButton_Click;
+            // 
             // RegisterForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
             ClientSize = new Size(391, 483);
+            Controls.Add(ExitButton);
             Controls.Add(AuthorizationButtonReg);
             Controls.Add(RegisterButtonReg);
             Controls.Add(CodeBoxReg);
@@ -140,5 +158,6 @@
         private TextBox CodeBoxReg;
         private Button RegisterButtonReg;
         private Button AuthorizationButtonReg;
+        private Button ExitButton;
     }
 }
