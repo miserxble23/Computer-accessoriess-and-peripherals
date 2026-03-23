@@ -39,6 +39,7 @@
             CategoryBox = new TextBox();
             UnitBox = new TextBox();
             PriceBox = new TextBox();
+            ListCategoryButton = new Button();
             SuspendLayout();
             // 
             // EditProductLabel
@@ -170,12 +171,28 @@
             PriceBox.Size = new Size(512, 36);
             PriceBox.TabIndex = 18;
             // 
+            // ListCategoryButton
+            // 
+            ListCategoryButton.BackColor = Color.DarkOliveGreen;
+            ListCategoryButton.Cursor = Cursors.Hand;
+            ListCategoryButton.FlatStyle = FlatStyle.Popup;
+            ListCategoryButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            ListCategoryButton.ForeColor = Color.White;
+            ListCategoryButton.Location = new Point(553, 231);
+            ListCategoryButton.Name = "ListCategoryButton";
+            ListCategoryButton.Size = new Size(195, 34);
+            ListCategoryButton.TabIndex = 23;
+            ListCategoryButton.Text = "Список категорий";
+            ListCategoryButton.UseVisualStyleBackColor = false;
+            ListCategoryButton.Click += ListCategoryButton_Click;
+            // 
             // EditProduct
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
             ClientSize = new Size(839, 530);
+            Controls.Add(ListCategoryButton);
             Controls.Add(PriceBox);
             Controls.Add(UnitBox);
             Controls.Add(CategoryBox);
@@ -209,5 +226,6 @@
         private TextBox CategoryBox;
         private TextBox UnitBox;
         private TextBox PriceBox;
+        private Button ListCategoryButton;
     }
 }

@@ -61,5 +61,11 @@ namespace ComputerAccessoriesApp.Forms
 
             this.Close();
         }
+        private void ListCategoryButton_Click(object sender, EventArgs e)
+        {
+            ListCategoryForm list = new ListCategoryForm();
+            list.ShowDialog();
+            this.Hide();
+        }
     }
 }

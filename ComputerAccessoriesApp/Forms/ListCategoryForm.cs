@@ -9,6 +9,10 @@
             InitializeComponent();
             parentCreate = createForm;
         }
+        public ListCategoryForm()
+        {
+            InitializeComponent();
+        }
         private void ListCategoryForm_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -35,7 +39,8 @@
         }
         private void BackButton_Click(object sender, EventArgs e)
         {
-            parentCreate.Show();
+            if (parentCreate != null)
+                parentCreate.Show();
             this.Close();
         }
         private void ListCategoryForm_Load(object sender, EventArgs e)
