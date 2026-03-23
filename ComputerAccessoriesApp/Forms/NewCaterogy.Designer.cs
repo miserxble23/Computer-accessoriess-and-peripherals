@@ -58,6 +58,7 @@
             SaveButton.TabIndex = 6;
             SaveButton.Text = "Сохранить";
             SaveButton.UseVisualStyleBackColor = false;
+            SaveButton.Click += SaveButton_Click;
             // 
             // CancelButton
             // 
@@ -72,6 +73,7 @@
             CancelButton.TabIndex = 7;
             CancelButton.Text = "Отмена";
             CancelButton.UseVisualStyleBackColor = false;
+            CancelButton.Click += CancelButton_Click;
             // 
             // LoginBoxReg
             // 

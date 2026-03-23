@@ -1,11 +1,14 @@
-﻿namespace ComputerAccessoriesApp.Forms
+﻿using Products;
+namespace ComputerAccessoriesApp.Forms
 {
     public partial class CreateProduct : Form
     {
         Point LastPoint;
-        public CreateProduct()
+        private CatalogForAdmin parentForm;
+        public CreateProduct(CatalogForAdmin form)
         {
             InitializeComponent();
+            parentForm = form;
         }
         private void CreateProduct_MouseMove(object sender, MouseEventArgs e)
         {
@@ -21,19 +24,54 @@
         }
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            CatalogForAdmin ctForAd = new CatalogForAdmin();
-            ctForAd.Show();
+            parentForm.Show();
             this.Close();
+        }
+        public void SetCategory(string category)
+        {
+            CategoryBox.Text = category;
         }
         private void ListCategoryButton_Click(object sender, EventArgs e)
         {
-            ListCategoryForm LiCt = new ListCategoryForm();
+            ListCategoryForm LiCt = new ListCategoryForm(this);
             LiCt.Show();
-            this.Close();
+            this.Hide();
         }
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            
+            if (string.IsNullOrWhiteSpace(NameBox.Text) ||
+                string.IsNullOrWhiteSpace(CategoryBox.Text) ||
+                string.IsNullOrWhiteSpace(UnitBox.Text) ||
+                string.IsNullOrWhiteSpace(PriceBox.Text))
+            {
+                return;
+            }
+            if (!decimal.TryParse(PriceBox.Text, out decimal price))
+            {
+                return;
+            }
+            ConfirmationForm confirm = new ConfirmationForm();
+            confirm.ShowDialog();
+            if (!confirm.IsConfirmed)
+                return;
+            using (var db = new ProductsDbContext())
+            {
+                Product product = new Product
+                {
+                    name = NameBox.Text,
+                    category = CategoryBox.Text,
+                    stock = 0,
+                    unit = UnitBox.Text,
+                    price = price
+                };
+                db.Products.Add(product);
+                db.SaveChanges();
+            }
+            ResultDispatchForm result = new ResultDispatchForm();
+            result.ShowDialog();
+            parentForm.Show();
+            parentForm.RefreshProducts();
+            this.Close();
         }
     }
 }

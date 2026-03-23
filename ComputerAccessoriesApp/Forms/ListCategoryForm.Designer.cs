@@ -76,6 +76,7 @@
             FindButton.TabIndex = 5;
             FindButton.Text = "Найти";
             FindButton.UseVisualStyleBackColor = false;
+            FindButton.Click += FindButton_Click;
             // 
             // ListCategoryLabel
             // 
@@ -112,6 +113,7 @@
             NewCategoryButton.TabIndex = 23;
             NewCategoryButton.Text = "Новая категория";
             NewCategoryButton.UseVisualStyleBackColor = false;
+            NewCategoryButton.Click += NewCategoryButton_Click;
             // 
             // EditPanel
             // 
@@ -151,6 +153,7 @@
             DeleteButton.TabIndex = 19;
             DeleteButton.Text = "Удалить";
             DeleteButton.UseVisualStyleBackColor = false;
+            DeleteButton.Click += DeleteButton_Click;
             // 
             // CancelButton
             // 
@@ -165,6 +168,7 @@
             CancelButton.TabIndex = 11;
             CancelButton.Text = "Отмена";
             CancelButton.UseVisualStyleBackColor = false;
+            CancelButton.Click += CancelButton_Click;
             // 
             // SaveButton
             // 
@@ -179,6 +183,7 @@
             SaveButton.TabIndex = 10;
             SaveButton.Text = "Сохранить";
             SaveButton.UseVisualStyleBackColor = false;
+            SaveButton.Click += SaveButton_Click;
             // 
             // EditLabel
             // 
@@ -219,6 +224,7 @@
             ListCategoryGridView.RowHeadersWidth = 56;
             ListCategoryGridView.Size = new Size(402, 373);
             ListCategoryGridView.TabIndex = 25;
+            ListCategoryGridView.CellClick += ListCategoryGridView_CellClick;
             // 
             // ID
             // 
@@ -226,13 +232,14 @@
             ID.HeaderText = "ID";
             ID.MinimumWidth = 7;
             ID.Name = "ID";
+            ID.Width = 135;
             // 
-            // Name
+            // CategoryName
             // 
             CategoryName.DataPropertyName = "name";
             CategoryName.HeaderText = "Название";
             CategoryName.MinimumWidth = 7;
-            CategoryName.Name = "Name";
+            CategoryName.Name = "CategoryName";
             CategoryName.Width = 299;
             // 
             // ListCategoryForm
@@ -251,6 +258,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "ListCategoryForm";
             Text = "ListCategoryForm";
+            Load += ListCategoryForm_Load;
             MouseDown += ListCategoryForm_MouseDown;
             MouseMove += ListCategoryForm_MouseMove;
             EditPanel.ResumeLayout(false);

@@ -41,9 +41,27 @@ namespace ComputerAccessoriesApp
                 this.Top += e.Y - LastPoint.Y;
             }
         }
+        public void RefreshProducts()
+        {
+            using (var db = new ProductsDbContext())
+            {
+                var products = db.Products.Select(p => new
+                {
+                    p.id,
+                    p.name,
+                    p.category,
+                    p.stock,
+                    p.unit,
+                    p.price
+                }).ToList();
+
+                ProductsGridViewAdmin.DataSource = products;
+            }
+        }
         private void CatalogForAdmin_Load(object sender, EventArgs e)
         {
             LoadProducts();
+            RefreshProducts();
         }
         private void ProductsGridViewAdmin_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -78,7 +96,7 @@ namespace ComputerAccessoriesApp
         }
         private void NewCardButton_Click(object sender, EventArgs e)
         {
-            CreateProduct crPr = new CreateProduct();
+            CreateProduct crPr = new CreateProduct(this);
             crPr.Show();
             this.Hide();
         }

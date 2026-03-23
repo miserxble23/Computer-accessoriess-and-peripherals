@@ -10,7 +10,7 @@ namespace ComputerAccessoriesApp.Forms
         {
             InitializeComponent();
         }
-        public EditProduct(int id,string name, string category, string unit, string price)
+        public EditProduct(int id, string name, string category, string unit, string price)
         {
             InitializeComponent();
             productId = id;
