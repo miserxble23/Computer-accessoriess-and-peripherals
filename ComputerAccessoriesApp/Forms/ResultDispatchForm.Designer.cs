@@ -68,6 +68,7 @@
             DoneButton.TabIndex = 4;
             DoneButton.Text = "Готово";
             DoneButton.UseVisualStyleBackColor = false;
+            DoneButton.Click += DoneButton_Click;
             // 
             // ResultDispatchForm
             // 

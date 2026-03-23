@@ -69,6 +69,7 @@
             YesButton.TabIndex = 5;
             YesButton.Text = "Да";
             YesButton.UseVisualStyleBackColor = false;
+            YesButton.Click += YesButton_Click;
             // 
             // NoButton
             // 
@@ -83,6 +84,7 @@
             NoButton.TabIndex = 6;
             NoButton.Text = "Нет";
             NoButton.UseVisualStyleBackColor = false;
+            NoButton.Click += NoButton_Click;
             // 
             // ConfirmationForm
             // 

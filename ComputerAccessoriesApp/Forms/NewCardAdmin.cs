@@ -1,5 +1,4 @@
 ﻿using ComputerAccessoriesApp.Forms;
-
 namespace ComputerAccessoriesApp
 {
     public partial class CardAdmin : Form
@@ -35,22 +34,49 @@ namespace ComputerAccessoriesApp
                 this.Top += e.Y - LastPoint.Y;
             }
         }
+        private void LoadProduct(int id)
+        {
+            using (var db = new ProductsDbContext())
+            {
+                var product = db.Products.FirstOrDefault(p => p.id == id);
+                if (product == null)
+                    return;
+
+                IDBox.Text = product.id.ToString();
+                NameBox.Text = product.name;
+                CategoryBox.Text = product.category;
+                StockBox.Text = product.stock.ToString();
+                UnitBox.Text = product.unit;
+                PriceBox.Text = product.price.ToString();
+            }
+        }
         private void ChangeButton_Click(object sender, EventArgs e)
         {
-            EditProduct edPr = new EditProduct();
-            edPr.Show();
-            this.Close();
+            if (!int.TryParse(IDBox.Text, out int id))
+                return;
+            EditProduct edPr = new EditProduct(
+                id,
+                NameBox.Text,
+                CategoryBox.Text,
+                UnitBox.Text,
+                PriceBox.Text
+            );
+            this.Hide();
+            edPr.ShowDialog();
+            LoadProduct(id);
+            this.Show();
         }
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(IDBox.Text, out int id))
             {
-                MessageBox.Show("Некорректный ID");
                 return;
             }
             using (var db = new ProductsDbContext())
             {
                 var product = db.Products.FirstOrDefault(p => p.id == id);
+                if (product == null)
+                    return;
                 db.Products.Remove(product);
                 db.SaveChanges();
             }

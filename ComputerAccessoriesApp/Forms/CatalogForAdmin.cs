@@ -78,7 +78,7 @@ namespace ComputerAccessoriesApp
         }
         private void NewCardButton_Click(object sender, EventArgs e)
         {
-            CreateProduct crPr=new CreateProduct();
+            CreateProduct crPr = new CreateProduct();
             crPr.Show();
             this.Hide();
         }

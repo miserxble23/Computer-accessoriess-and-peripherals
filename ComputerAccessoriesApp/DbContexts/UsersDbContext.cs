@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Users;
-using Products;
 public class AppDbContext : DbContext
 {
     public DbSet<User> Users { get; set; }

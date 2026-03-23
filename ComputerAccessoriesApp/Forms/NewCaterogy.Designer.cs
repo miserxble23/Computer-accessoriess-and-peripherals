@@ -28,36 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ConfirmationLabel = new Label();
-            this.SaveButton = new Button();
+            NewCategoryLabel = new Label();
+            SaveButton = new Button();
             CancelButton = new Button();
             LoginBoxReg = new TextBox();
             SuspendLayout();
             // 
-            // ConfirmationLabel
+            // NewCategoryLabel
             // 
-            ConfirmationLabel.AutoSize = true;
-            ConfirmationLabel.Font = new Font("Candara", 23.8153839F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            ConfirmationLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            ConfirmationLabel.Location = new Point(12, 9);
-            ConfirmationLabel.Name = "ConfirmationLabel";
-            ConfirmationLabel.Size = new Size(340, 53);
-            ConfirmationLabel.TabIndex = 4;
-            ConfirmationLabel.Text = "Новая категория";
+            NewCategoryLabel.AutoSize = true;
+            NewCategoryLabel.Font = new Font("Candara", 23.8153839F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            NewCategoryLabel.ForeColor = Color.FromArgb(61, 65, 39);
+            NewCategoryLabel.Location = new Point(12, 9);
+            NewCategoryLabel.Name = "NewCategoryLabel";
+            NewCategoryLabel.Size = new Size(340, 53);
+            NewCategoryLabel.TabIndex = 4;
+            NewCategoryLabel.Text = "Новая категория";
             // 
             // SaveButton
             // 
-            this.SaveButton.BackColor = Color.DarkOliveGreen;
-            this.SaveButton.Cursor = Cursors.Hand;
-            this.SaveButton.FlatStyle = FlatStyle.Popup;
-            this.SaveButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            this.SaveButton.ForeColor = Color.White;
-            this.SaveButton.Location = new Point(12, 213);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new Size(126, 34);
-            this.SaveButton.TabIndex = 6;
-            this.SaveButton.Text = "Сохранить";
-            this.SaveButton.UseVisualStyleBackColor = false;
+            SaveButton.BackColor = Color.DarkOliveGreen;
+            SaveButton.Cursor = Cursors.Hand;
+            SaveButton.FlatStyle = FlatStyle.Popup;
+            SaveButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            SaveButton.ForeColor = Color.White;
+            SaveButton.Location = new Point(12, 213);
+            SaveButton.Name = "SaveButton";
+            SaveButton.Size = new Size(126, 34);
+            SaveButton.TabIndex = 6;
+            SaveButton.Text = "Сохранить";
+            SaveButton.UseVisualStyleBackColor = false;
             // 
             // CancelButton
             // 
@@ -92,8 +92,8 @@
             ClientSize = new Size(391, 259);
             Controls.Add(LoginBoxReg);
             Controls.Add(CancelButton);
-            Controls.Add(this.SaveButton);
-            Controls.Add(ConfirmationLabel);
+            Controls.Add(SaveButton);
+            Controls.Add(NewCategoryLabel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "NewCaterogy";
             Text = "NewCaterogy";
@@ -105,7 +105,7 @@
 
         #endregion
 
-        private Label ConfirmationLabel;
+        private Label NewCategoryLabel;
         private Button SaveButton;
         private Button CancelButton;
         private TextBox LoginBoxReg;

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ConfirmationLabel = new Label();
+            CreateProductLabel = new Label();
             NameLabel = new Label();
             CategoryLabel = new Label();
             UnitLabel = new Label();
@@ -39,18 +39,19 @@
             PriceBox = new TextBox();
             SaveButton = new Button();
             CancelButton = new Button();
+            ListCategoryButton = new Button();
             SuspendLayout();
             // 
-            // ConfirmationLabel
+            // CreateProductLabel
             // 
-            ConfirmationLabel.AutoSize = true;
-            ConfirmationLabel.Font = new Font("Candara", 23.8153839F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            ConfirmationLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            ConfirmationLabel.Location = new Point(249, 9);
-            ConfirmationLabel.Name = "ConfirmationLabel";
-            ConfirmationLabel.Size = new Size(341, 53);
-            ConfirmationLabel.TabIndex = 6;
-            ConfirmationLabel.Text = "Создание товара";
+            CreateProductLabel.AutoSize = true;
+            CreateProductLabel.Font = new Font("Candara", 23.8153839F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            CreateProductLabel.ForeColor = Color.FromArgb(61, 65, 39);
+            CreateProductLabel.Location = new Point(249, 9);
+            CreateProductLabel.Name = "CreateProductLabel";
+            CreateProductLabel.Size = new Size(341, 53);
+            CreateProductLabel.TabIndex = 6;
+            CreateProductLabel.Text = "Создание товара";
             // 
             // NameLabel
             // 
@@ -153,10 +154,11 @@
             SaveButton.ForeColor = Color.White;
             SaveButton.Location = new Point(56, 461);
             SaveButton.Name = "SaveButton";
-            SaveButton.Size = new Size(126, 34);
+            SaveButton.Size = new Size(195, 34);
             SaveButton.TabIndex = 20;
             SaveButton.Text = "Сохранить";
             SaveButton.UseVisualStyleBackColor = false;
+            SaveButton.Click += SaveButton_Click;
             // 
             // CancelButton
             // 
@@ -165,13 +167,28 @@
             CancelButton.FlatStyle = FlatStyle.Popup;
             CancelButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
             CancelButton.ForeColor = Color.White;
-            CancelButton.Location = new Point(650, 461);
+            CancelButton.Location = new Point(553, 461);
             CancelButton.Name = "CancelButton";
-            CancelButton.Size = new Size(98, 34);
+            CancelButton.Size = new Size(195, 34);
             CancelButton.TabIndex = 21;
             CancelButton.Text = "Отмена";
             CancelButton.UseVisualStyleBackColor = false;
             CancelButton.Click += CancelButton_Click;
+            // 
+            // ListCategoryButton
+            // 
+            ListCategoryButton.BackColor = Color.DarkOliveGreen;
+            ListCategoryButton.Cursor = Cursors.Hand;
+            ListCategoryButton.FlatStyle = FlatStyle.Popup;
+            ListCategoryButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            ListCategoryButton.ForeColor = Color.White;
+            ListCategoryButton.Location = new Point(553, 237);
+            ListCategoryButton.Name = "ListCategoryButton";
+            ListCategoryButton.Size = new Size(195, 34);
+            ListCategoryButton.TabIndex = 22;
+            ListCategoryButton.Text = "Список категорий";
+            ListCategoryButton.UseVisualStyleBackColor = false;
+            ListCategoryButton.Click += ListCategoryButton_Click;
             // 
             // CreateProduct
             // 
@@ -179,6 +196,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
             ClientSize = new Size(839, 530);
+            Controls.Add(ListCategoryButton);
             Controls.Add(CancelButton);
             Controls.Add(SaveButton);
             Controls.Add(PriceBox);
@@ -189,7 +207,7 @@
             Controls.Add(UnitLabel);
             Controls.Add(CategoryLabel);
             Controls.Add(NameLabel);
-            Controls.Add(ConfirmationLabel);
+            Controls.Add(CreateProductLabel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "CreateProduct";
             Text = "CreateProdusct";
@@ -201,7 +219,7 @@
 
         #endregion
 
-        private Label ConfirmationLabel;
+        private Label CreateProductLabel;
         private Label NameLabel;
         private Label CategoryLabel;
         private Label UnitLabel;
@@ -212,5 +230,6 @@
         private TextBox PriceBox;
         private Button SaveButton;
         private Button CancelButton;
+        private Button ListCategoryButton;
     }
 }

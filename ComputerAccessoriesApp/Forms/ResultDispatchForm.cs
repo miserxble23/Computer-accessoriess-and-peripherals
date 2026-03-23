@@ -20,5 +20,9 @@
         {
             LastPoint = new Point(e.X, e.Y);
         }
+        private void DoneButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

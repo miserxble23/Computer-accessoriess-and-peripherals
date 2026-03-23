@@ -21,9 +21,19 @@
         }
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            CatalogForAdmin ctForAd= new CatalogForAdmin();
+            CatalogForAdmin ctForAd = new CatalogForAdmin();
             ctForAd.Show();
             this.Close();
+        }
+        private void ListCategoryButton_Click(object sender, EventArgs e)
+        {
+            ListCategoryForm LiCt = new ListCategoryForm();
+            LiCt.Show();
+            this.Close();
+        }
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
