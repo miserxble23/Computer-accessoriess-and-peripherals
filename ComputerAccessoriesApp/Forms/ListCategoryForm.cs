@@ -40,7 +40,9 @@
         private void BackButton_Click(object sender, EventArgs e)
         {
             if (parentCreate != null)
+            {
                 parentCreate.Show();
+            }
             this.Close();
         }
         private void ListCategoryForm_Load(object sender, EventArgs e)

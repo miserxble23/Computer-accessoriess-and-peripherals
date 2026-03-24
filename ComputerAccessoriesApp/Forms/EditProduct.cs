@@ -1,6 +1,4 @@
-﻿using Products;
-
-namespace ComputerAccessoriesApp.Forms
+﻿namespace ComputerAccessoriesApp.Forms
 {
     public partial class EditProduct : Form
     {
@@ -42,7 +40,9 @@ namespace ComputerAccessoriesApp.Forms
             {
                 var product = db.Products.FirstOrDefault(p => p.id == productId);
                 if (product == null)
+                {
                     return;
+                }
 
                 product.name = NameBox.Text;
                 product.category = CategoryBox.Text;
