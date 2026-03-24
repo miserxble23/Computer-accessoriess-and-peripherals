@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations.Schema;
 namespace Products
 {
     [Table("products")]
@@ -30,9 +29,5 @@ namespace Products
                 }
             }
         }
-<<<<<<< HEAD
-        
-=======
->>>>>>> 952dc77 (Добавлена инкапсуляция для поля price в классе Products)
     }
 }
