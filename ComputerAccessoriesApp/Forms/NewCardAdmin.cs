@@ -47,7 +47,7 @@ namespace ComputerAccessoriesApp
                 CategoryBox.Text = product.category;
                 StockBox.Text = product.stock.ToString();
                 UnitBox.Text = product.unit;
-                PriceBox.Text = product.price.ToString();
+                PriceBox.Text = product.Price.ToString();
             }
         }
         private void ChangeButton_Click(object sender, EventArgs e)

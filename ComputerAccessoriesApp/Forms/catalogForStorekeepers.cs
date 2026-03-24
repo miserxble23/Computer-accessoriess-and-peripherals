@@ -18,7 +18,7 @@ namespace ComputerAccessoriesApp
                     p.category,
                     p.stock,
                     p.unit,
-                    p.price
+                    p.Price
                 }).ToList();
                 ProductsGridViewStorekep.DataSource = products;
             }
@@ -63,7 +63,7 @@ namespace ComputerAccessoriesApp
                     p.category,
                     p.stock,
                     p.unit,
-                    p.price
+                    p.Price
                 }).ToList();
                 ProductsGridViewStorekep.DataSource = products;
             }

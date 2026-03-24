@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace Products
 {
     [Table("products")]
@@ -9,6 +10,26 @@ namespace Products
         public string category { get; set; }
         public int stock { get; set; }
         public string unit { get; set; }
-        public decimal price { get; set; }
+        private decimal price;
+        [Column("price")]
+        public decimal Price
+        {
+            get
+            {
+                return price;
+            }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Цена не может быть отрицательной!");
+                }
+                else
+                {
+                    price = value;
+                }
+            }
+        }
+        
     }
 }

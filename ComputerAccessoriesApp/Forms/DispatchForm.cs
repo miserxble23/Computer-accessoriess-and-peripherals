@@ -25,7 +25,7 @@
                     p.category,
                     p.stock,
                     p.unit,
-                    p.price
+                    p.Price
                 }).ToList();
                 DispatchGridView.DataSource = products;
             }
@@ -56,7 +56,7 @@
                     p.category,
                     p.stock,
                     p.unit,
-                    p.price
+                    p.Price
                 }).ToList();
                 DispatchGridView.DataSource = products;
             }

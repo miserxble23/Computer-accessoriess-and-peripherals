@@ -50,7 +50,7 @@ namespace ComputerAccessoriesApp.Forms
 
                 if (decimal.TryParse(PriceBox.Text, out decimal price))
                 {
-                    product.price = price;
+                    product.Price = price;
                 }
                 else
                 {

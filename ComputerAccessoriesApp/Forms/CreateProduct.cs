@@ -46,8 +46,10 @@ namespace ComputerAccessoriesApp.Forms
             {
                 return;
             }
-            if (!decimal.TryParse(PriceBox.Text, out decimal price))
+            if (!decimal.TryParse(PriceBox.Text, out decimal price) || price < 0)
             {
+                ErrorForm error = new ErrorForm();
+                error.ShowDialog();
                 return;
             }
             ConfirmationForm confirm = new ConfirmationForm();
@@ -62,7 +64,7 @@ namespace ComputerAccessoriesApp.Forms
                     category = CategoryBox.Text,
                     stock = 0,
                     unit = UnitBox.Text,
-                    price = price
+                    Price = price
                 };
                 db.Products.Add(product);
                 db.SaveChanges();
