@@ -3,6 +3,7 @@ namespace ComputerAccessoriesApp
 {
     public partial class CardAdmin : Form
     {
+        Point LastPoint;
         public CardAdmin()
         {
             InitializeComponent();
@@ -17,7 +18,6 @@ namespace ComputerAccessoriesApp
             UnitBox.Text = unit;
             PriceBox.Text = price;
         }
-        Point LastPoint;
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -40,8 +40,9 @@ namespace ComputerAccessoriesApp
             {
                 var product = db.Products.FirstOrDefault(p => p.id == id);
                 if (product == null)
+                {
                     return;
-
+                }
                 IDBox.Text = product.id.ToString();
                 NameBox.Text = product.name;
                 CategoryBox.Text = product.category;
@@ -53,7 +54,9 @@ namespace ComputerAccessoriesApp
         private void ChangeButton_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(IDBox.Text, out int id))
+            {
                 return;
+            }
             EditProduct edPr = new EditProduct(
                 id,
                 NameBox.Text,
@@ -76,7 +79,9 @@ namespace ComputerAccessoriesApp
             {
                 var product = db.Products.FirstOrDefault(p => p.id == id);
                 if (product == null)
+                {
                     return;
+                }
                 db.Products.Remove(product);
                 db.SaveChanges();
             }

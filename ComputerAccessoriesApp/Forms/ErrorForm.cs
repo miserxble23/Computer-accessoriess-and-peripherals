@@ -2,11 +2,11 @@
 {
     public partial class ErrorForm : Form
     {
+        Point LastPoint;
         public ErrorForm()
         {
             InitializeComponent();
         }
-        Point LastPoint;
         private void ExitButton_Click(object sender, EventArgs e)
         {
             this.Close();

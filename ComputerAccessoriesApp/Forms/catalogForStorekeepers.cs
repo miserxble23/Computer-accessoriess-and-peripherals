@@ -3,6 +3,7 @@ namespace ComputerAccessoriesApp
 {
     public partial class CatalogForStorekeepers : Form
     {
+        Point LastPoint;
         public CatalogForStorekeepers()
         {
             InitializeComponent();
@@ -23,7 +24,6 @@ namespace ComputerAccessoriesApp
                 ProductsGridViewStorekep.DataSource = products;
             }
         }
-        Point LastPoint;
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();

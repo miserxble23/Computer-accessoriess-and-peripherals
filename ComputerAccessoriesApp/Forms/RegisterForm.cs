@@ -66,7 +66,6 @@ namespace ComputerAccessoriesApp
                     MessageBox.Show("Пользователь уже существует!");
                     return;
                 }
-
                 User newUser = new User
                 {
                     username = fullname,
@@ -74,7 +73,6 @@ namespace ComputerAccessoriesApp
                     code = code,
                     role = role
                 };
-
                 db.Users.Add(newUser);
                 db.SaveChanges();
             }

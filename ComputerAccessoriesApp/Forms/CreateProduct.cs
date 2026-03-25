@@ -72,7 +72,7 @@ namespace ComputerAccessoriesApp.Forms
             ResultDispatchForm result = new ResultDispatchForm();
             result.ShowDialog();
             parentForm.Show();
-            parentForm.RefreshProducts();
+            parentForm.LoadProducts();
             this.Close();
         }
     }

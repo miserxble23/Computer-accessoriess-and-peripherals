@@ -2,6 +2,7 @@
 {
     public partial class InvalidValueForm : Form
     {
+        Point LastPoint;
         public InvalidValueForm()
         {
             InitializeComponent();
@@ -10,7 +11,6 @@
         {
             this.Close();
         }
-        Point LastPoint;
         private void InvalidValueForm_MouseDown(object sender, MouseEventArgs e)
         {
             LastPoint = new Point(e.X, e.Y);

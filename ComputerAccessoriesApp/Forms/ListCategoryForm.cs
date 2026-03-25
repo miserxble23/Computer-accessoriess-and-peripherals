@@ -49,6 +49,7 @@
         {
             LoadCategories();
         }
+
         private int selectedCategoryId = -1;
         private void ListCategoryGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -63,12 +64,16 @@
         private void SaveButton_Click(object sender, EventArgs e)
         {
             if (selectedCategoryId == -1)
+            {
                 return;
+            }
             using (var db = new ProductsDbContext())
             {
                 var category = db.Categories.FirstOrDefault(c => c.id == selectedCategoryId);
                 if (category == null)
+                {
                     return;
+                }
                 category.name = NameBox.Text;
                 db.SaveChanges();
             }
@@ -106,8 +111,7 @@
             string search = FindBox.Text.ToLower();
             using (var db = new ProductsDbContext())
             {
-                var categories = db.Categories
-                    .Where(c => c.name.ToLower().Contains(search)).Select(c => new
+                var categories = db.Categories.Where(c => c.name.ToLower().Contains(search)).Select(c => new
                     {
                         c.id,
                         c.name

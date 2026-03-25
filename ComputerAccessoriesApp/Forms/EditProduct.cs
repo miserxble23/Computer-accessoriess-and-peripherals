@@ -33,7 +33,6 @@
         {
             this.Close();
         }
-
         private void SaveButton_Click(object sender, EventArgs e)
         {
             using (var db = new ProductsDbContext())
@@ -43,11 +42,9 @@
                 {
                     return;
                 }
-
                 product.name = NameBox.Text;
                 product.category = CategoryBox.Text;
                 product.unit = UnitBox.Text;
-
                 if (decimal.TryParse(PriceBox.Text, out decimal price))
                 {
                     product.Price = price;
@@ -58,7 +55,6 @@
                 }
                 db.SaveChanges();
             }
-
             this.Close();
         }
         private void ListCategoryButton_Click(object sender, EventArgs e)

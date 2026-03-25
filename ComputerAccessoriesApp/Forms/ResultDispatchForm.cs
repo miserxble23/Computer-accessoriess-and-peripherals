@@ -2,11 +2,11 @@
 {
     public partial class ResultDispatchForm : Form
     {
+        Point LastPoint;
         public ResultDispatchForm()
         {
             InitializeComponent();
         }
-        Point LastPoint;
         private void ResultDispatchForm_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)

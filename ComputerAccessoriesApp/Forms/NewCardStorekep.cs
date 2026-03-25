@@ -2,6 +2,7 @@
 {
     public partial class CardStorekep : Form
     {
+        Point LastPoint;
         public CardStorekep()
         {
             InitializeComponent();
@@ -16,7 +17,6 @@
             UnitBox.Text = unit;
             PriceBox.Text = price;
         }
-        Point LastPoint;
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
