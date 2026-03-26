@@ -3,12 +3,12 @@
     public partial class EditProduct : Form
     {
         Point LastPoint;
-        private int productId;
+        private Guid productId;
         public EditProduct()
         {
             InitializeComponent();
         }
-        public EditProduct(int id, string name, string category, string unit, string price)
+        public EditProduct(Guid id, string name, string category, string unit, string price)
         {
             InitializeComponent();
             productId = id;
@@ -35,9 +35,16 @@
         }
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            using (var db = new ProductsDbContext())
+            if (string.IsNullOrWhiteSpace(NameBox.Text) ||
+                string.IsNullOrWhiteSpace(CategoryBox.Text) ||
+                string.IsNullOrWhiteSpace(UnitBox.Text) ||
+                string.IsNullOrWhiteSpace(PriceBox.Text))
             {
-                var product = db.Products.FirstOrDefault(p => p.id == productId);
+                return;
+            }
+            using (var db = new DbContext())
+            {
+                var product = db.products.FirstOrDefault(p => p.id == productId);
                 if (product == null)
                 {
                     return;
@@ -59,7 +66,7 @@
         }
         private void ListCategoryButton_Click(object sender, EventArgs e)
         {
-            ListCategoryForm list = new ListCategoryForm();
+            var list = new ListCategoryForm();
             list.ShowDialog();
             this.Hide();
         }

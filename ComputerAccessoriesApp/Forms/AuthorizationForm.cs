@@ -27,11 +27,12 @@
         }
         private void EnterButtonAutho_Click(object sender, EventArgs e)
         {
-            string username = LoginBoxAutho.Text;
-            string password = PasswordBoxAutho.Text;
-            using (var db = new AppDbContext())
+            var username = LoginBoxAutho.Text;
+            var password = PasswordBoxAutho.Text;
+            var hashedPassword = PasswordHelper.HashPassword(password);
+            using (var db = new DbContext())
             {
-                var user = db.Users.FirstOrDefault(u => u.username == username && u.password == password);
+                var user = db.users.FirstOrDefault(u => u.username == username && u.password == hashedPassword);
                 if (user == null)
                 {
                     var errorForm = new ErrorForm();

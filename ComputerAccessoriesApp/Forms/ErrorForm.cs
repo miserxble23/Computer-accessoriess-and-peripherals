@@ -11,12 +11,10 @@
         {
             this.Close();
         }
-
         private void ErrorForm_MouseDown(object sender, MouseEventArgs e)
         {
             LastPoint = new Point(e.X, e.Y);
         }
-
         private void ErrorForm_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)

@@ -177,7 +177,7 @@
             // 
             Quantity.DataPropertyName = "stock";
             Quantity.FillWeight = 112F;
-            Quantity.HeaderText = "Остаток";
+            Quantity.HeaderText = "Количество";
             Quantity.MinimumWidth = 7;
             Quantity.Name = "Quantity";
             Quantity.ReadOnly = true;

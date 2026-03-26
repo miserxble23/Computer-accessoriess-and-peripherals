@@ -29,22 +29,23 @@ namespace ComputerAccessoriesApp.Forms
                 MessageBox.Show("Введите название");
                 return;
             }
-
-            using (var db = new ProductsDbContext())
+            using (var db = new DbContext())
             {
-                bool exists = db.Categories.Any(c => c.name.ToLower() == LoginBoxReg.Text.ToLower());
+                var exists = db.categories.Any(c => c.name.ToLower() == LoginBoxReg.Text.ToLower());
                 if (exists)
                 {
+                    MessageBox.Show("Такая категория уже существует!");
                     return;
                 }
-                Category category = new Category
+                var category = new Category
                 {
+                    id = Guid.NewGuid(),
                     name = LoginBoxReg.Text
                 };
-                db.Categories.Add(category);
+                db.categories.Add(category);
                 db.SaveChanges();
             }
-            ResultDispatchForm result = new ResultDispatchForm();
+            var result = new ResultDispatchForm();
             result.ShowDialog();
             parentForm.LoadCategories();
             parentForm.Show();

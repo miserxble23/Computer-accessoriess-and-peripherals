@@ -10,9 +10,9 @@ namespace ComputerAccessoriesApp
         }
         private void LoadProducts()
         {
-            using (var db = new ProductsDbContext())
+            using (var db = new DbContext())
             {
-                var products = db.Products.Select(p => new
+                var products = db.products.Select(p => new
                 {
                     p.id,
                     p.name,
@@ -26,7 +26,9 @@ namespace ComputerAccessoriesApp
         }
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            var form = new AuthorizationForm();
+            form.Show();
+            this.Close();
         }
         private void CatalogForStorekeepers_MouseDown(object sender, MouseEventArgs e)
         {
@@ -46,17 +48,27 @@ namespace ComputerAccessoriesApp
         }
         private void ProductsGridViewStorekep_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return;
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
             var row = ProductsGridViewStorekep.Rows[e.RowIndex]; //[e.RowIndex] — берём строку по которой кликнули
-            CardStorekep form = new CardStorekep(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString(), row.Cells[4].Value.ToString(), row.Cells[5].Value.ToString());  //Cells - это ячейки строки
+            CardStorekep form = new CardStorekep(
+                row.Cells[0].Value.ToString(),
+                row.Cells[1].Value.ToString(), //Cells - это ячейки строки
+                row.Cells[2].Value.ToString(),
+                row.Cells[3].Value.ToString(),
+                row.Cells[4].Value.ToString(),
+                row.Cells[5].Value.ToString()
+            );
             form.Show();
         }
         private void SearchButtonStorekep_Click(object sender, EventArgs e)
         {
-            string search = SearchBoxStorekep.Text;
-            using (var db = new ProductsDbContext())
+            var search = SearchBoxStorekep.Text;
+            using (var db = new DbContext())
             {
-                var products = db.Products.Where(p => p.name.ToLower().Contains(search.ToLower())).Select(p => new
+                var products = db.products.Where(p => p.name.ToLower().Contains(search.ToLower())).Select(p => new
                 {
                     p.id,
                     p.name,
@@ -70,7 +82,7 @@ namespace ComputerAccessoriesApp
         }
         private void DispatchButton_Click(object sender, EventArgs e)
         {
-            DispatchForm disp = new DispatchForm(this);
+            var disp = new DispatchForm(this);
             disp.Show();
             this.Hide();
         }

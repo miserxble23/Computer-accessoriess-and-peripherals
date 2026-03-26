@@ -30,10 +30,10 @@ namespace ComputerAccessoriesApp
         {
             const int MinPasswordLength = 6;
             const string adminCode = "admin123";
-            string fullname = LoginBoxReg.Text;
-            string password = PasswordBoxReg.Text;
-            string code = CodeBoxReg.Text;
-            bool isAdmin = false;
+            var fullname = LoginBoxReg.Text;
+            var password = PasswordBoxReg.Text;
+            var code = CodeBoxReg.Text;
+            var isAdmin = false;
             if (password.Length < MinPasswordLength)
             {
                 MessageBox.Show($"Пароль должен быть не менее {MinPasswordLength} символов");
@@ -56,11 +56,11 @@ namespace ComputerAccessoriesApp
                     return;
                 }
             }
-            string role = isAdmin ? "admin" : "storekeeper";
-            using (var db = new AppDbContext())
+            var role = isAdmin ? "admin" : "storekeeper";
+            var hashedPassword = PasswordHelper.HashPassword(password);
+            using (var db = new DbContext())
             {
-                bool userExists = db.Users.Any(u => u.username == fullname);
-
+                var userExists = db.users.Any(u => u.username == fullname);
                 if (userExists)
                 {
                     MessageBox.Show("Пользователь уже существует!");
@@ -69,11 +69,11 @@ namespace ComputerAccessoriesApp
                 User newUser = new User
                 {
                     username = fullname,
-                    password = password,
+                    password = hashedPassword,
                     code = code,
                     role = role
                 };
-                db.Users.Add(newUser);
+                db.users.Add(newUser);
                 db.SaveChanges();
             }
             MessageBox.Show("Регистрация успешна!");

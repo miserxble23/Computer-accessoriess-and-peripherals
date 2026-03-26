@@ -157,6 +157,7 @@
             UnitBox.Location = new Point(236, 306);
             UnitBox.Multiline = true;
             UnitBox.Name = "UnitBox";
+            UnitBox.ReadOnly = true;
             UnitBox.Size = new Size(512, 36);
             UnitBox.TabIndex = 17;
             // 

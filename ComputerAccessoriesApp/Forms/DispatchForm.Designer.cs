@@ -39,9 +39,6 @@
             FindButton = new Button();
             BasketPanel = new Panel();
             BasketGridView = new DataGridView();
-            Namee = new DataGridViewTextBoxColumn();
-            Quantityy = new DataGridViewTextBoxColumn();
-            Pricee = new DataGridViewTextBoxColumn();
             BasketLabel = new Label();
             npgsqlDataAdapter1 = new Npgsql.NpgsqlDataAdapter();
             DispatchGridView = new DataGridView();
@@ -51,6 +48,9 @@
             Quantity = new DataGridViewTextBoxColumn();
             Unit = new DataGridViewTextBoxColumn();
             Price = new DataGridViewTextBoxColumn();
+            Namee = new DataGridViewTextBoxColumn();
+            Quantityy = new DataGridViewTextBoxColumn();
+            Pricee = new DataGridViewTextBoxColumn();
             BasketPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BasketGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DispatchGridView).BeginInit();
@@ -163,27 +163,6 @@
             BasketGridView.Size = new Size(225, 263);
             BasketGridView.TabIndex = 4;
             // 
-            // Namee
-            // 
-            Namee.HeaderText = "Название";
-            Namee.MinimumWidth = 7;
-            Namee.Name = "Namee";
-            Namee.Width = 85;
-            // 
-            // Quantityy
-            // 
-            Quantityy.HeaderText = "Остаток";
-            Quantityy.MinimumWidth = 7;
-            Quantityy.Name = "Quantityy";
-            Quantityy.Width = 80;
-            // 
-            // Pricee
-            // 
-            Pricee.HeaderText = "Цена";
-            Pricee.MinimumWidth = 7;
-            Pricee.Name = "Pricee";
-            Pricee.Width = 57;
-            // 
             // BasketLabel
             // 
             BasketLabel.AutoSize = true;
@@ -263,7 +242,7 @@
             // 
             Quantity.DataPropertyName = "stock";
             Quantity.FillWeight = 22.3751926F;
-            Quantity.HeaderText = "Остаток";
+            Quantity.HeaderText = "Количество";
             Quantity.MinimumWidth = 7;
             Quantity.Name = "Quantity";
             Quantity.Width = 67;
@@ -285,6 +264,27 @@
             Price.MinimumWidth = 7;
             Price.Name = "Price";
             Price.Width = 67;
+            // 
+            // Namee
+            // 
+            Namee.HeaderText = "Название";
+            Namee.MinimumWidth = 7;
+            Namee.Name = "Namee";
+            Namee.Width = 85;
+            // 
+            // Quantityy
+            // 
+            Quantityy.HeaderText = "Количество";
+            Quantityy.MinimumWidth = 7;
+            Quantityy.Name = "Quantityy";
+            Quantityy.Width = 80;
+            // 
+            // Pricee
+            // 
+            Pricee.HeaderText = "Цена";
+            Pricee.MinimumWidth = 7;
+            Pricee.Name = "Pricee";
+            Pricee.Width = 57;
             // 
             // DispatchForm
             // 

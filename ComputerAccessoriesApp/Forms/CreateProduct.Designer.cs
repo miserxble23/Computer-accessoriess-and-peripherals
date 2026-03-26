@@ -130,6 +130,7 @@
             UnitBox.Multiline = true;
             UnitBox.Name = "UnitBox";
             UnitBox.PlaceholderText = "  Выберите единицу измерения";
+            UnitBox.ReadOnly = true;
             UnitBox.Size = new Size(512, 36);
             UnitBox.TabIndex = 18;
             // 

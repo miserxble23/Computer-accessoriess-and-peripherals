@@ -9,6 +9,11 @@ namespace ComputerAccessoriesApp.Forms
         {
             InitializeComponent();
             parentForm = form;
+            this.Load += CreateProduct_Load;
+        }
+        private void CreateProduct_Load(object sender, EventArgs e)
+        {
+            UnitBox.Text = "шт";
         }
         private void CreateProduct_MouseMove(object sender, MouseEventArgs e)
         {
@@ -33,7 +38,7 @@ namespace ComputerAccessoriesApp.Forms
         }
         private void ListCategoryButton_Click(object sender, EventArgs e)
         {
-            ListCategoryForm LiCt = new ListCategoryForm(this);
+            var LiCt = new ListCategoryForm(this);
             LiCt.Show();
             this.Hide();
         }
@@ -48,17 +53,19 @@ namespace ComputerAccessoriesApp.Forms
             }
             if (!decimal.TryParse(PriceBox.Text, out decimal price) || price < 0)
             {
-                ErrorForm error = new ErrorForm();
+                var error = new ErrorForm();
                 error.ShowDialog();
                 return;
             }
             ConfirmationForm confirm = new ConfirmationForm();
             confirm.ShowDialog();
             if (!confirm.IsConfirmed)
-                return;
-            using (var db = new ProductsDbContext())
             {
-                Product product = new Product
+                return;
+            }
+            using (var db = new DbContext())
+            {
+                var product = new Product
                 {
                     name = NameBox.Text,
                     category = CategoryBox.Text,
@@ -66,10 +73,10 @@ namespace ComputerAccessoriesApp.Forms
                     unit = UnitBox.Text,
                     Price = price
                 };
-                db.Products.Add(product);
+                db.products.Add(product);
                 db.SaveChanges();
             }
-            ResultDispatchForm result = new ResultDispatchForm();
+            var result = new ResultDispatchForm();
             result.ShowDialog();
             parentForm.Show();
             parentForm.LoadProducts();

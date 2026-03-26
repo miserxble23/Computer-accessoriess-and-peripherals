@@ -15,7 +15,6 @@
                 this.Top += e.Y - LastPoint.Y;
             }
         }
-
         private void ResultDispatchForm_MouseDown(object sender, MouseEventArgs e)
         {
             LastPoint = new Point(e.X, e.Y);

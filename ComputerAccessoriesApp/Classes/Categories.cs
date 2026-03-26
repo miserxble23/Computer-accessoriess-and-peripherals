@@ -1,10 +1,22 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace Products
 {
+    /// <summary>
+    /// Категория товара (например: клавиатуры, мыши и т.д.)
+    /// </summary>
     [Table("categories")]
     public class Category
     {
-        public int id { get; set; }
+        ///<summary>
+        /// Уникальный идентификатор категории (GUID)
+        /// </summary>
+        [Key]
+        public Guid id { get; set; }
+
+        /// <summary>
+        /// Название категории
+        /// </summary>
         public string name { get; set; }
     }
 }

@@ -34,11 +34,11 @@ namespace ComputerAccessoriesApp
                 this.Top += e.Y - LastPoint.Y;
             }
         }
-        private void LoadProduct(int id)
+        private void LoadProduct(Guid id)
         {
-            using (var db = new ProductsDbContext())
+            using (var db = new DbContext())
             {
-                var product = db.Products.FirstOrDefault(p => p.id == id);
+                var product = db.products.FirstOrDefault(p => p.id == id);
                 if (product == null)
                 {
                     return;
@@ -53,7 +53,7 @@ namespace ComputerAccessoriesApp
         }
         private void ChangeButton_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(IDBox.Text, out int id))
+            if (!Guid.TryParse(IDBox.Text, out Guid id))
             {
                 return;
             }
@@ -71,18 +71,18 @@ namespace ComputerAccessoriesApp
         }
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(IDBox.Text, out int id))
+            if (!Guid.TryParse(IDBox.Text, out Guid id))
             {
                 return;
             }
-            using (var db = new ProductsDbContext())
+            using (var db = new DbContext())
             {
-                var product = db.Products.FirstOrDefault(p => p.id == id);
+                var product = db.products.FirstOrDefault(p => p.id == id);
                 if (product == null)
                 {
                     return;
                 }
-                db.Products.Remove(product);
+                db.products.Remove(product);
                 db.SaveChanges();
             }
             this.Close();

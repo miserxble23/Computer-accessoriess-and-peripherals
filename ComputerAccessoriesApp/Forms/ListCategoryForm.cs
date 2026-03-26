@@ -27,9 +27,9 @@
         }
         public void LoadCategories()
         {
-            using (var db = new ProductsDbContext())
+            using (var db = new DbContext())
             {
-                var categories = db.Categories.Select(c => new
+                var categories = db.categories.Select(c => new
                 {
                     c.id,
                     c.name
@@ -50,7 +50,7 @@
             LoadCategories();
         }
 
-        private int selectedCategoryId = -1;
+        private Guid selectedCategoryId = Guid.Empty;
         private void ListCategoryGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -58,18 +58,18 @@
                 return;
             }
             var row = ListCategoryGridView.Rows[e.RowIndex];
-            selectedCategoryId = Convert.ToInt32(row.Cells[0].Value);
+            selectedCategoryId = Guid.Parse(row.Cells[0].Value.ToString());
             NameBox.Text = row.Cells[1].Value.ToString();
         }
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            if (selectedCategoryId == -1)
+            if (selectedCategoryId == Guid.Empty)
             {
                 return;
             }
-            using (var db = new ProductsDbContext())
+            using (var db = new DbContext())
             {
-                var category = db.Categories.FirstOrDefault(c => c.id == selectedCategoryId);
+                var category = db.categories.FirstOrDefault(c => c.id == selectedCategoryId);
                 if (category == null)
                 {
                     return;
@@ -79,39 +79,45 @@
             }
             LoadCategories();
             NameBox.Clear();
-            selectedCategoryId = -1;
+            selectedCategoryId = Guid.Empty;
         }
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            if (selectedCategoryId == -1)
+            if (selectedCategoryId == Guid.Empty)
             {
                 return;
             }
-            using (var db = new ProductsDbContext())
+            using (var db = new DbContext())
             {
-                var category = db.Categories.FirstOrDefault(c => c.id == selectedCategoryId);
+                var category = db.categories.FirstOrDefault(c => c.id == selectedCategoryId);
                 if (category == null)
                 {
                     return;
                 }
-                db.Categories.Remove(category);
+                var isUsed = db.products.Any(p => p.category == category.name);
+                if (isUsed)
+                {
+                    MessageBox.Show("Нельзя удалить категорию — она используется в товарах!");
+                    return;
+                }
+                db.categories.Remove(category);
                 db.SaveChanges();
             }
             LoadCategories();
             NameBox.Clear();
-            selectedCategoryId = -1;
+            selectedCategoryId = Guid.Empty;
         }
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            selectedCategoryId = -1;
+            selectedCategoryId = Guid.Empty;
             NameBox.Clear();
         }
         private void FindButton_Click(object sender, EventArgs e)
         {
-            string search = FindBox.Text.ToLower();
-            using (var db = new ProductsDbContext())
+            var search = FindBox.Text.ToLower();
+            using (var db = new DbContext())
             {
-                var categories = db.Categories.Where(c => c.name.ToLower().Contains(search)).Select(c => new
+                var categories = db.categories.Where(c => c.name.ToLower().Contains(search)).Select(c => new
                     {
                         c.id,
                         c.name
@@ -121,7 +127,7 @@
         }
         private void NewCategoryButton_Click(object sender, EventArgs e)
         {
-            NewCaterogy caterogy = new NewCaterogy(this);
+            var caterogy = new NewCaterogy(this);
             caterogy.Show();
             this.Hide();
         }
