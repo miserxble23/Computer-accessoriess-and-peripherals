@@ -8,6 +8,6 @@ public class DbContext : Microsoft.EntityFrameworkCore.DbContext
     public DbSet<User> users { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseNpgsql("Server=localhost;Port=1234;Username=postgres;Password=230907;Database=products_db");
+        optionsBuilder.UseNpgsql("Server=localhost;Port=5432;Username=postgres;Password=Almirchik95;Database=products_db");
     }
 }

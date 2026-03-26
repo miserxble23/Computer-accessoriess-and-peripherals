@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="ComputerAccessoriesApp/ComputerAccessoriesApp.csproj" />
+  <Project Path="UnitTests/UnitTests.csproj" Id="5aabf7c1-5d87-46ae-aa70-43934085afbd" />
 </Solution>
