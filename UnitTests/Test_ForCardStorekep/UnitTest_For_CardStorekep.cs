@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-
 namespace UnitTests
 {
     [TestClass]
@@ -14,7 +13,7 @@ namespace UnitTests
             Assert.AreEqual("Printer_3D", newtestCard_Storekep.name);
             Assert.AreEqual("Сomputer Peripherals", newtestCard_Storekep.category);
             Assert.AreEqual("10", newtestCard_Storekep.stock);
-            Assert.AreEqual("pcs", newtestCard_Storekep.unit);
+            Assert.AreEqual("cs", newtestCard_Storekep.unit);
             Assert.AreEqual("500$", newtestCard_Storekep.price);
         }
         [TestMethod]

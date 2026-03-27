@@ -49,11 +49,13 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Test_For_Helper\Helper.cs" />
     <Compile Include="Test_ForCardStorekep\Test_For_CardStorekep_Method.cs" />
     <Compile Include="Test_ForCardStorekep\UnitTest_For_CardStorekep.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test_For_EditProduct\Test_Product.cs" />
     <Compile Include="Test_For_EditProduct\UnitTest_FoEditProduct.cs" />
+    <Compile Include="Test_For_Helper\UnitTest_For_Helper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
