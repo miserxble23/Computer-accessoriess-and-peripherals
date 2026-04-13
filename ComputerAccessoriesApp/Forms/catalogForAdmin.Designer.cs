@@ -36,24 +36,24 @@
             ExitButton = new Button();
             DispatchButton = new Button();
             ProductsGridViewAdmin = new DataGridView();
-            NewCardButton = new Button();
-            ID = new DataGridViewTextBoxColumn();
             ProductName = new DataGridViewTextBoxColumn();
             Category = new DataGridViewTextBoxColumn();
             Quantity = new DataGridViewTextBoxColumn();
             Unit = new DataGridViewTextBoxColumn();
             Price = new DataGridViewTextBoxColumn();
+            NewCardButton = new Button();
+            SettingsButton = new Button();
+            DispatchsButton = new Button();
             ((System.ComponentModel.ISupportInitialize)ProductsGridViewAdmin).BeginInit();
             SuspendLayout();
             // 
             // StorekepLabel
             // 
-            StorekepLabel.AutoSize = true;
             StorekepLabel.Font = new Font("Candara", 22.1538467F);
             StorekepLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            StorekepLabel.Location = new Point(12, 9);
+            StorekepLabel.Location = new Point(22, 21);
             StorekepLabel.Name = "StorekepLabel";
-            StorekepLabel.Size = new Size(314, 49);
+            StorekepLabel.Size = new Size(155, 90);
             StorekepLabel.TabIndex = 0;
             StorekepLabel.Text = "Каталог товаров";
             // 
@@ -62,10 +62,10 @@
             SearchBoxAdmin.BackColor = Color.FromArgb(212, 222, 149);
             SearchBoxAdmin.BorderStyle = BorderStyle.FixedSingle;
             SearchBoxAdmin.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            SearchBoxAdmin.Location = new Point(332, 83);
+            SearchBoxAdmin.Location = new Point(171, 79);
             SearchBoxAdmin.Name = "SearchBoxAdmin";
             SearchBoxAdmin.PlaceholderText = "  Поиск";
-            SearchBoxAdmin.Size = new Size(352, 34);
+            SearchBoxAdmin.Size = new Size(429, 32);
             SearchBoxAdmin.TabIndex = 3;
             // 
             // SearchButtonAdmin
@@ -75,9 +75,9 @@
             SearchButtonAdmin.FlatStyle = FlatStyle.Popup;
             SearchButtonAdmin.Font = new Font("Candara", 12.1846151F);
             SearchButtonAdmin.ForeColor = Color.White;
-            SearchButtonAdmin.Location = new Point(705, 83);
+            SearchButtonAdmin.Location = new Point(606, 77);
             SearchButtonAdmin.Name = "SearchButtonAdmin";
-            SearchButtonAdmin.Size = new Size(111, 34);
+            SearchButtonAdmin.Size = new Size(99, 32);
             SearchButtonAdmin.TabIndex = 4;
             SearchButtonAdmin.Text = "Найти";
             SearchButtonAdmin.UseVisualStyleBackColor = false;
@@ -90,9 +90,9 @@
             ExitButton.FlatStyle = FlatStyle.Popup;
             ExitButton.Font = new Font("Candara", 12.1846151F);
             ExitButton.ForeColor = Color.White;
-            ExitButton.Location = new Point(705, 24);
+            ExitButton.Location = new Point(606, 496);
             ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(111, 34);
+            ExitButton.Size = new Size(99, 32);
             ExitButton.TabIndex = 5;
             ExitButton.Text = "Выход";
             ExitButton.UseVisualStyleBackColor = false;
@@ -105,11 +105,11 @@
             DispatchButton.FlatStyle = FlatStyle.Popup;
             DispatchButton.Font = new Font("Candara", 12.1846151F);
             DispatchButton.ForeColor = Color.White;
-            DispatchButton.Location = new Point(545, 24);
+            DispatchButton.Location = new Point(351, 33);
             DispatchButton.Name = "DispatchButton";
-            DispatchButton.Size = new Size(139, 34);
+            DispatchButton.Size = new Size(106, 32);
             DispatchButton.TabIndex = 6;
-            DispatchButton.Text = "Отгрузка";
+            DispatchButton.Text = "Отчёт";
             DispatchButton.UseVisualStyleBackColor = false;
             DispatchButton.Click += DispatchButton_Click;
             // 
@@ -126,7 +126,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             ProductsGridViewAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             ProductsGridViewAdmin.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ProductsGridViewAdmin.Columns.AddRange(new DataGridViewColumn[] { ID, ProductName, Category, Quantity, Unit, Price });
+            ProductsGridViewAdmin.Columns.AddRange(new DataGridViewColumn[] { ProductName, Category, Quantity, Unit, Price });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(197, 227, 132);
             dataGridViewCellStyle2.Font = new Font("Candara", 10.1846151F);
@@ -136,38 +136,13 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             ProductsGridViewAdmin.DefaultCellStyle = dataGridViewCellStyle2;
             ProductsGridViewAdmin.EnableHeadersVisualStyles = false;
-            ProductsGridViewAdmin.Location = new Point(49, 143);
+            ProductsGridViewAdmin.Location = new Point(44, 136);
             ProductsGridViewAdmin.Name = "ProductsGridViewAdmin";
             ProductsGridViewAdmin.RowHeadersVisible = false;
             ProductsGridViewAdmin.RowHeadersWidth = 56;
-            ProductsGridViewAdmin.Size = new Size(741, 363);
+            ProductsGridViewAdmin.Size = new Size(661, 346);
             ProductsGridViewAdmin.TabIndex = 8;
             ProductsGridViewAdmin.CellDoubleClick += ProductsGridViewAdmin_CellDoubleClick;
-            // 
-            // NewCardButton
-            // 
-            NewCardButton.BackColor = Color.DarkOliveGreen;
-            NewCardButton.Cursor = Cursors.Hand;
-            NewCardButton.FlatStyle = FlatStyle.Popup;
-            NewCardButton.Font = new Font("Candara", 12.1846151F);
-            NewCardButton.ForeColor = Color.White;
-            NewCardButton.Location = new Point(332, 24);
-            NewCardButton.Name = "NewCardButton";
-            NewCardButton.Size = new Size(196, 34);
-            NewCardButton.TabIndex = 9;
-            NewCardButton.Text = "Новая карточка";
-            NewCardButton.UseVisualStyleBackColor = false;
-            NewCardButton.Click += NewCardButton_Click;
-            // 
-            // ID
-            // 
-            ID.DataPropertyName = "id";
-            ID.FillWeight = 112F;
-            ID.HeaderText = "ID";
-            ID.MinimumWidth = 7;
-            ID.Name = "ID";
-            ID.ReadOnly = true;
-            ID.Width = 80;
             // 
             // ProductName
             // 
@@ -219,12 +194,57 @@
             Price.ReadOnly = true;
             Price.Width = 123;
             // 
+            // NewCardButton
+            // 
+            NewCardButton.BackColor = Color.DarkOliveGreen;
+            NewCardButton.Cursor = Cursors.Hand;
+            NewCardButton.FlatStyle = FlatStyle.Popup;
+            NewCardButton.Font = new Font("Candara", 12.1846151F);
+            NewCardButton.ForeColor = Color.White;
+            NewCardButton.Location = new Point(171, 33);
+            NewCardButton.Name = "NewCardButton";
+            NewCardButton.Size = new Size(174, 32);
+            NewCardButton.TabIndex = 9;
+            NewCardButton.Text = "Новая карточка";
+            NewCardButton.UseVisualStyleBackColor = false;
+            NewCardButton.Click += NewCardButton_Click;
+            // 
+            // SettingsButton
+            // 
+            SettingsButton.BackColor = Color.DarkOliveGreen;
+            SettingsButton.Cursor = Cursors.Hand;
+            SettingsButton.FlatStyle = FlatStyle.Popup;
+            SettingsButton.Font = new Font("Candara", 12.1846151F);
+            SettingsButton.ForeColor = Color.White;
+            SettingsButton.Location = new Point(463, 33);
+            SettingsButton.Name = "SettingsButton";
+            SettingsButton.Size = new Size(137, 32);
+            SettingsButton.TabIndex = 10;
+            SettingsButton.Text = "Настройки";
+            SettingsButton.UseVisualStyleBackColor = false;
+            // 
+            // DispatchsButton
+            // 
+            DispatchsButton.BackColor = Color.DarkOliveGreen;
+            DispatchsButton.Cursor = Cursors.Hand;
+            DispatchsButton.FlatStyle = FlatStyle.Popup;
+            DispatchsButton.Font = new Font("Candara", 12.1846151F);
+            DispatchsButton.ForeColor = Color.White;
+            DispatchsButton.Location = new Point(606, 33);
+            DispatchsButton.Name = "DispatchsButton";
+            DispatchsButton.Size = new Size(99, 32);
+            DispatchsButton.TabIndex = 11;
+            DispatchsButton.Text = "Отчёты";
+            DispatchsButton.UseVisualStyleBackColor = false;
+            // 
             // CatalogForAdmin
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(839, 530);
+            ClientSize = new Size(746, 540);
+            Controls.Add(DispatchsButton);
+            Controls.Add(SettingsButton);
             Controls.Add(NewCardButton);
             Controls.Add(ProductsGridViewAdmin);
             Controls.Add(DispatchButton);
@@ -252,11 +272,12 @@
         private Button DispatchButton;
         private DataGridView ProductsGridViewAdmin;
         private Button NewCardButton;
-        private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn ProductName;
         private DataGridViewTextBoxColumn Category;
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn Unit;
         private DataGridViewTextBoxColumn Price;
+        private Button SettingsButton;
+        private Button DispatchsButton;
     }
 }

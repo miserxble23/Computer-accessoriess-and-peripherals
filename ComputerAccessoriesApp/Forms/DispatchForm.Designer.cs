@@ -39,18 +39,17 @@
             FindButton = new Button();
             BasketPanel = new Panel();
             BasketGridView = new DataGridView();
+            Namee = new DataGridViewTextBoxColumn();
+            Quantityy = new DataGridViewTextBoxColumn();
+            Pricee = new DataGridViewTextBoxColumn();
             BasketLabel = new Label();
             npgsqlDataAdapter1 = new Npgsql.NpgsqlDataAdapter();
             DispatchGridView = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
             ProductNameColumn = new DataGridViewTextBoxColumn();
             Category = new DataGridViewTextBoxColumn();
             Quantity = new DataGridViewTextBoxColumn();
             Unit = new DataGridViewTextBoxColumn();
             Price = new DataGridViewTextBoxColumn();
-            Namee = new DataGridViewTextBoxColumn();
-            Quantityy = new DataGridViewTextBoxColumn();
-            Pricee = new DataGridViewTextBoxColumn();
             BasketPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BasketGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DispatchGridView).BeginInit();
@@ -63,9 +62,9 @@
             BackButton.FlatStyle = FlatStyle.Popup;
             BackButton.Font = new Font("Candara", 12.1846151F);
             BackButton.ForeColor = Color.White;
-            BackButton.Location = new Point(664, 445);
+            BackButton.Location = new Point(590, 424);
             BackButton.Name = "BackButton";
-            BackButton.Size = new Size(124, 43);
+            BackButton.Size = new Size(110, 41);
             BackButton.TabIndex = 0;
             BackButton.Text = "Назад";
             BackButton.UseVisualStyleBackColor = false;
@@ -78,9 +77,9 @@
             SendButton.FlatStyle = FlatStyle.Popup;
             SendButton.Font = new Font("Candara", 12.1846151F);
             SendButton.ForeColor = Color.White;
-            SendButton.Location = new Point(12, 445);
+            SendButton.Location = new Point(11, 424);
             SendButton.Name = "SendButton";
-            SendButton.Size = new Size(124, 43);
+            SendButton.Size = new Size(121, 41);
             SendButton.TabIndex = 1;
             SendButton.Text = "Отправить";
             SendButton.UseVisualStyleBackColor = false;
@@ -91,9 +90,9 @@
             DispatchLabel.AutoSize = true;
             DispatchLabel.Font = new Font("Candara", 22.1538467F);
             DispatchLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            DispatchLabel.Location = new Point(12, 9);
+            DispatchLabel.Location = new Point(11, 9);
             DispatchLabel.Name = "DispatchLabel";
-            DispatchLabel.Size = new Size(335, 49);
+            DispatchLabel.Size = new Size(307, 45);
             DispatchLabel.TabIndex = 2;
             DispatchLabel.Text = "Отгрузка товаров";
             // 
@@ -102,10 +101,10 @@
             FindBox.BackColor = Color.FromArgb(212, 222, 149);
             FindBox.BorderStyle = BorderStyle.FixedSingle;
             FindBox.Font = new Font("Candara", 14.1846151F);
-            FindBox.Location = new Point(353, 17);
+            FindBox.Location = new Point(314, 16);
             FindBox.Name = "FindBox";
             FindBox.PlaceholderText = "  Поиск";
-            FindBox.Size = new Size(280, 39);
+            FindBox.Size = new Size(249, 36);
             FindBox.TabIndex = 3;
             // 
             // FindButton
@@ -115,9 +114,9 @@
             FindButton.FlatStyle = FlatStyle.Popup;
             FindButton.Font = new Font("Candara", 12.1846151F);
             FindButton.ForeColor = Color.White;
-            FindButton.Location = new Point(664, 15);
+            FindButton.Location = new Point(590, 14);
             FindButton.Name = "FindButton";
-            FindButton.Size = new Size(124, 43);
+            FindButton.Size = new Size(110, 41);
             FindButton.TabIndex = 4;
             FindButton.Text = "Найти";
             FindButton.UseVisualStyleBackColor = false;
@@ -129,9 +128,9 @@
             BasketPanel.BorderStyle = BorderStyle.FixedSingle;
             BasketPanel.Controls.Add(BasketGridView);
             BasketPanel.Controls.Add(BasketLabel);
-            BasketPanel.Location = new Point(506, 82);
+            BasketPanel.Location = new Point(450, 78);
             BasketPanel.Name = "BasketPanel";
-            BasketPanel.Size = new Size(271, 344);
+            BasketPanel.Size = new Size(241, 328);
             BasketPanel.TabIndex = 5;
             // 
             // BasketGridView
@@ -156,12 +155,33 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             BasketGridView.DefaultCellStyle = dataGridViewCellStyle2;
             BasketGridView.EnableHeadersVisualStyles = false;
-            BasketGridView.Location = new Point(20, 59);
+            BasketGridView.Location = new Point(18, 56);
             BasketGridView.Name = "BasketGridView";
             BasketGridView.RowHeadersVisible = false;
             BasketGridView.RowHeadersWidth = 56;
-            BasketGridView.Size = new Size(225, 263);
+            BasketGridView.Size = new Size(200, 250);
             BasketGridView.TabIndex = 4;
+            // 
+            // Namee
+            // 
+            Namee.HeaderText = "Название";
+            Namee.MinimumWidth = 7;
+            Namee.Name = "Namee";
+            Namee.Width = 85;
+            // 
+            // Quantityy
+            // 
+            Quantityy.HeaderText = "Количество";
+            Quantityy.MinimumWidth = 7;
+            Quantityy.Name = "Quantityy";
+            Quantityy.Width = 80;
+            // 
+            // Pricee
+            // 
+            Pricee.HeaderText = "Цена";
+            Pricee.MinimumWidth = 7;
+            Pricee.Name = "Pricee";
+            Pricee.Width = 57;
             // 
             // BasketLabel
             // 
@@ -170,7 +190,7 @@
             BasketLabel.ForeColor = Color.FromArgb(61, 65, 39);
             BasketLabel.Location = new Point(3, 10);
             BasketLabel.Name = "BasketLabel";
-            BasketLabel.Size = new Size(129, 37);
+            BasketLabel.Size = new Size(114, 33);
             BasketLabel.TabIndex = 3;
             BasketLabel.Text = "Корзина";
             // 
@@ -193,7 +213,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
             DispatchGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             DispatchGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DispatchGridView.Columns.AddRange(new DataGridViewColumn[] { ID, ProductNameColumn, Category, Quantity, Unit, Price });
+            DispatchGridView.Columns.AddRange(new DataGridViewColumn[] { ProductNameColumn, Category, Quantity, Unit, Price });
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(197, 227, 132);
             dataGridViewCellStyle4.Font = new Font("Candara", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -203,22 +223,13 @@
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
             DispatchGridView.DefaultCellStyle = dataGridViewCellStyle4;
             DispatchGridView.EnableHeadersVisualStyles = false;
-            DispatchGridView.Location = new Point(12, 82);
+            DispatchGridView.Location = new Point(11, 78);
             DispatchGridView.Name = "DispatchGridView";
             DispatchGridView.RowHeadersVisible = false;
             DispatchGridView.RowHeadersWidth = 56;
-            DispatchGridView.Size = new Size(470, 344);
+            DispatchGridView.Size = new Size(418, 328);
             DispatchGridView.TabIndex = 6;
             DispatchGridView.CellContentClick += DispatchGridView_CellContentClick;
-            // 
-            // ID
-            // 
-            ID.DataPropertyName = "id";
-            ID.FillWeight = 42.37726F;
-            ID.HeaderText = "ID";
-            ID.MinimumWidth = 7;
-            ID.Name = "ID";
-            ID.Width = 33;
             // 
             // ProductNameColumn
             // 
@@ -265,33 +276,12 @@
             Price.Name = "Price";
             Price.Width = 67;
             // 
-            // Namee
-            // 
-            Namee.HeaderText = "Название";
-            Namee.MinimumWidth = 7;
-            Namee.Name = "Namee";
-            Namee.Width = 85;
-            // 
-            // Quantityy
-            // 
-            Quantityy.HeaderText = "Количество";
-            Quantityy.MinimumWidth = 7;
-            Quantityy.Name = "Quantityy";
-            Quantityy.Width = 80;
-            // 
-            // Pricee
-            // 
-            Pricee.HeaderText = "Цена";
-            Pricee.MinimumWidth = 7;
-            Pricee.Name = "Pricee";
-            Pricee.Width = 57;
-            // 
             // DispatchForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(800, 500);
+            ClientSize = new Size(711, 476);
             Controls.Add(DispatchGridView);
             Controls.Add(BasketPanel);
             Controls.Add(FindButton);
@@ -327,7 +317,6 @@
         private DataGridViewTextBoxColumn Namee;
         private DataGridViewTextBoxColumn Quantityy;
         private DataGridViewTextBoxColumn Pricee;
-        private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn ProductNameColumn;
         private DataGridViewTextBoxColumn Category;
         private DataGridViewTextBoxColumn Quantity;

@@ -42,7 +42,6 @@
             SaveButton = new Button();
             EditLabel = new Label();
             ListCategoryGridView = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
             CategoryName = new DataGridViewTextBoxColumn();
             EditPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ListCategoryGridView).BeginInit();
@@ -55,9 +54,9 @@
             BackButton.FlatStyle = FlatStyle.Popup;
             BackButton.Font = new Font("Candara", 12.1846151F);
             BackButton.ForeColor = Color.White;
-            BackButton.Location = new Point(703, 23);
+            BackButton.Location = new Point(625, 22);
             BackButton.Name = "BackButton";
-            BackButton.Size = new Size(124, 39);
+            BackButton.Size = new Size(110, 37);
             BackButton.TabIndex = 1;
             BackButton.Text = "Назад";
             BackButton.UseVisualStyleBackColor = false;
@@ -70,9 +69,9 @@
             FindButton.FlatStyle = FlatStyle.Popup;
             FindButton.Font = new Font("Candara", 12.1846151F);
             FindButton.ForeColor = Color.White;
-            FindButton.Location = new Point(435, 87);
+            FindButton.Location = new Point(387, 83);
             FindButton.Name = "FindButton";
-            FindButton.Size = new Size(124, 39);
+            FindButton.Size = new Size(110, 37);
             FindButton.TabIndex = 5;
             FindButton.Text = "Найти";
             FindButton.UseVisualStyleBackColor = false;
@@ -83,9 +82,9 @@
             ListCategoryLabel.AutoSize = true;
             ListCategoryLabel.Font = new Font("Candara", 23.8153839F, FontStyle.Regular, GraphicsUnit.Point, 204);
             ListCategoryLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            ListCategoryLabel.Location = new Point(12, 9);
+            ListCategoryLabel.Location = new Point(11, 9);
             ListCategoryLabel.Name = "ListCategoryLabel";
-            ListCategoryLabel.Size = new Size(358, 53);
+            ListCategoryLabel.Size = new Size(334, 49);
             ListCategoryLabel.TabIndex = 6;
             ListCategoryLabel.Text = "Список категорий";
             // 
@@ -94,10 +93,10 @@
             FindBox.BackColor = Color.FromArgb(212, 222, 149);
             FindBox.BorderStyle = BorderStyle.FixedSingle;
             FindBox.Font = new Font("Candara", 14.1846151F);
-            FindBox.Location = new Point(12, 87);
+            FindBox.Location = new Point(11, 83);
             FindBox.Name = "FindBox";
             FindBox.PlaceholderText = "  Поиск";
-            FindBox.Size = new Size(402, 39);
+            FindBox.Size = new Size(358, 36);
             FindBox.TabIndex = 7;
             // 
             // NewCategoryButton
@@ -107,9 +106,9 @@
             NewCategoryButton.FlatStyle = FlatStyle.Popup;
             NewCategoryButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
             NewCategoryButton.ForeColor = Color.White;
-            NewCategoryButton.Location = new Point(389, 23);
+            NewCategoryButton.Location = new Point(346, 22);
             NewCategoryButton.Name = "NewCategoryButton";
-            NewCategoryButton.Size = new Size(209, 39);
+            NewCategoryButton.Size = new Size(186, 37);
             NewCategoryButton.TabIndex = 23;
             NewCategoryButton.Text = "Новая категория";
             NewCategoryButton.UseVisualStyleBackColor = false;
@@ -124,9 +123,9 @@
             EditPanel.Controls.Add(CancelButton);
             EditPanel.Controls.Add(SaveButton);
             EditPanel.Controls.Add(EditLabel);
-            EditPanel.Location = new Point(435, 145);
+            EditPanel.Location = new Point(387, 138);
             EditPanel.Name = "EditPanel";
-            EditPanel.Size = new Size(362, 247);
+            EditPanel.Size = new Size(322, 235);
             EditPanel.TabIndex = 24;
             // 
             // NameBox
@@ -134,10 +133,10 @@
             NameBox.BackColor = Color.FromArgb(197, 227, 132);
             NameBox.BorderStyle = BorderStyle.FixedSingle;
             NameBox.Font = new Font("Candara", 14.1846151F);
-            NameBox.Location = new Point(19, 64);
+            NameBox.Location = new Point(17, 61);
             NameBox.Name = "NameBox";
             NameBox.PlaceholderText = "  Название";
-            NameBox.Size = new Size(316, 39);
+            NameBox.Size = new Size(281, 36);
             NameBox.TabIndex = 21;
             // 
             // DeleteButton
@@ -147,9 +146,9 @@
             DeleteButton.FlatStyle = FlatStyle.Popup;
             DeleteButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
             DeleteButton.ForeColor = Color.White;
-            DeleteButton.Location = new Point(137, 133);
+            DeleteButton.Location = new Point(122, 127);
             DeleteButton.Name = "DeleteButton";
-            DeleteButton.Size = new Size(102, 34);
+            DeleteButton.Size = new Size(91, 32);
             DeleteButton.TabIndex = 19;
             DeleteButton.Text = "Удалить";
             DeleteButton.UseVisualStyleBackColor = false;
@@ -162,9 +161,9 @@
             CancelButton.FlatStyle = FlatStyle.Popup;
             CancelButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
             CancelButton.ForeColor = Color.White;
-            CancelButton.Location = new Point(248, 133);
+            CancelButton.Location = new Point(220, 127);
             CancelButton.Name = "CancelButton";
-            CancelButton.Size = new Size(109, 34);
+            CancelButton.Size = new Size(97, 32);
             CancelButton.TabIndex = 11;
             CancelButton.Text = "Отмена";
             CancelButton.UseVisualStyleBackColor = false;
@@ -177,9 +176,9 @@
             SaveButton.FlatStyle = FlatStyle.Popup;
             SaveButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
             SaveButton.ForeColor = Color.White;
-            SaveButton.Location = new Point(3, 133);
+            SaveButton.Location = new Point(3, 127);
             SaveButton.Name = "SaveButton";
-            SaveButton.Size = new Size(128, 34);
+            SaveButton.Size = new Size(114, 32);
             SaveButton.TabIndex = 10;
             SaveButton.Text = "Сохранить";
             SaveButton.UseVisualStyleBackColor = false;
@@ -192,7 +191,7 @@
             EditLabel.ForeColor = Color.FromArgb(61, 65, 39);
             EditLabel.Location = new Point(3, 10);
             EditLabel.Name = "EditLabel";
-            EditLabel.Size = new Size(236, 37);
+            EditLabel.Size = new Size(209, 33);
             EditLabel.TabIndex = 3;
             EditLabel.Text = "Редактирование";
             // 
@@ -208,7 +207,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             ListCategoryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             ListCategoryGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ListCategoryGridView.Columns.AddRange(new DataGridViewColumn[] { ID, CategoryName });
+            ListCategoryGridView.Columns.AddRange(new DataGridViewColumn[] { CategoryName });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(197, 227, 132);
             dataGridViewCellStyle2.Font = new Font("Candara", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -218,21 +217,13 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             ListCategoryGridView.DefaultCellStyle = dataGridViewCellStyle2;
             ListCategoryGridView.EnableHeadersVisualStyles = false;
-            ListCategoryGridView.Location = new Point(12, 145);
+            ListCategoryGridView.Location = new Point(11, 138);
             ListCategoryGridView.Name = "ListCategoryGridView";
             ListCategoryGridView.RowHeadersVisible = false;
             ListCategoryGridView.RowHeadersWidth = 56;
-            ListCategoryGridView.Size = new Size(402, 373);
+            ListCategoryGridView.Size = new Size(357, 355);
             ListCategoryGridView.TabIndex = 25;
             ListCategoryGridView.CellClick += ListCategoryGridView_CellClick;
-            // 
-            // ID
-            // 
-            ID.DataPropertyName = "id";
-            ID.HeaderText = "ID";
-            ID.MinimumWidth = 7;
-            ID.Name = "ID";
-            ID.Width = 135;
             // 
             // CategoryName
             // 
@@ -244,10 +235,10 @@
             // 
             // ListCategoryForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(839, 530);
+            ClientSize = new Size(746, 505);
             Controls.Add(ListCategoryGridView);
             Controls.Add(EditPanel);
             Controls.Add(NewCategoryButton);
@@ -282,7 +273,6 @@
         private Button DeleteButton;
         private TextBox NameBox;
         private DataGridView ListCategoryGridView;
-        private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn CategoryName;
     }
 }

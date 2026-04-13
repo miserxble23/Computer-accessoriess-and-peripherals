@@ -82,5 +82,23 @@ namespace ComputerAccessoriesApp.Forms
             parentForm.LoadProducts();
             this.Close();
         }
+
+        private void UnitBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void PriceBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void RelevanceBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void PurchasePriceBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

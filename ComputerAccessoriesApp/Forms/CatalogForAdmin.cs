@@ -17,10 +17,10 @@ namespace ComputerAccessoriesApp
                 {
                     p.id,
                     p.name,
-                    p.category,
                     p.stock,
                     p.unit,
-                    p.Price
+                    p.Price,
+                    p.category
                 }).ToList();
                 ProductsGridViewAdmin.DataSource = products;
             }

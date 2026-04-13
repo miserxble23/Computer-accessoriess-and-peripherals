@@ -36,12 +36,12 @@
             ExitButton = new Button();
             DispatchButton = new Button();
             ProductsGridViewStorekep = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
             ProductName = new DataGridViewTextBoxColumn();
             Category = new DataGridViewTextBoxColumn();
             Quantity = new DataGridViewTextBoxColumn();
             Unit = new DataGridViewTextBoxColumn();
             Price = new DataGridViewTextBoxColumn();
+            ArrivalButton = new Button();
             ((System.ComponentModel.ISupportInitialize)ProductsGridViewStorekep).BeginInit();
             SuspendLayout();
             // 
@@ -50,9 +50,9 @@
             AdminLabel.AutoSize = true;
             AdminLabel.Font = new Font("Candara", 22.1538467F);
             AdminLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            AdminLabel.Location = new Point(12, 9);
+            AdminLabel.Location = new Point(12, 22);
             AdminLabel.Name = "AdminLabel";
-            AdminLabel.Size = new Size(314, 49);
+            AdminLabel.Size = new Size(288, 45);
             AdminLabel.TabIndex = 0;
             AdminLabel.Text = "Каталог товаров";
             // 
@@ -61,10 +61,10 @@
             SearchBoxStorekep.BackColor = Color.FromArgb(212, 222, 149);
             SearchBoxStorekep.BorderStyle = BorderStyle.FixedSingle;
             SearchBoxStorekep.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            SearchBoxStorekep.Location = new Point(336, 83);
+            SearchBoxStorekep.Location = new Point(285, 79);
             SearchBoxStorekep.Name = "SearchBoxStorekep";
             SearchBoxStorekep.PlaceholderText = "  Поиск";
-            SearchBoxStorekep.Size = new Size(352, 34);
+            SearchBoxStorekep.Size = new Size(313, 32);
             SearchBoxStorekep.TabIndex = 3;
             // 
             // SearchButtonStorekep
@@ -74,9 +74,9 @@
             SearchButtonStorekep.FlatStyle = FlatStyle.Popup;
             SearchButtonStorekep.Font = new Font("Candara", 12.1846151F);
             SearchButtonStorekep.ForeColor = Color.White;
-            SearchButtonStorekep.Location = new Point(705, 83);
+            SearchButtonStorekep.Location = new Point(604, 79);
             SearchButtonStorekep.Name = "SearchButtonStorekep";
-            SearchButtonStorekep.Size = new Size(111, 34);
+            SearchButtonStorekep.Size = new Size(99, 32);
             SearchButtonStorekep.TabIndex = 4;
             SearchButtonStorekep.Text = "Найти";
             SearchButtonStorekep.UseVisualStyleBackColor = false;
@@ -89,9 +89,9 @@
             ExitButton.FlatStyle = FlatStyle.Popup;
             ExitButton.Font = new Font("Candara", 12.1846151F);
             ExitButton.ForeColor = Color.White;
-            ExitButton.Location = new Point(705, 24);
+            ExitButton.Location = new Point(604, 496);
             ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(111, 34);
+            ExitButton.Size = new Size(99, 32);
             ExitButton.TabIndex = 5;
             ExitButton.Text = "Выход";
             ExitButton.UseVisualStyleBackColor = false;
@@ -104,9 +104,9 @@
             DispatchButton.FlatStyle = FlatStyle.Popup;
             DispatchButton.Font = new Font("Candara", 12.1846151F);
             DispatchButton.ForeColor = Color.White;
-            DispatchButton.Location = new Point(549, 24);
+            DispatchButton.Location = new Point(474, 34);
             DispatchButton.Name = "DispatchButton";
-            DispatchButton.Size = new Size(139, 34);
+            DispatchButton.Size = new Size(124, 32);
             DispatchButton.TabIndex = 6;
             DispatchButton.Text = "Отгрузка";
             DispatchButton.UseVisualStyleBackColor = false;
@@ -125,7 +125,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             ProductsGridViewStorekep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             ProductsGridViewStorekep.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ProductsGridViewStorekep.Columns.AddRange(new DataGridViewColumn[] { ID, ProductName, Category, Quantity, Unit, Price });
+            ProductsGridViewStorekep.Columns.AddRange(new DataGridViewColumn[] { ProductName, Category, Quantity, Unit, Price });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(197, 227, 132);
             dataGridViewCellStyle2.Font = new Font("Candara", 10.1846151F);
@@ -135,23 +135,13 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             ProductsGridViewStorekep.DefaultCellStyle = dataGridViewCellStyle2;
             ProductsGridViewStorekep.EnableHeadersVisualStyles = false;
-            ProductsGridViewStorekep.Location = new Point(49, 143);
+            ProductsGridViewStorekep.Location = new Point(44, 136);
             ProductsGridViewStorekep.Name = "ProductsGridViewStorekep";
             ProductsGridViewStorekep.RowHeadersVisible = false;
             ProductsGridViewStorekep.RowHeadersWidth = 56;
-            ProductsGridViewStorekep.Size = new Size(741, 363);
+            ProductsGridViewStorekep.Size = new Size(659, 346);
             ProductsGridViewStorekep.TabIndex = 7;
             ProductsGridViewStorekep.CellDoubleClick += ProductsGridViewStorekep_CellDoubleClick;
-            // 
-            // ID
-            // 
-            ID.DataPropertyName = "id";
-            ID.FillWeight = 112F;
-            ID.HeaderText = "ID";
-            ID.MinimumWidth = 7;
-            ID.Name = "ID";
-            ID.ReadOnly = true;
-            ID.Width = 80;
             // 
             // ProductName
             // 
@@ -203,12 +193,27 @@
             Price.ReadOnly = true;
             Price.Width = 123;
             // 
+            // ArrivalButton
+            // 
+            ArrivalButton.BackColor = Color.DarkOliveGreen;
+            ArrivalButton.Cursor = Cursors.Hand;
+            ArrivalButton.FlatStyle = FlatStyle.Popup;
+            ArrivalButton.Font = new Font("Candara", 12.1846151F);
+            ArrivalButton.ForeColor = Color.White;
+            ArrivalButton.Location = new Point(604, 34);
+            ArrivalButton.Name = "ArrivalButton";
+            ArrivalButton.Size = new Size(99, 32);
+            ArrivalButton.TabIndex = 8;
+            ArrivalButton.Text = "Приход";
+            ArrivalButton.UseVisualStyleBackColor = false;
+            // 
             // CatalogForStorekeepers
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(839, 530);
+            ClientSize = new Size(746, 540);
+            Controls.Add(ArrivalButton);
             Controls.Add(ProductsGridViewStorekep);
             Controls.Add(DispatchButton);
             Controls.Add(ExitButton);
@@ -234,11 +239,11 @@
         private Button ExitButton;
         private Button DispatchButton;
         private DataGridView ProductsGridViewStorekep;
-        private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn ProductName;
         private DataGridViewTextBoxColumn Category;
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn Unit;
         private DataGridViewTextBoxColumn Price;
+        private Button ArrivalButton;
     }
 }
