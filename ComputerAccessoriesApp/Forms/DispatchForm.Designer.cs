@@ -253,7 +253,7 @@
             // 
             Quantity.DataPropertyName = "stock";
             Quantity.FillWeight = 22.3751926F;
-            Quantity.HeaderText = "Количество";
+            Quantity.HeaderText = "Кол-во";
             Quantity.MinimumWidth = 7;
             Quantity.Name = "Quantity";
             Quantity.Width = 67;
@@ -275,6 +275,27 @@
             Price.MinimumWidth = 7;
             Price.Name = "Price";
             Price.Width = 67;
+            // 
+            // Namee
+            // 
+            Namee.HeaderText = "Название";
+            Namee.MinimumWidth = 7;
+            Namee.Name = "Namee";
+            Namee.Width = 85;
+            // 
+            // Quantityy
+            // 
+            Quantityy.HeaderText = "Кол-во";
+            Quantityy.MinimumWidth = 7;
+            Quantityy.Name = "Quantityy";
+            Quantityy.Width = 80;
+            // 
+            // Pricee
+            // 
+            Pricee.HeaderText = "Цена";
+            Pricee.MinimumWidth = 7;
+            Pricee.Name = "Pricee";
+            Pricee.Width = 57;
             // 
             // DispatchForm
             // 
