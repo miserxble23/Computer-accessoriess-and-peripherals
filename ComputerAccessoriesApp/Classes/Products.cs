@@ -30,10 +30,13 @@ namespace Products
         public int stock { get; set; }
 
         /// <summary>
-        /// Единица измерения (шт, кг и т.д.)
+        /// Единица измерения (шт.)
         /// </summary>
-        public string unit { get; set; }
+        public string unit = "шт.";
 
+        /// <summary>
+        /// Цена продажи товара
+        /// </summary>
         private decimal price;
 
         /// <summary>
@@ -58,5 +61,15 @@ namespace Products
                 }
             }
         }
+
+        /// <summary>
+        /// Актуальность товара
+        /// </summary>
+        public int relevancemonth;
+
+        /// <summary>
+        /// Цена закупки товара
+        /// </summary>
+        public decimal purchaseprice;
     }
 }

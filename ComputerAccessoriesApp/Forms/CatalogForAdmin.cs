@@ -15,12 +15,13 @@ namespace ComputerAccessoriesApp
             {
                 var products = db.products.Select(p => new
                 {
-                    p.id,
                     p.name,
+                    p.category,
                     p.stock,
                     p.unit,
                     p.Price,
-                    p.category
+                    p.relevancemonth,
+                    p.purchaseprice
                 }).ToList();
                 ProductsGridViewAdmin.DataSource = products;
             }
@@ -58,7 +59,8 @@ namespace ComputerAccessoriesApp
                 row.Cells[2].Value.ToString(),
                 row.Cells[3].Value.ToString(),
                 row.Cells[4].Value.ToString(),
-                row.Cells[5].Value.ToString()
+                row.Cells[5].Value.ToString(),
+                row.Cells[6].Value.ToString()
             );
             form.Show();
         }
@@ -69,12 +71,13 @@ namespace ComputerAccessoriesApp
             {
                 var products = db.products.Where(p => p.name.ToLower().Contains(search.ToLower())).Select(p => new
                 {
-                    p.id,
                     p.name,
                     p.category,
                     p.stock,
                     p.unit,
-                    p.Price
+                    p.Price,
+                    p.relevancemonth,
+                    p.purchaseprice
                 }).ToList();
                 ProductsGridViewAdmin.DataSource = products;
             }

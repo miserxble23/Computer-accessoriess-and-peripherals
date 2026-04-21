@@ -1,6 +1,6 @@
 ﻿namespace ComputerAccessoriesApp
 {
-    partial class DispatchForm
+    partial class SupplieForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             BackButton = new Button();
             SendButton = new Button();
-            DispatchLabel = new Label();
+            SupplieLabel = new Label();
             FindBox = new TextBox();
             FindButton = new Button();
             BasketPanel = new Panel();
@@ -44,15 +44,17 @@
             Pricee = new DataGridViewTextBoxColumn();
             BasketLabel = new Label();
             npgsqlDataAdapter1 = new Npgsql.NpgsqlDataAdapter();
-            DispatchGridView = new DataGridView();
+            SupplieGridView = new DataGridView();
             ProductNameColumn = new DataGridViewTextBoxColumn();
             Category = new DataGridViewTextBoxColumn();
             Quantity = new DataGridViewTextBoxColumn();
             Unit = new DataGridViewTextBoxColumn();
             Price = new DataGridViewTextBoxColumn();
+            ImportButton = new Button();
+            DeleteButton = new Button();
             BasketPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BasketGridView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)DispatchGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SupplieGridView).BeginInit();
             SuspendLayout();
             // 
             // BackButton
@@ -62,7 +64,7 @@
             BackButton.FlatStyle = FlatStyle.Popup;
             BackButton.Font = new Font("Candara", 12.1846151F);
             BackButton.ForeColor = Color.White;
-            BackButton.Location = new Point(590, 424);
+            BackButton.Location = new Point(771, 424);
             BackButton.Name = "BackButton";
             BackButton.Size = new Size(110, 41);
             BackButton.TabIndex = 0;
@@ -79,32 +81,32 @@
             SendButton.ForeColor = Color.White;
             SendButton.Location = new Point(11, 424);
             SendButton.Name = "SendButton";
-            SendButton.Size = new Size(121, 41);
+            SendButton.Size = new Size(214, 41);
             SendButton.TabIndex = 1;
-            SendButton.Text = "Отправить";
+            SendButton.Text = " Оформить отправку";
             SendButton.UseVisualStyleBackColor = false;
             SendButton.Click += SendButton_Click;
             // 
-            // DispatchLabel
+            // SupplieLabel
             // 
-            DispatchLabel.AutoSize = true;
-            DispatchLabel.Font = new Font("Candara", 22.1538467F);
-            DispatchLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            DispatchLabel.Location = new Point(11, 9);
-            DispatchLabel.Name = "DispatchLabel";
-            DispatchLabel.Size = new Size(307, 45);
-            DispatchLabel.TabIndex = 2;
-            DispatchLabel.Text = "Отгрузка товаров";
+            SupplieLabel.AutoSize = true;
+            SupplieLabel.Font = new Font("Candara", 22.1538467F);
+            SupplieLabel.ForeColor = Color.FromArgb(61, 65, 39);
+            SupplieLabel.Location = new Point(11, 9);
+            SupplieLabel.Name = "SupplieLabel";
+            SupplieLabel.Size = new Size(310, 45);
+            SupplieLabel.TabIndex = 2;
+            SupplieLabel.Text = "Поставка товаров";
             // 
             // FindBox
             // 
             FindBox.BackColor = Color.FromArgb(212, 222, 149);
             FindBox.BorderStyle = BorderStyle.FixedSingle;
             FindBox.Font = new Font("Candara", 14.1846151F);
-            FindBox.Location = new Point(314, 16);
+            FindBox.Location = new Point(338, 19);
             FindBox.Name = "FindBox";
             FindBox.PlaceholderText = "  Поиск";
-            FindBox.Size = new Size(249, 36);
+            FindBox.Size = new Size(420, 36);
             FindBox.TabIndex = 3;
             // 
             // FindButton
@@ -114,7 +116,7 @@
             FindButton.FlatStyle = FlatStyle.Popup;
             FindButton.Font = new Font("Candara", 12.1846151F);
             FindButton.ForeColor = Color.White;
-            FindButton.Location = new Point(590, 14);
+            FindButton.Location = new Point(771, 17);
             FindButton.Name = "FindButton";
             FindButton.Size = new Size(110, 41);
             FindButton.TabIndex = 4;
@@ -126,9 +128,10 @@
             // 
             BasketPanel.BackColor = Color.FromArgb(212, 222, 149);
             BasketPanel.BorderStyle = BorderStyle.FixedSingle;
+            BasketPanel.Controls.Add(DeleteButton);
             BasketPanel.Controls.Add(BasketGridView);
             BasketPanel.Controls.Add(BasketLabel);
-            BasketPanel.Location = new Point(450, 78);
+            BasketPanel.Location = new Point(640, 78);
             BasketPanel.Name = "BasketPanel";
             BasketPanel.Size = new Size(241, 328);
             BasketPanel.TabIndex = 5;
@@ -159,7 +162,7 @@
             BasketGridView.Name = "BasketGridView";
             BasketGridView.RowHeadersVisible = false;
             BasketGridView.RowHeadersWidth = 56;
-            BasketGridView.Size = new Size(200, 250);
+            BasketGridView.Size = new Size(200, 227);
             BasketGridView.TabIndex = 4;
             // 
             // Namee
@@ -201,9 +204,9 @@
             npgsqlDataAdapter1.SelectCommand = null;
             npgsqlDataAdapter1.UpdateCommand = null;
             // 
-            // DispatchGridView
+            // SupplieGridView
             // 
-            DispatchGridView.BackgroundColor = Color.FromArgb(197, 227, 132);
+            SupplieGridView.BackgroundColor = Color.FromArgb(197, 227, 132);
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(197, 227, 132);
             dataGridViewCellStyle3.Font = new Font("Candara", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -211,9 +214,9 @@
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            DispatchGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            DispatchGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DispatchGridView.Columns.AddRange(new DataGridViewColumn[] { ProductNameColumn, Category, Quantity, Unit, Price });
+            SupplieGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            SupplieGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            SupplieGridView.Columns.AddRange(new DataGridViewColumn[] { ProductNameColumn, Category, Quantity, Unit, Price });
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(197, 227, 132);
             dataGridViewCellStyle4.Font = new Font("Candara", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -221,15 +224,15 @@
             dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            DispatchGridView.DefaultCellStyle = dataGridViewCellStyle4;
-            DispatchGridView.EnableHeadersVisualStyles = false;
-            DispatchGridView.Location = new Point(11, 78);
-            DispatchGridView.Name = "DispatchGridView";
-            DispatchGridView.RowHeadersVisible = false;
-            DispatchGridView.RowHeadersWidth = 56;
-            DispatchGridView.Size = new Size(418, 328);
-            DispatchGridView.TabIndex = 6;
-            DispatchGridView.CellContentClick += DispatchGridView_CellContentClick;
+            SupplieGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            SupplieGridView.EnableHeadersVisualStyles = false;
+            SupplieGridView.Location = new Point(11, 78);
+            SupplieGridView.Name = "SupplieGridView";
+            SupplieGridView.RowHeadersVisible = false;
+            SupplieGridView.RowHeadersWidth = 56;
+            SupplieGridView.Size = new Size(595, 328);
+            SupplieGridView.TabIndex = 6;
+            SupplieGridView.CellContentClick += SupplieGridView_CellContentClick;
             // 
             // ProductNameColumn
             // 
@@ -276,28 +279,57 @@
             Price.Name = "Price";
             Price.Width = 67;
             // 
-            // DispatchForm
+            // ImportButton
+            // 
+            ImportButton.BackColor = Color.DarkOliveGreen;
+            ImportButton.Cursor = Cursors.Hand;
+            ImportButton.FlatStyle = FlatStyle.Popup;
+            ImportButton.Font = new Font("Candara", 12.1846151F);
+            ImportButton.ForeColor = Color.White;
+            ImportButton.Location = new Point(380, 424);
+            ImportButton.Name = "ImportButton";
+            ImportButton.Size = new Size(235, 41);
+            ImportButton.TabIndex = 7;
+            ImportButton.Text = "Импортировать файлы";
+            ImportButton.UseVisualStyleBackColor = false;
+            // 
+            // DeleteButton
+            // 
+            DeleteButton.BackColor = Color.DarkOliveGreen;
+            DeleteButton.Cursor = Cursors.Hand;
+            DeleteButton.FlatStyle = FlatStyle.Popup;
+            DeleteButton.Font = new Font("Candara", 11.1846151F);
+            DeleteButton.ForeColor = Color.White;
+            DeleteButton.Location = new Point(130, 289);
+            DeleteButton.Name = "DeleteButton";
+            DeleteButton.Size = new Size(88, 34);
+            DeleteButton.TabIndex = 5;
+            DeleteButton.Text = "Убрать";
+            DeleteButton.UseVisualStyleBackColor = false;
+            // 
+            // SupplieForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(711, 476);
-            Controls.Add(DispatchGridView);
+            ClientSize = new Size(924, 476);
+            Controls.Add(ImportButton);
+            Controls.Add(SupplieGridView);
             Controls.Add(BasketPanel);
             Controls.Add(FindButton);
             Controls.Add(FindBox);
-            Controls.Add(DispatchLabel);
+            Controls.Add(SupplieLabel);
             Controls.Add(SendButton);
             Controls.Add(BackButton);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "DispatchForm";
-            Text = "DispatchForm";
-            MouseDown += DispatchForm_MouseDown;
-            MouseMove += DispatchForm_MouseMove;
+            Name = "SupplieForm";
+            Text = "SupplieForm";
+            MouseDown += SupplieForm_MouseDown;
+            MouseMove += SupplieForm_MouseMove;
             BasketPanel.ResumeLayout(false);
             BasketPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)BasketGridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)DispatchGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SupplieGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -306,13 +338,13 @@
 
         private Button BackButton;
         private Button SendButton;
-        private Label DispatchLabel;
+        private Label SupplieLabel;
         private TextBox FindBox;
         private Button FindButton;
         private Panel BasketPanel;
         private Label BasketLabel;
         private Npgsql.NpgsqlDataAdapter npgsqlDataAdapter1;
-        private DataGridView DispatchGridView;
+        private DataGridView SupplieGridView;
         private DataGridView BasketGridView;
         private DataGridViewTextBoxColumn Namee;
         private DataGridViewTextBoxColumn Quantityy;
@@ -322,5 +354,7 @@
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn Unit;
         private DataGridViewTextBoxColumn Price;
+        private Button ImportButton;
+        private Button DeleteButton;
     }
 }

@@ -44,7 +44,7 @@
                 {
                     var form = new CatalogForAdmin();
                     form.Show();
-                }
+                } 
                 else
                 {
                     var form = new CatalogForStorekeepers();

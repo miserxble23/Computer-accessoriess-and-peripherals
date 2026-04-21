@@ -1,16 +1,16 @@
 ﻿namespace ComputerAccessoriesApp
 {
-    public partial class DispatchForm : Form
+    public partial class SupplieForm : Form
     {
         private Form parentForm;
         Point LastPoint;
-        public DispatchForm(Form parent)
+        public SupplieForm(Form parent)
         {
             InitializeComponent();
             parentForm = parent;
             LoadProducts();
         }
-        private void DispatchForm_MouseDown(object sender, MouseEventArgs e)
+        private void SupplieForm_MouseDown(object sender, MouseEventArgs e)
         {
             LastPoint = new Point(e.X, e.Y);
         }
@@ -26,10 +26,10 @@
                     p.unit,
                     p.Price
                 }).ToList();
-                DispatchGridView.DataSource = products;
+                SupplieGridView.DataSource = products;
             }
         }
-        private void DispatchForm_MouseMove(object sender, MouseEventArgs e)
+        private void SupplieForm_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -56,16 +56,16 @@
                     p.unit,
                     p.Price
                 }).ToList();
-                DispatchGridView.DataSource = products;
+                SupplieGridView.DataSource = products;
             }
         }
-        private void DispatchGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void SupplieGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
             {
                 return;
             }
-            var row = DispatchGridView.Rows[e.RowIndex]; //[e.RowIndex] — берём строку по которой кликнули
+            var row = SupplieGridView.Rows[e.RowIndex]; //[e.RowIndex] — берём строку по которой кликнули
             var name = row.Cells["ProductNameColumn"].Value.ToString(); //Cells - это ячейки строки
             var stockText = row.Cells["Quantity"].Value.ToString(); //Cells - это ячейки строки
             var price = row.Cells["Price"].Value.ToString(); //Cells - это ячейки строки

@@ -1,4 +1,5 @@
 ﻿using Products;
+using Categories;
 namespace ComputerAccessoriesApp.Forms
 {
     public partial class NewCaterogy : Form

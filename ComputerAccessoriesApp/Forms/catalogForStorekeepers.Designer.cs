@@ -36,12 +36,15 @@
             ExitButton = new Button();
             DispatchButton = new Button();
             ProductsGridViewStorekep = new DataGridView();
+            ArrivalButton = new Button();
+            SupplieButton = new Button();
             ProductName = new DataGridViewTextBoxColumn();
             Category = new DataGridViewTextBoxColumn();
             Quantity = new DataGridViewTextBoxColumn();
             Unit = new DataGridViewTextBoxColumn();
             Price = new DataGridViewTextBoxColumn();
-            ArrivalButton = new Button();
+            Relevance = new DataGridViewTextBoxColumn();
+            Sale = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)ProductsGridViewStorekep).BeginInit();
             SuspendLayout();
             // 
@@ -125,7 +128,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             ProductsGridViewStorekep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             ProductsGridViewStorekep.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ProductsGridViewStorekep.Columns.AddRange(new DataGridViewColumn[] { ProductName, Category, Quantity, Unit, Price });
+            ProductsGridViewStorekep.Columns.AddRange(new DataGridViewColumn[] { ProductName, Category, Quantity, Unit, Price, Relevance, Sale });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(197, 227, 132);
             dataGridViewCellStyle2.Font = new Font("Candara", 10.1846151F);
@@ -142,6 +145,34 @@
             ProductsGridViewStorekep.Size = new Size(659, 346);
             ProductsGridViewStorekep.TabIndex = 7;
             ProductsGridViewStorekep.CellDoubleClick += ProductsGridViewStorekep_CellDoubleClick;
+            // 
+            // ArrivalButton
+            // 
+            ArrivalButton.BackColor = Color.DarkOliveGreen;
+            ArrivalButton.Cursor = Cursors.Hand;
+            ArrivalButton.FlatStyle = FlatStyle.Popup;
+            ArrivalButton.Font = new Font("Candara", 12.1846151F);
+            ArrivalButton.ForeColor = Color.White;
+            ArrivalButton.Location = new Point(604, 34);
+            ArrivalButton.Name = "ArrivalButton";
+            ArrivalButton.Size = new Size(99, 32);
+            ArrivalButton.TabIndex = 8;
+            ArrivalButton.Text = "Приход";
+            ArrivalButton.UseVisualStyleBackColor = false;
+            // 
+            // SupplieButton
+            // 
+            SupplieButton.BackColor = Color.DarkOliveGreen;
+            SupplieButton.Cursor = Cursors.Hand;
+            SupplieButton.FlatStyle = FlatStyle.Popup;
+            SupplieButton.Font = new Font("Candara", 12.1846151F);
+            SupplieButton.ForeColor = Color.White;
+            SupplieButton.Location = new Point(306, 35);
+            SupplieButton.Name = "SupplieButton";
+            SupplieButton.Size = new Size(162, 32);
+            SupplieButton.TabIndex = 9;
+            SupplieButton.Text = "Поставка";
+            SupplieButton.UseVisualStyleBackColor = false;
             // 
             // ProductName
             // 
@@ -193,19 +224,20 @@
             Price.ReadOnly = true;
             Price.Width = 123;
             // 
-            // ArrivalButton
+            // Relevance
             // 
-            ArrivalButton.BackColor = Color.DarkOliveGreen;
-            ArrivalButton.Cursor = Cursors.Hand;
-            ArrivalButton.FlatStyle = FlatStyle.Popup;
-            ArrivalButton.Font = new Font("Candara", 12.1846151F);
-            ArrivalButton.ForeColor = Color.White;
-            ArrivalButton.Location = new Point(604, 34);
-            ArrivalButton.Name = "ArrivalButton";
-            ArrivalButton.Size = new Size(99, 32);
-            ArrivalButton.TabIndex = 8;
-            ArrivalButton.Text = "Приход";
-            ArrivalButton.UseVisualStyleBackColor = false;
+            Relevance.FillWeight = 112F;
+            Relevance.HeaderText = "Актуальность";
+            Relevance.MinimumWidth = 7;
+            Relevance.Name = "Relevance";
+            Relevance.Width = 123;
+            // 
+            // Sale
+            // 
+            Sale.HeaderText = "Скидка";
+            Sale.MinimumWidth = 6;
+            Sale.Name = "Sale";
+            Sale.Width = 125;
             // 
             // CatalogForStorekeepers
             // 
@@ -213,6 +245,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
             ClientSize = new Size(746, 540);
+            Controls.Add(SupplieButton);
             Controls.Add(ArrivalButton);
             Controls.Add(ProductsGridViewStorekep);
             Controls.Add(DispatchButton);
@@ -239,11 +272,14 @@
         private Button ExitButton;
         private Button DispatchButton;
         private DataGridView ProductsGridViewStorekep;
+        private Button ArrivalButton;
+        private Button SupplieButton;
         private DataGridViewTextBoxColumn ProductName;
         private DataGridViewTextBoxColumn Category;
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn Unit;
         private DataGridViewTextBoxColumn Price;
-        private Button ArrivalButton;
+        private DataGridViewTextBoxColumn Relevance;
+        private DataGridViewTextBoxColumn Sale;
     }
 }

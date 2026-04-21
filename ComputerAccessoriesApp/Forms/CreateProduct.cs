@@ -4,16 +4,25 @@ namespace ComputerAccessoriesApp.Forms
     public partial class CreateProduct : Form
     {
         Point LastPoint;
-        private CatalogForAdmin parentForm;
-        public CreateProduct(CatalogForAdmin form)
+        private ComputerAccessoriesApp.CatalogForAdmin parentForm;
+        public CreateProduct(ComputerAccessoriesApp.CatalogForAdmin form)
         {
             InitializeComponent();
             parentForm = form;
             this.Load += CreateProduct_Load;
         }
+
         private void CreateProduct_Load(object sender, EventArgs e)
         {
-            UnitBox.Text = "шт";
+            LoadElementsToCategoryBox();
+        }
+        public void LoadElementsToCategoryBox()
+        {
+            using (var db = new DbContext())
+            {
+                List<string> products = db.categories.Select(p => p.name).ToList();
+                CategoryBox.DataSource = products;
+            }
         }
         private void CreateProduct_MouseMove(object sender, MouseEventArgs e)
         {
@@ -46,7 +55,6 @@ namespace ComputerAccessoriesApp.Forms
         {
             if (string.IsNullOrWhiteSpace(NameBox.Text) ||
                 string.IsNullOrWhiteSpace(CategoryBox.Text) ||
-                string.IsNullOrWhiteSpace(UnitBox.Text) ||
                 string.IsNullOrWhiteSpace(PriceBox.Text))
             {
                 return;
@@ -70,7 +78,7 @@ namespace ComputerAccessoriesApp.Forms
                     name = NameBox.Text,
                     category = CategoryBox.Text,
                     stock = 0,
-                    unit = UnitBox.Text,
+                    unit = "шт.",
                     Price = price
                 };
                 db.products.Add(product);
@@ -82,23 +90,5 @@ namespace ComputerAccessoriesApp.Forms
             parentForm.LoadProducts();
             this.Close();
         }
-
-        private void UnitBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void PriceBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void RelevanceBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void PurchasePriceBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

@@ -39,9 +39,9 @@
             NewCategoryLabel.AutoSize = true;
             NewCategoryLabel.Font = new Font("Candara", 23.8153839F, FontStyle.Regular, GraphicsUnit.Point, 204);
             NewCategoryLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            NewCategoryLabel.Location = new Point(12, 9);
+            NewCategoryLabel.Location = new Point(11, 9);
             NewCategoryLabel.Name = "NewCategoryLabel";
-            NewCategoryLabel.Size = new Size(340, 53);
+            NewCategoryLabel.Size = new Size(318, 49);
             NewCategoryLabel.TabIndex = 4;
             NewCategoryLabel.Text = "Новая категория";
             // 
@@ -52,9 +52,9 @@
             SaveButton.FlatStyle = FlatStyle.Popup;
             SaveButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
             SaveButton.ForeColor = Color.White;
-            SaveButton.Location = new Point(12, 213);
+            SaveButton.Location = new Point(11, 203);
             SaveButton.Name = "SaveButton";
-            SaveButton.Size = new Size(126, 34);
+            SaveButton.Size = new Size(124, 32);
             SaveButton.TabIndex = 6;
             SaveButton.Text = "Сохранить";
             SaveButton.UseVisualStyleBackColor = false;
@@ -67,9 +67,9 @@
             CancelButton.FlatStyle = FlatStyle.Popup;
             CancelButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
             CancelButton.ForeColor = Color.White;
-            CancelButton.Location = new Point(281, 213);
+            CancelButton.Location = new Point(240, 203);
             CancelButton.Name = "CancelButton";
-            CancelButton.Size = new Size(98, 34);
+            CancelButton.Size = new Size(97, 32);
             CancelButton.TabIndex = 7;
             CancelButton.Text = "Отмена";
             CancelButton.UseVisualStyleBackColor = false;
@@ -80,18 +80,18 @@
             LoginBoxReg.BackColor = Color.FromArgb(212, 222, 149);
             LoginBoxReg.BorderStyle = BorderStyle.FixedSingle;
             LoginBoxReg.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            LoginBoxReg.Location = new Point(54, 112);
+            LoginBoxReg.Location = new Point(48, 107);
             LoginBoxReg.Name = "LoginBoxReg";
             LoginBoxReg.PlaceholderText = "  Введите название";
-            LoginBoxReg.Size = new Size(283, 34);
+            LoginBoxReg.Size = new Size(252, 32);
             LoginBoxReg.TabIndex = 8;
             // 
             // NewCaterogy
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(391, 259);
+            ClientSize = new Size(348, 247);
             Controls.Add(LoginBoxReg);
             Controls.Add(CancelButton);
             Controls.Add(SaveButton);

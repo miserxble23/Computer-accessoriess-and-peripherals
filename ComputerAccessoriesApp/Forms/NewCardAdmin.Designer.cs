@@ -30,20 +30,22 @@
         {
             CardLabel = new Label();
             CancelButton = new Button();
-            IDLabel = new Label();
-            NameLabel = new Label();
-            CategoryLabel = new Label();
-            StockLabel = new Label();
-            UnitLabel = new Label();
-            PriceLabel = new Label();
-            IDBox = new TextBox();
-            NameBox = new TextBox();
-            CategoryBox = new TextBox();
-            StockBox = new TextBox();
-            UnitBox = new TextBox();
-            PriceBox = new TextBox();
             DeleteButton = new Button();
             ChangeButton = new Button();
+            NameLabel = new Label();
+            NameBox = new TextBox();
+            QuantityLabel = new Label();
+            QuantityBox = new TextBox();
+            CategoryLabel = new Label();
+            PriceLabel = new Label();
+            PriceBox = new TextBox();
+            PurchasePriceBox = new TextBox();
+            PurchasePriceLabel = new Label();
+            RelevanceBox = new TextBox();
+            RelevanceLabel = new Label();
+            CategoryBox = new TextBox();
+            UnitBox = new TextBox();
+            UnitLabel = new Label();
             SuspendLayout();
             // 
             // CardLabel
@@ -51,9 +53,9 @@
             CardLabel.AutoSize = true;
             CardLabel.Font = new Font("Candara", 22.1538467F);
             CardLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            CardLabel.Location = new Point(241, 9);
+            CardLabel.Location = new Point(205, 9);
             CardLabel.Name = "CardLabel";
-            CardLabel.Size = new Size(318, 49);
+            CardLabel.Size = new Size(291, 45);
             CardLabel.TabIndex = 1;
             CardLabel.Text = "Карточка товара";
             // 
@@ -64,151 +66,13 @@
             CancelButton.FlatStyle = FlatStyle.Popup;
             CancelButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
             CancelButton.ForeColor = Color.White;
-            CancelButton.Location = new Point(651, 395);
+            CancelButton.Location = new Point(592, 358);
             CancelButton.Name = "CancelButton";
-            CancelButton.Size = new Size(102, 43);
+            CancelButton.Size = new Size(91, 41);
             CancelButton.TabIndex = 2;
             CancelButton.Text = "Отмена";
             CancelButton.UseVisualStyleBackColor = false;
             CancelButton.Click += CancelButton_Click;
-            // 
-            // IDLabel
-            // 
-            IDLabel.AutoSize = true;
-            IDLabel.Font = new Font("Candara", 16.0615387F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            IDLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            IDLabel.Location = new Point(64, 63);
-            IDLabel.Name = "IDLabel";
-            IDLabel.Size = new Size(42, 36);
-            IDLabel.TabIndex = 3;
-            IDLabel.Text = "ID";
-            // 
-            // NameLabel
-            // 
-            NameLabel.AutoSize = true;
-            NameLabel.Font = new Font("Candara", 16.2769222F);
-            NameLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            NameLabel.Location = new Point(62, 115);
-            NameLabel.Name = "NameLabel";
-            NameLabel.Size = new Size(142, 37);
-            NameLabel.TabIndex = 4;
-            NameLabel.Text = "Название";
-            // 
-            // CategoryLabel
-            // 
-            CategoryLabel.AutoSize = true;
-            CategoryLabel.Font = new Font("Candara", 16.2769222F);
-            CategoryLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            CategoryLabel.Location = new Point(62, 165);
-            CategoryLabel.Name = "CategoryLabel";
-            CategoryLabel.Size = new Size(154, 37);
-            CategoryLabel.TabIndex = 5;
-            CategoryLabel.Text = "Категория";
-            // 
-            // StockLabel
-            // 
-            StockLabel.AutoSize = true;
-            StockLabel.Font = new Font("Candara", 16.2769222F);
-            StockLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            StockLabel.Location = new Point(62, 219);
-            StockLabel.Name = "StockLabel";
-            StockLabel.Size = new Size(171, 37);
-            StockLabel.TabIndex = 6;
-            StockLabel.Text = "Количество";
-            // 
-            // UnitLabel
-            // 
-            UnitLabel.AutoSize = true;
-            UnitLabel.Font = new Font("Candara", 16.2769222F);
-            UnitLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            UnitLabel.Location = new Point(62, 278);
-            UnitLabel.Name = "UnitLabel";
-            UnitLabel.Size = new Size(126, 37);
-            UnitLabel.TabIndex = 7;
-            UnitLabel.Text = "Ед. Изм.";
-            // 
-            // PriceLabel
-            // 
-            PriceLabel.AutoSize = true;
-            PriceLabel.Font = new Font("Candara", 16.2769222F);
-            PriceLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            PriceLabel.Location = new Point(64, 342);
-            PriceLabel.Name = "PriceLabel";
-            PriceLabel.Size = new Size(82, 37);
-            PriceLabel.TabIndex = 8;
-            PriceLabel.Text = "Цена";
-            // 
-            // IDBox
-            // 
-            IDBox.BackColor = Color.FromArgb(212, 222, 149);
-            IDBox.BorderStyle = BorderStyle.FixedSingle;
-            IDBox.Font = new Font("Candara", 14.1846151F);
-            IDBox.Location = new Point(241, 64);
-            IDBox.Multiline = true;
-            IDBox.Name = "IDBox";
-            IDBox.ReadOnly = true;
-            IDBox.Size = new Size(512, 36);
-            IDBox.TabIndex = 9;
-            // 
-            // NameBox
-            // 
-            NameBox.BackColor = Color.FromArgb(212, 222, 149);
-            NameBox.BorderStyle = BorderStyle.FixedSingle;
-            NameBox.Font = new Font("Candara", 14.1846151F);
-            NameBox.Location = new Point(241, 116);
-            NameBox.Multiline = true;
-            NameBox.Name = "NameBox";
-            NameBox.ReadOnly = true;
-            NameBox.Size = new Size(512, 36);
-            NameBox.TabIndex = 13;
-            // 
-            // CategoryBox
-            // 
-            CategoryBox.BackColor = Color.FromArgb(212, 222, 149);
-            CategoryBox.BorderStyle = BorderStyle.FixedSingle;
-            CategoryBox.Font = new Font("Candara", 14.1846151F);
-            CategoryBox.Location = new Point(241, 166);
-            CategoryBox.Multiline = true;
-            CategoryBox.Name = "CategoryBox";
-            CategoryBox.ReadOnly = true;
-            CategoryBox.Size = new Size(512, 36);
-            CategoryBox.TabIndex = 14;
-            // 
-            // StockBox
-            // 
-            StockBox.BackColor = Color.FromArgb(212, 222, 149);
-            StockBox.BorderStyle = BorderStyle.FixedSingle;
-            StockBox.Font = new Font("Candara", 14.1846151F);
-            StockBox.Location = new Point(241, 219);
-            StockBox.Multiline = true;
-            StockBox.Name = "StockBox";
-            StockBox.ReadOnly = true;
-            StockBox.Size = new Size(512, 36);
-            StockBox.TabIndex = 15;
-            // 
-            // UnitBox
-            // 
-            UnitBox.BackColor = Color.FromArgb(212, 222, 149);
-            UnitBox.BorderStyle = BorderStyle.FixedSingle;
-            UnitBox.Font = new Font("Candara", 14.1846151F);
-            UnitBox.Location = new Point(241, 279);
-            UnitBox.Multiline = true;
-            UnitBox.Name = "UnitBox";
-            UnitBox.ReadOnly = true;
-            UnitBox.Size = new Size(512, 36);
-            UnitBox.TabIndex = 16;
-            // 
-            // PriceBox
-            // 
-            PriceBox.BackColor = Color.FromArgb(212, 222, 149);
-            PriceBox.BorderStyle = BorderStyle.FixedSingle;
-            PriceBox.Font = new Font("Candara", 14.1846151F);
-            PriceBox.Location = new Point(241, 343);
-            PriceBox.Multiline = true;
-            PriceBox.Name = "PriceBox";
-            PriceBox.ReadOnly = true;
-            PriceBox.Size = new Size(512, 36);
-            PriceBox.TabIndex = 17;
             // 
             // DeleteButton
             // 
@@ -217,9 +81,9 @@
             DeleteButton.FlatStyle = FlatStyle.Popup;
             DeleteButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
             DeleteButton.ForeColor = Color.White;
-            DeleteButton.Location = new Point(522, 395);
+            DeleteButton.Location = new Point(479, 358);
             DeleteButton.Name = "DeleteButton";
-            DeleteButton.Size = new Size(102, 43);
+            DeleteButton.Size = new Size(98, 41);
             DeleteButton.TabIndex = 18;
             DeleteButton.Text = "Удалить";
             DeleteButton.UseVisualStyleBackColor = false;
@@ -232,34 +96,197 @@
             ChangeButton.FlatStyle = FlatStyle.Popup;
             ChangeButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
             ChangeButton.ForeColor = Color.White;
-            ChangeButton.Location = new Point(369, 395);
+            ChangeButton.Location = new Point(349, 358);
             ChangeButton.Name = "ChangeButton";
-            ChangeButton.Size = new Size(122, 43);
+            ChangeButton.Size = new Size(114, 41);
             ChangeButton.TabIndex = 19;
             ChangeButton.Text = "Изменить";
             ChangeButton.UseVisualStyleBackColor = false;
             ChangeButton.Click += ChangeButton_Click;
             // 
+            // NameLabel
+            // 
+            NameLabel.AutoSize = true;
+            NameLabel.Font = new Font("Candara", 16.2769222F);
+            NameLabel.ForeColor = Color.FromArgb(61, 65, 39);
+            NameLabel.Location = new Point(35, 60);
+            NameLabel.Name = "NameLabel";
+            NameLabel.Size = new Size(131, 35);
+            NameLabel.TabIndex = 4;
+            NameLabel.Text = "Название";
+            // 
+            // NameBox
+            // 
+            NameBox.BackColor = Color.FromArgb(212, 222, 149);
+            NameBox.BorderStyle = BorderStyle.FixedSingle;
+            NameBox.Font = new Font("Candara", 14.1846151F);
+            NameBox.Location = new Point(228, 60);
+            NameBox.Multiline = true;
+            NameBox.Name = "NameBox";
+            NameBox.ReadOnly = true;
+            NameBox.Size = new Size(455, 34);
+            NameBox.TabIndex = 13;
+            // 
+            // QuantityLabel
+            // 
+            QuantityLabel.AutoSize = true;
+            QuantityLabel.Font = new Font("Candara", 16.2769222F);
+            QuantityLabel.ForeColor = Color.FromArgb(61, 65, 39);
+            QuantityLabel.Location = new Point(35, 140);
+            QuantityLabel.Name = "QuantityLabel";
+            QuantityLabel.Size = new Size(159, 35);
+            QuantityLabel.TabIndex = 23;
+            QuantityLabel.Text = "Количество";
+            // 
+            // QuantityBox
+            // 
+            QuantityBox.BackColor = Color.FromArgb(212, 222, 149);
+            QuantityBox.BorderStyle = BorderStyle.FixedSingle;
+            QuantityBox.Font = new Font("Candara", 14.1846151F);
+            QuantityBox.Location = new Point(228, 141);
+            QuantityBox.Multiline = true;
+            QuantityBox.Name = "QuantityBox";
+            QuantityBox.ReadOnly = true;
+            QuantityBox.Size = new Size(455, 34);
+            QuantityBox.TabIndex = 24;
+            // 
+            // CategoryLabel
+            // 
+            CategoryLabel.AutoSize = true;
+            CategoryLabel.Font = new Font("Candara", 16.2769222F);
+            CategoryLabel.ForeColor = Color.FromArgb(61, 65, 39);
+            CategoryLabel.Location = new Point(35, 100);
+            CategoryLabel.Name = "CategoryLabel";
+            CategoryLabel.Size = new Size(144, 35);
+            CategoryLabel.TabIndex = 5;
+            CategoryLabel.Text = "Категория";
+            // 
+            // PriceLabel
+            // 
+            PriceLabel.AutoSize = true;
+            PriceLabel.Font = new Font("Candara", 16.2769222F);
+            PriceLabel.ForeColor = Color.FromArgb(61, 65, 39);
+            PriceLabel.Location = new Point(35, 222);
+            PriceLabel.Name = "PriceLabel";
+            PriceLabel.Size = new Size(76, 35);
+            PriceLabel.TabIndex = 8;
+            PriceLabel.Text = "Цена";
+            // 
+            // PriceBox
+            // 
+            PriceBox.BackColor = Color.FromArgb(212, 222, 149);
+            PriceBox.BorderStyle = BorderStyle.FixedSingle;
+            PriceBox.Font = new Font("Candara", 14.1846151F);
+            PriceBox.Location = new Point(228, 222);
+            PriceBox.Multiline = true;
+            PriceBox.Name = "PriceBox";
+            PriceBox.ReadOnly = true;
+            PriceBox.Size = new Size(455, 34);
+            PriceBox.TabIndex = 17;
+            // 
+            // PurchasePriceBox
+            // 
+            PurchasePriceBox.BackColor = Color.FromArgb(212, 222, 149);
+            PurchasePriceBox.BorderStyle = BorderStyle.FixedSingle;
+            PurchasePriceBox.Font = new Font("Candara", 14.1846151F);
+            PurchasePriceBox.Location = new Point(228, 262);
+            PurchasePriceBox.Multiline = true;
+            PurchasePriceBox.Name = "PurchasePriceBox";
+            PurchasePriceBox.ReadOnly = true;
+            PurchasePriceBox.Size = new Size(455, 34);
+            PurchasePriceBox.TabIndex = 26;
+            // 
+            // PurchasePriceLabel
+            // 
+            PurchasePriceLabel.AutoSize = true;
+            PurchasePriceLabel.Font = new Font("Candara", 16.2769222F);
+            PurchasePriceLabel.ForeColor = Color.FromArgb(61, 65, 39);
+            PurchasePriceLabel.Location = new Point(35, 262);
+            PurchasePriceLabel.Name = "PurchasePriceLabel";
+            PurchasePriceLabel.Size = new Size(156, 35);
+            PurchasePriceLabel.TabIndex = 25;
+            PurchasePriceLabel.Text = "Закуп. цена";
+            // 
+            // RelevanceBox
+            // 
+            RelevanceBox.BackColor = Color.FromArgb(212, 222, 149);
+            RelevanceBox.BorderStyle = BorderStyle.FixedSingle;
+            RelevanceBox.Font = new Font("Candara", 14.1846151F);
+            RelevanceBox.Location = new Point(228, 302);
+            RelevanceBox.Multiline = true;
+            RelevanceBox.Name = "RelevanceBox";
+            RelevanceBox.ReadOnly = true;
+            RelevanceBox.Size = new Size(455, 34);
+            RelevanceBox.TabIndex = 28;
+            // 
+            // RelevanceLabel
+            // 
+            RelevanceLabel.AutoSize = true;
+            RelevanceLabel.Font = new Font("Candara", 16.2769222F);
+            RelevanceLabel.ForeColor = Color.FromArgb(61, 65, 39);
+            RelevanceLabel.Location = new Point(35, 301);
+            RelevanceLabel.Name = "RelevanceLabel";
+            RelevanceLabel.Size = new Size(181, 35);
+            RelevanceLabel.TabIndex = 27;
+            RelevanceLabel.Text = "Актуальность";
+            // 
+            // CategoryBox
+            // 
+            CategoryBox.BackColor = Color.FromArgb(212, 222, 149);
+            CategoryBox.BorderStyle = BorderStyle.FixedSingle;
+            CategoryBox.Font = new Font("Candara", 14.1846151F);
+            CategoryBox.Location = new Point(228, 100);
+            CategoryBox.Multiline = true;
+            CategoryBox.Name = "CategoryBox";
+            CategoryBox.ReadOnly = true;
+            CategoryBox.Size = new Size(455, 34);
+            CategoryBox.TabIndex = 29;
+            // 
+            // UnitBox
+            // 
+            UnitBox.BackColor = Color.FromArgb(212, 222, 149);
+            UnitBox.BorderStyle = BorderStyle.FixedSingle;
+            UnitBox.Font = new Font("Candara", 14.1846151F);
+            UnitBox.Location = new Point(228, 182);
+            UnitBox.Multiline = true;
+            UnitBox.Name = "UnitBox";
+            UnitBox.ReadOnly = true;
+            UnitBox.Size = new Size(455, 34);
+            UnitBox.TabIndex = 31;
+            // 
+            // UnitLabel
+            // 
+            UnitLabel.AutoSize = true;
+            UnitLabel.Font = new Font("Candara", 16.2769222F);
+            UnitLabel.ForeColor = Color.FromArgb(61, 65, 39);
+            UnitLabel.Location = new Point(35, 181);
+            UnitLabel.Name = "UnitLabel";
+            UnitLabel.Size = new Size(112, 35);
+            UnitLabel.TabIndex = 30;
+            UnitLabel.Text = "Ед. изм.";
+            // 
             // CardAdmin
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(711, 429);
+            Controls.Add(UnitBox);
+            Controls.Add(UnitLabel);
+            Controls.Add(CategoryBox);
+            Controls.Add(RelevanceBox);
+            Controls.Add(RelevanceLabel);
+            Controls.Add(PurchasePriceBox);
+            Controls.Add(PurchasePriceLabel);
+            Controls.Add(QuantityBox);
+            Controls.Add(QuantityLabel);
             Controls.Add(ChangeButton);
             Controls.Add(DeleteButton);
             Controls.Add(PriceBox);
-            Controls.Add(UnitBox);
-            Controls.Add(StockBox);
-            Controls.Add(CategoryBox);
             Controls.Add(NameBox);
-            Controls.Add(IDBox);
             Controls.Add(PriceLabel);
-            Controls.Add(UnitLabel);
-            Controls.Add(StockLabel);
             Controls.Add(CategoryLabel);
             Controls.Add(NameLabel);
-            Controls.Add(IDLabel);
             Controls.Add(CancelButton);
             Controls.Add(CardLabel);
             FormBorderStyle = FormBorderStyle.None;
@@ -275,19 +302,21 @@
 
         private Label CardLabel;
         private Button CancelButton;
-        private Label IDLabel;
         private Label NameLabel;
         private Label CategoryLabel;
-        private Label StockLabel;
-        private Label UnitLabel;
         private Label PriceLabel;
-        private TextBox IDBox;
         private TextBox NameBox;
-        private TextBox CategoryBox;
-        private TextBox StockBox;
-        private TextBox UnitBox;
         private TextBox PriceBox;
         private Button DeleteButton;
         private Button ChangeButton;
+        private TextBox QuantityBox;
+        private Label QuantityLabel;
+        private TextBox PurchasePriceBox;
+        private Label PurchasePriceLabel;
+        private TextBox RelevanceBox;
+        private Label RelevanceLabel;
+        private TextBox CategoryBox;
+        private TextBox UnitBox;
+        private Label UnitLabel;
     }
 }

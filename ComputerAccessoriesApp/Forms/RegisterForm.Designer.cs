@@ -43,7 +43,7 @@
             RegisterLabel.ForeColor = Color.FromArgb(61, 65, 39);
             RegisterLabel.Location = new Point(0, 0);
             RegisterLabel.Name = "RegisterLabel";
-            RegisterLabel.Size = new Size(391, 120);
+            RegisterLabel.Size = new Size(348, 114);
             RegisterLabel.TabIndex = 0;
             RegisterLabel.Text = "Регистрация";
             RegisterLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -53,10 +53,10 @@
             LoginBoxReg.BackColor = Color.FromArgb(212, 222, 149);
             LoginBoxReg.BorderStyle = BorderStyle.FixedSingle;
             LoginBoxReg.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            LoginBoxReg.Location = new Point(53, 123);
+            LoginBoxReg.Location = new Point(47, 117);
             LoginBoxReg.Name = "LoginBoxReg";
             LoginBoxReg.PlaceholderText = "  Введите логин";
-            LoginBoxReg.Size = new Size(283, 34);
+            LoginBoxReg.Size = new Size(252, 32);
             LoginBoxReg.TabIndex = 2;
             // 
             // PasswordBoxReg
@@ -64,11 +64,11 @@
             PasswordBoxReg.BackColor = Color.FromArgb(212, 222, 149);
             PasswordBoxReg.BorderStyle = BorderStyle.FixedSingle;
             PasswordBoxReg.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            PasswordBoxReg.Location = new Point(53, 179);
+            PasswordBoxReg.Location = new Point(47, 170);
             PasswordBoxReg.Name = "PasswordBoxReg";
             PasswordBoxReg.PasswordChar = '●';
             PasswordBoxReg.PlaceholderText = "  Введите пароль";
-            PasswordBoxReg.Size = new Size(283, 34);
+            PasswordBoxReg.Size = new Size(252, 32);
             PasswordBoxReg.TabIndex = 3;
             // 
             // CodeBoxReg
@@ -76,10 +76,10 @@
             CodeBoxReg.BackColor = Color.FromArgb(212, 222, 149);
             CodeBoxReg.BorderStyle = BorderStyle.FixedSingle;
             CodeBoxReg.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CodeBoxReg.Location = new Point(53, 234);
+            CodeBoxReg.Location = new Point(47, 223);
             CodeBoxReg.Name = "CodeBoxReg";
             CodeBoxReg.PlaceholderText = "  Введите код";
-            CodeBoxReg.Size = new Size(283, 34);
+            CodeBoxReg.Size = new Size(252, 32);
             CodeBoxReg.TabIndex = 4;
             // 
             // RegisterButtonReg
@@ -89,9 +89,9 @@
             RegisterButtonReg.FlatStyle = FlatStyle.Popup;
             RegisterButtonReg.Font = new Font("Candara", 16.0615387F, FontStyle.Regular, GraphicsUnit.Point, 0);
             RegisterButtonReg.ForeColor = Color.White;
-            RegisterButtonReg.Location = new Point(51, 304);
+            RegisterButtonReg.Location = new Point(40, 293);
             RegisterButtonReg.Name = "RegisterButtonReg";
-            RegisterButtonReg.Size = new Size(288, 44);
+            RegisterButtonReg.Size = new Size(269, 42);
             RegisterButtonReg.TabIndex = 0;
             RegisterButtonReg.Text = "Зарегистрироваться";
             RegisterButtonReg.UseVisualStyleBackColor = false;
@@ -104,9 +104,9 @@
             AuthorizationButtonReg.FlatStyle = FlatStyle.Popup;
             AuthorizationButtonReg.Font = new Font("Candara", 16.0615387F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AuthorizationButtonReg.ForeColor = Color.White;
-            AuthorizationButtonReg.Location = new Point(182, 394);
+            AuthorizationButtonReg.Location = new Point(147, 375);
             AuthorizationButtonReg.Name = "AuthorizationButtonReg";
-            AuthorizationButtonReg.Size = new Size(187, 44);
+            AuthorizationButtonReg.Size = new Size(181, 42);
             AuthorizationButtonReg.TabIndex = 6;
             AuthorizationButtonReg.Text = "Авторизация";
             AuthorizationButtonReg.UseVisualStyleBackColor = false;
@@ -120,9 +120,9 @@
             ExitButton.FlatStyle = FlatStyle.Popup;
             ExitButton.Font = new Font("Candara", 16.0615387F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ExitButton.ForeColor = Color.White;
-            ExitButton.Location = new Point(345, 0);
+            ExitButton.Location = new Point(307, 0);
             ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(46, 44);
+            ExitButton.Size = new Size(41, 42);
             ExitButton.TabIndex = 7;
             ExitButton.Text = "X";
             ExitButton.UseVisualStyleBackColor = false;
@@ -130,10 +130,10 @@
             // 
             // RegisterForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(391, 483);
+            ClientSize = new Size(348, 460);
             Controls.Add(ExitButton);
             Controls.Add(AuthorizationButtonReg);
             Controls.Add(RegisterButtonReg);

@@ -125,7 +125,7 @@
             EditPanel.Controls.Add(EditLabel);
             EditPanel.Location = new Point(387, 138);
             EditPanel.Name = "EditPanel";
-            EditPanel.Size = new Size(322, 235);
+            EditPanel.Size = new Size(347, 235);
             EditPanel.TabIndex = 24;
             // 
             // NameBox
@@ -133,10 +133,10 @@
             NameBox.BackColor = Color.FromArgb(197, 227, 132);
             NameBox.BorderStyle = BorderStyle.FixedSingle;
             NameBox.Font = new Font("Candara", 14.1846151F);
-            NameBox.Location = new Point(17, 61);
+            NameBox.Location = new Point(3, 61);
             NameBox.Name = "NameBox";
             NameBox.PlaceholderText = "  Название";
-            NameBox.Size = new Size(281, 36);
+            NameBox.Size = new Size(339, 36);
             NameBox.TabIndex = 21;
             // 
             // DeleteButton
@@ -146,9 +146,9 @@
             DeleteButton.FlatStyle = FlatStyle.Popup;
             DeleteButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
             DeleteButton.ForeColor = Color.White;
-            DeleteButton.Location = new Point(122, 127);
+            DeleteButton.Location = new Point(136, 127);
             DeleteButton.Name = "DeleteButton";
-            DeleteButton.Size = new Size(91, 32);
+            DeleteButton.Size = new Size(99, 32);
             DeleteButton.TabIndex = 19;
             DeleteButton.Text = "Удалить";
             DeleteButton.UseVisualStyleBackColor = false;
@@ -161,9 +161,9 @@
             CancelButton.FlatStyle = FlatStyle.Popup;
             CancelButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
             CancelButton.ForeColor = Color.White;
-            CancelButton.Location = new Point(220, 127);
+            CancelButton.Location = new Point(247, 127);
             CancelButton.Name = "CancelButton";
-            CancelButton.Size = new Size(97, 32);
+            CancelButton.Size = new Size(95, 32);
             CancelButton.TabIndex = 11;
             CancelButton.Text = "Отмена";
             CancelButton.UseVisualStyleBackColor = false;
@@ -178,7 +178,7 @@
             SaveButton.ForeColor = Color.White;
             SaveButton.Location = new Point(3, 127);
             SaveButton.Name = "SaveButton";
-            SaveButton.Size = new Size(114, 32);
+            SaveButton.Size = new Size(123, 32);
             SaveButton.TabIndex = 10;
             SaveButton.Text = "Сохранить";
             SaveButton.UseVisualStyleBackColor = false;
@@ -217,7 +217,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             ListCategoryGridView.DefaultCellStyle = dataGridViewCellStyle2;
             ListCategoryGridView.EnableHeadersVisualStyles = false;
-            ListCategoryGridView.Location = new Point(11, 138);
+            ListCategoryGridView.Location = new Point(12, 138);
             ListCategoryGridView.Name = "ListCategoryGridView";
             ListCategoryGridView.RowHeadersVisible = false;
             ListCategoryGridView.RowHeadersWidth = 56;
@@ -231,7 +231,7 @@
             CategoryName.HeaderText = "Название";
             CategoryName.MinimumWidth = 7;
             CategoryName.Name = "CategoryName";
-            CategoryName.Width = 299;
+            CategoryName.Width = 380;
             // 
             // ListCategoryForm
             // 

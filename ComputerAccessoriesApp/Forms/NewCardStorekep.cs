@@ -7,15 +7,15 @@
         {
             InitializeComponent();
         }
-        public CardStorekep(string id, string name, string category, string stock, string unit, string price)
+        public CardStorekep(string name, string category, string stock,string unit, string price, string relevance)
         {
             InitializeComponent();
-            IDBox.Text = id;
             NameBox.Text = name;
             CategoryBox.Text = category;
-            StockBox.Text = stock;
+            QuantityBox.Text = stock;
             UnitBox.Text = unit;
             PriceBox.Text = price;
+            RelevanceBox.Text = relevance;
         }
         private void CancelButton_Click(object sender, EventArgs e)
         {

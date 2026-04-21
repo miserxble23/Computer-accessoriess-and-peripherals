@@ -35,15 +35,18 @@
             SearchButtonAdmin = new Button();
             ExitButton = new Button();
             DispatchButton = new Button();
+            NewCardButton = new Button();
+            SettingsButton = new Button();
+            DispatchsButton = new Button();
             ProductsGridViewAdmin = new DataGridView();
             ProductName = new DataGridViewTextBoxColumn();
             Category = new DataGridViewTextBoxColumn();
             Quantity = new DataGridViewTextBoxColumn();
             Unit = new DataGridViewTextBoxColumn();
             Price = new DataGridViewTextBoxColumn();
-            NewCardButton = new Button();
-            SettingsButton = new Button();
-            DispatchsButton = new Button();
+            PurchasePrice = new DataGridViewTextBoxColumn();
+            Relevance = new DataGridViewTextBoxColumn();
+            Sale = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)ProductsGridViewAdmin).BeginInit();
             SuspendLayout();
             // 
@@ -109,9 +112,52 @@
             DispatchButton.Name = "DispatchButton";
             DispatchButton.Size = new Size(106, 32);
             DispatchButton.TabIndex = 6;
-            DispatchButton.Text = "Отчёт";
+            DispatchButton.Text = "Поставка";
             DispatchButton.UseVisualStyleBackColor = false;
             DispatchButton.Click += DispatchButton_Click;
+            // 
+            // NewCardButton
+            // 
+            NewCardButton.BackColor = Color.DarkOliveGreen;
+            NewCardButton.Cursor = Cursors.Hand;
+            NewCardButton.FlatStyle = FlatStyle.Popup;
+            NewCardButton.Font = new Font("Candara", 12.1846151F);
+            NewCardButton.ForeColor = Color.White;
+            NewCardButton.Location = new Point(171, 33);
+            NewCardButton.Name = "NewCardButton";
+            NewCardButton.Size = new Size(174, 32);
+            NewCardButton.TabIndex = 9;
+            NewCardButton.Text = "Новая карточка";
+            NewCardButton.UseVisualStyleBackColor = false;
+            NewCardButton.Click += NewCardButton_Click;
+            // 
+            // SettingsButton
+            // 
+            SettingsButton.BackColor = Color.DarkOliveGreen;
+            SettingsButton.Cursor = Cursors.Hand;
+            SettingsButton.FlatStyle = FlatStyle.Popup;
+            SettingsButton.Font = new Font("Candara", 12.1846151F);
+            SettingsButton.ForeColor = Color.White;
+            SettingsButton.Location = new Point(463, 33);
+            SettingsButton.Name = "SettingsButton";
+            SettingsButton.Size = new Size(137, 32);
+            SettingsButton.TabIndex = 10;
+            SettingsButton.Text = "Настройки";
+            SettingsButton.UseVisualStyleBackColor = false;
+            // 
+            // DispatchsButton
+            // 
+            DispatchsButton.BackColor = Color.DarkOliveGreen;
+            DispatchsButton.Cursor = Cursors.Hand;
+            DispatchsButton.FlatStyle = FlatStyle.Popup;
+            DispatchsButton.Font = new Font("Candara", 12.1846151F);
+            DispatchsButton.ForeColor = Color.White;
+            DispatchsButton.Location = new Point(606, 33);
+            DispatchsButton.Name = "DispatchsButton";
+            DispatchsButton.Size = new Size(99, 32);
+            DispatchsButton.TabIndex = 11;
+            DispatchsButton.Text = "Отчёты";
+            DispatchsButton.UseVisualStyleBackColor = false;
             // 
             // ProductsGridViewAdmin
             // 
@@ -126,7 +172,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             ProductsGridViewAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             ProductsGridViewAdmin.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ProductsGridViewAdmin.Columns.AddRange(new DataGridViewColumn[] { ProductName, Category, Quantity, Unit, Price });
+            ProductsGridViewAdmin.Columns.AddRange(new DataGridViewColumn[] { ProductName, Category, Quantity, Unit, Price, PurchasePrice, Relevance, Sale });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(197, 227, 132);
             dataGridViewCellStyle2.Font = new Font("Candara", 10.1846151F);
@@ -136,7 +182,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             ProductsGridViewAdmin.DefaultCellStyle = dataGridViewCellStyle2;
             ProductsGridViewAdmin.EnableHeadersVisualStyles = false;
-            ProductsGridViewAdmin.Location = new Point(44, 136);
+            ProductsGridViewAdmin.Location = new Point(44, 132);
             ProductsGridViewAdmin.Name = "ProductsGridViewAdmin";
             ProductsGridViewAdmin.RowHeadersVisible = false;
             ProductsGridViewAdmin.RowHeadersWidth = 56;
@@ -194,48 +240,26 @@
             Price.ReadOnly = true;
             Price.Width = 123;
             // 
-            // NewCardButton
+            // PurchasePrice
             // 
-            NewCardButton.BackColor = Color.DarkOliveGreen;
-            NewCardButton.Cursor = Cursors.Hand;
-            NewCardButton.FlatStyle = FlatStyle.Popup;
-            NewCardButton.Font = new Font("Candara", 12.1846151F);
-            NewCardButton.ForeColor = Color.White;
-            NewCardButton.Location = new Point(171, 33);
-            NewCardButton.Name = "NewCardButton";
-            NewCardButton.Size = new Size(174, 32);
-            NewCardButton.TabIndex = 9;
-            NewCardButton.Text = "Новая карточка";
-            NewCardButton.UseVisualStyleBackColor = false;
-            NewCardButton.Click += NewCardButton_Click;
+            PurchasePrice.HeaderText = "Закуп. цена";
+            PurchasePrice.MinimumWidth = 6;
+            PurchasePrice.Name = "PurchasePrice";
+            PurchasePrice.Width = 125;
             // 
-            // SettingsButton
+            // Relevance
             // 
-            SettingsButton.BackColor = Color.DarkOliveGreen;
-            SettingsButton.Cursor = Cursors.Hand;
-            SettingsButton.FlatStyle = FlatStyle.Popup;
-            SettingsButton.Font = new Font("Candara", 12.1846151F);
-            SettingsButton.ForeColor = Color.White;
-            SettingsButton.Location = new Point(463, 33);
-            SettingsButton.Name = "SettingsButton";
-            SettingsButton.Size = new Size(137, 32);
-            SettingsButton.TabIndex = 10;
-            SettingsButton.Text = "Настройки";
-            SettingsButton.UseVisualStyleBackColor = false;
+            Relevance.HeaderText = "Актуальность";
+            Relevance.MinimumWidth = 6;
+            Relevance.Name = "Relevance";
+            Relevance.Width = 125;
             // 
-            // DispatchsButton
+            // Sale
             // 
-            DispatchsButton.BackColor = Color.DarkOliveGreen;
-            DispatchsButton.Cursor = Cursors.Hand;
-            DispatchsButton.FlatStyle = FlatStyle.Popup;
-            DispatchsButton.Font = new Font("Candara", 12.1846151F);
-            DispatchsButton.ForeColor = Color.White;
-            DispatchsButton.Location = new Point(606, 33);
-            DispatchsButton.Name = "DispatchsButton";
-            DispatchsButton.Size = new Size(99, 32);
-            DispatchsButton.TabIndex = 11;
-            DispatchsButton.Text = "Отчёты";
-            DispatchsButton.UseVisualStyleBackColor = false;
+            Sale.HeaderText = "Скидка";
+            Sale.MinimumWidth = 6;
+            Sale.Name = "Sale";
+            Sale.Width = 125;
             // 
             // CatalogForAdmin
             // 
@@ -270,14 +294,17 @@
         private Button SearchButtonAdmin;
         private Button ExitButton;
         private Button DispatchButton;
-        private DataGridView ProductsGridViewAdmin;
         private Button NewCardButton;
+        private Button SettingsButton;
+        private Button DispatchsButton;
+        private DataGridView ProductsGridViewAdmin;
         private DataGridViewTextBoxColumn ProductName;
         private DataGridViewTextBoxColumn Category;
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn Unit;
         private DataGridViewTextBoxColumn Price;
-        private Button SettingsButton;
-        private Button DispatchsButton;
+        private DataGridViewTextBoxColumn PurchasePrice;
+        private DataGridViewTextBoxColumn Relevance;
+        private DataGridViewTextBoxColumn Sale;
     }
 }

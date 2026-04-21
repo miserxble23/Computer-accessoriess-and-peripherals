@@ -8,14 +8,22 @@
         {
             InitializeComponent();
         }
-        public EditProduct(Guid id, string name, string category, string unit, string price)
+        public EditProduct(Guid id, string name, string category, string price)
         {
             InitializeComponent();
             productId = id;
             NameBox.Text = name;
             CategoryBox.Text = category;
-            UnitBox.Text = unit;
             PriceBox.Text = price;
+            LoadElementsToCategoryBox();
+        }
+        public void LoadElementsToCategoryBox()
+        {
+            using (var db = new DbContext())
+            {
+                List<string> products = db.categories.Select(p => p.name).ToList();
+                CategoryBox.DataSource = products;
+            }
         }
         private void EditProduct_MouseMove(object sender, MouseEventArgs e)
         {
@@ -37,7 +45,6 @@
         {
             if (string.IsNullOrWhiteSpace(NameBox.Text) ||
                 string.IsNullOrWhiteSpace(CategoryBox.Text) ||
-                string.IsNullOrWhiteSpace(UnitBox.Text) ||
                 string.IsNullOrWhiteSpace(PriceBox.Text))
             {
                 return;
@@ -51,7 +58,7 @@
                 }
                 product.name = NameBox.Text;
                 product.category = CategoryBox.Text;
-                product.unit = UnitBox.Text;
+                product.unit = "шт.";
                 if (decimal.TryParse(PriceBox.Text, out decimal price))
                 {
                     product.Price = price;
