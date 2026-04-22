@@ -34,10 +34,10 @@
             SearchBoxAdmin = new TextBox();
             SearchButtonAdmin = new Button();
             ExitButton = new Button();
-            DispatchButton = new Button();
+            SupplieButton = new Button();
             NewCardButton = new Button();
             SettingsButton = new Button();
-            DispatchsButton = new Button();
+            ReportsButton = new Button();
             ProductsGridViewAdmin = new DataGridView();
             ProductName = new DataGridViewTextBoxColumn();
             Category = new DataGridViewTextBoxColumn();
@@ -45,8 +45,8 @@
             Unit = new DataGridViewTextBoxColumn();
             Price = new DataGridViewTextBoxColumn();
             PurchasePrice = new DataGridViewTextBoxColumn();
-            Relevance = new DataGridViewTextBoxColumn();
-            Sale = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
+            SupplieDate = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)ProductsGridViewAdmin).BeginInit();
             SuspendLayout();
             // 
@@ -101,20 +101,20 @@
             ExitButton.UseVisualStyleBackColor = false;
             ExitButton.Click += ExitButton_Click;
             // 
-            // DispatchButton
+            // SupplieButton
             // 
-            DispatchButton.BackColor = Color.DarkOliveGreen;
-            DispatchButton.Cursor = Cursors.Hand;
-            DispatchButton.FlatStyle = FlatStyle.Popup;
-            DispatchButton.Font = new Font("Candara", 12.1846151F);
-            DispatchButton.ForeColor = Color.White;
-            DispatchButton.Location = new Point(351, 33);
-            DispatchButton.Name = "DispatchButton";
-            DispatchButton.Size = new Size(106, 32);
-            DispatchButton.TabIndex = 6;
-            DispatchButton.Text = "Поставка";
-            DispatchButton.UseVisualStyleBackColor = false;
-            DispatchButton.Click += DispatchButton_Click;
+            SupplieButton.BackColor = Color.DarkOliveGreen;
+            SupplieButton.Cursor = Cursors.Hand;
+            SupplieButton.FlatStyle = FlatStyle.Popup;
+            SupplieButton.Font = new Font("Candara", 12.1846151F);
+            SupplieButton.ForeColor = Color.White;
+            SupplieButton.Location = new Point(351, 33);
+            SupplieButton.Name = "SupplieButton";
+            SupplieButton.Size = new Size(106, 32);
+            SupplieButton.TabIndex = 6;
+            SupplieButton.Text = "Поставка";
+            SupplieButton.UseVisualStyleBackColor = false;
+            SupplieButton.Click += SupplieButton_Click;
             // 
             // NewCardButton
             // 
@@ -127,7 +127,7 @@
             NewCardButton.Name = "NewCardButton";
             NewCardButton.Size = new Size(174, 32);
             NewCardButton.TabIndex = 9;
-            NewCardButton.Text = "Новая карточка";
+            NewCardButton.Text = "Новый товар";
             NewCardButton.UseVisualStyleBackColor = false;
             NewCardButton.Click += NewCardButton_Click;
             // 
@@ -145,19 +145,20 @@
             SettingsButton.Text = "Настройки";
             SettingsButton.UseVisualStyleBackColor = false;
             // 
-            // DispatchsButton
+            // ReportsButton
             // 
-            DispatchsButton.BackColor = Color.DarkOliveGreen;
-            DispatchsButton.Cursor = Cursors.Hand;
-            DispatchsButton.FlatStyle = FlatStyle.Popup;
-            DispatchsButton.Font = new Font("Candara", 12.1846151F);
-            DispatchsButton.ForeColor = Color.White;
-            DispatchsButton.Location = new Point(606, 33);
-            DispatchsButton.Name = "DispatchsButton";
-            DispatchsButton.Size = new Size(99, 32);
-            DispatchsButton.TabIndex = 11;
-            DispatchsButton.Text = "Отчёты";
-            DispatchsButton.UseVisualStyleBackColor = false;
+            ReportsButton.BackColor = Color.DarkOliveGreen;
+            ReportsButton.Cursor = Cursors.Hand;
+            ReportsButton.FlatStyle = FlatStyle.Popup;
+            ReportsButton.Font = new Font("Candara", 12.1846151F);
+            ReportsButton.ForeColor = Color.White;
+            ReportsButton.Location = new Point(606, 33);
+            ReportsButton.Name = "ReportsButton";
+            ReportsButton.Size = new Size(99, 32);
+            ReportsButton.TabIndex = 11;
+            ReportsButton.Text = "Отчёты";
+            ReportsButton.UseVisualStyleBackColor = false;
+            ReportsButton.Click += ReportsButton_Click;
             // 
             // ProductsGridViewAdmin
             // 
@@ -172,7 +173,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             ProductsGridViewAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             ProductsGridViewAdmin.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ProductsGridViewAdmin.Columns.AddRange(new DataGridViewColumn[] { ProductName, Category, Quantity, Unit, Price, PurchasePrice, Relevance, Sale });
+            ProductsGridViewAdmin.Columns.AddRange(new DataGridViewColumn[] { ProductName, Category, Quantity, Unit, Price, PurchasePrice, Status, SupplieDate });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(197, 227, 132);
             dataGridViewCellStyle2.Font = new Font("Candara", 10.1846151F);
@@ -242,24 +243,25 @@
             // 
             // PurchasePrice
             // 
+            PurchasePrice.DataPropertyName = "purchaseprice";
             PurchasePrice.HeaderText = "Закуп. цена";
             PurchasePrice.MinimumWidth = 6;
             PurchasePrice.Name = "PurchasePrice";
             PurchasePrice.Width = 125;
             // 
-            // Relevance
+            // Status
             // 
-            Relevance.HeaderText = "Актуальность";
-            Relevance.MinimumWidth = 6;
-            Relevance.Name = "Relevance";
-            Relevance.Width = 125;
+            Status.HeaderText = "Статус";
+            Status.MinimumWidth = 6;
+            Status.Name = "Status";
+            Status.Width = 125;
             // 
-            // Sale
+            // SupplieDate
             // 
-            Sale.HeaderText = "Скидка";
-            Sale.MinimumWidth = 6;
-            Sale.Name = "Sale";
-            Sale.Width = 125;
+            SupplieDate.HeaderText = "Дата закупки";
+            SupplieDate.MinimumWidth = 6;
+            SupplieDate.Name = "SupplieDate";
+            SupplieDate.Width = 125;
             // 
             // CatalogForAdmin
             // 
@@ -267,11 +269,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
             ClientSize = new Size(746, 540);
-            Controls.Add(DispatchsButton);
+            Controls.Add(ReportsButton);
             Controls.Add(SettingsButton);
             Controls.Add(NewCardButton);
             Controls.Add(ProductsGridViewAdmin);
-            Controls.Add(DispatchButton);
+            Controls.Add(SupplieButton);
             Controls.Add(ExitButton);
             Controls.Add(SearchButtonAdmin);
             Controls.Add(SearchBoxAdmin);
@@ -293,10 +295,10 @@
         private TextBox SearchBoxAdmin;
         private Button SearchButtonAdmin;
         private Button ExitButton;
-        private Button DispatchButton;
+        private Button SupplieButton;
         private Button NewCardButton;
         private Button SettingsButton;
-        private Button DispatchsButton;
+        private Button ReportsButton;
         private DataGridView ProductsGridViewAdmin;
         private DataGridViewTextBoxColumn ProductName;
         private DataGridViewTextBoxColumn Category;
@@ -304,7 +306,7 @@
         private DataGridViewTextBoxColumn Unit;
         private DataGridViewTextBoxColumn Price;
         private DataGridViewTextBoxColumn PurchasePrice;
-        private DataGridViewTextBoxColumn Relevance;
-        private DataGridViewTextBoxColumn Sale;
+        private DataGridViewTextBoxColumn Status;
+        private DataGridViewTextBoxColumn SupplieDate;
     }
 }

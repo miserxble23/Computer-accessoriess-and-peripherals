@@ -22,9 +22,7 @@
                 {
                     p.name,
                     p.category,
-                    p.stock,
-                    p.unit,
-                    p.Price
+                    p.unit
                 }).ToList();
                 SupplieGridView.DataSource = products;
             }
@@ -52,13 +50,12 @@
                 {
                     p.name,
                     p.category,
-                    p.stock,
                     p.unit,
-                    p.Price
                 }).ToList();
                 SupplieGridView.DataSource = products;
             }
         }
+        /*
         private void SupplieGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -99,6 +96,7 @@
             }
             BasketGridView.Rows.Add(name, 1, price);
         }
+        */
         private void SendButton_Click(object sender, EventArgs e)
         {
             var confirm = new ConfirmationForm();

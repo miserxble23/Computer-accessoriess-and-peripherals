@@ -53,6 +53,20 @@ namespace ComputerAccessoriesApp
         {
             if (e.RowIndex < 0) return;
             var row = ProductsGridViewAdmin.Rows[e.RowIndex]; //[e.RowIndex] — берём строку по которой кликнули
+            /*
+            if (row.Cells[2].Value == null)
+            {
+                CardAdmin otherform = new CardAdmin(
+                    row.Cells[0].Value.ToString(),//Cells - это ячейки строки
+                    row.Cells[1].Value.ToString(),
+                    "0",
+                    row.Cells[3].Value.ToString(),
+                    row.Cells[4].Value.ToString(),
+                    row.Cells[5].Value.ToString(),
+                    row.Cells[6].Value.ToString()
+                );
+                otherform.Show();
+            }*/
             CardAdmin form = new CardAdmin(
                 row.Cells[0].Value.ToString(),//Cells - это ячейки строки
                 row.Cells[1].Value.ToString(),
@@ -82,16 +96,23 @@ namespace ComputerAccessoriesApp
                 ProductsGridViewAdmin.DataSource = products;
             }
         }
-        private void DispatchButton_Click(object sender, EventArgs e)
+        private void SupplieButton_Click(object sender, EventArgs e)
         {
-            var disp = new DispatchForm(this);
-            disp.Show();
+            var supp = new SupplieForm(this);
+            supp.Show();
             this.Hide();
         }
         private void NewCardButton_Click(object sender, EventArgs e)
         {
             var crPr = new CreateProduct(this);
             crPr.Show();
+            this.Hide();
+        }
+
+        private void ReportsButton_Click(object sender, EventArgs e)
+        {
+            var repo = new Reports(this);
+            repo.Show();
             this.Hide();
         }
     }

@@ -32,12 +32,14 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             BackButton = new Button();
             SendButton = new Button();
             SupplieLabel = new Label();
             FindBox = new TextBox();
             FindButton = new Button();
             BasketPanel = new Panel();
+            DeleteButton = new Button();
             BasketGridView = new DataGridView();
             Namee = new DataGridViewTextBoxColumn();
             Quantityy = new DataGridViewTextBoxColumn();
@@ -47,14 +49,19 @@
             SupplieGridView = new DataGridView();
             ProductNameColumn = new DataGridViewTextBoxColumn();
             Category = new DataGridViewTextBoxColumn();
-            Quantity = new DataGridViewTextBoxColumn();
             Unit = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
             ImportButton = new Button();
-            DeleteButton = new Button();
+            NewCardButton = new Button();
+            panel1 = new Panel();
+            DateBox = new DateTimePicker();
+            RelevanceBox = new TextBox();
+            PurchasePriceBox = new TextBox();
+            QuantityBox = new TextBox();
+            AddButton = new Button();
             BasketPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BasketGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)SupplieGridView).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // BackButton
@@ -126,19 +133,34 @@
             // 
             // BasketPanel
             // 
-            BasketPanel.BackColor = Color.FromArgb(212, 222, 149);
-            BasketPanel.BorderStyle = BorderStyle.FixedSingle;
+            BasketPanel.BackColor = Color.FromArgb(152, 159, 105);
             BasketPanel.Controls.Add(DeleteButton);
             BasketPanel.Controls.Add(BasketGridView);
             BasketPanel.Controls.Add(BasketLabel);
-            BasketPanel.Location = new Point(640, 78);
+            BasketPanel.ImeMode = ImeMode.On;
+            BasketPanel.Location = new Point(640, 75);
             BasketPanel.Name = "BasketPanel";
             BasketPanel.Size = new Size(241, 328);
             BasketPanel.TabIndex = 5;
             // 
+            // DeleteButton
+            // 
+            DeleteButton.BackColor = Color.DarkOliveGreen;
+            DeleteButton.Cursor = Cursors.Hand;
+            DeleteButton.FlatStyle = FlatStyle.Popup;
+            DeleteButton.Font = new Font("Candara", 11.1846151F);
+            DeleteButton.ForeColor = Color.White;
+            DeleteButton.Location = new Point(130, 289);
+            DeleteButton.Name = "DeleteButton";
+            DeleteButton.Size = new Size(88, 34);
+            DeleteButton.TabIndex = 5;
+            DeleteButton.Text = "Убрать";
+            DeleteButton.UseVisualStyleBackColor = false;
+            // 
             // BasketGridView
             // 
             BasketGridView.BackgroundColor = Color.FromArgb(197, 227, 132);
+            BasketGridView.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(197, 227, 132);
             dataGridViewCellStyle1.Font = new Font("Candara", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -158,6 +180,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             BasketGridView.DefaultCellStyle = dataGridViewCellStyle2;
             BasketGridView.EnableHeadersVisualStyles = false;
+            BasketGridView.ImeMode = ImeMode.NoControl;
             BasketGridView.Location = new Point(18, 56);
             BasketGridView.Name = "BasketGridView";
             BasketGridView.RowHeadersVisible = false;
@@ -168,16 +191,16 @@
             // Namee
             // 
             Namee.HeaderText = "Название";
-            Namee.MinimumWidth = 7;
+            Namee.MinimumWidth = 6;
             Namee.Name = "Namee";
-            Namee.Width = 85;
+            Namee.Width = 80;
             // 
             // Quantityy
             // 
             Quantityy.HeaderText = "Кол-во";
             Quantityy.MinimumWidth = 7;
             Quantityy.Name = "Quantityy";
-            Quantityy.Width = 80;
+            Quantityy.Width = 64;
             // 
             // Pricee
             // 
@@ -216,7 +239,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
             SupplieGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             SupplieGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            SupplieGridView.Columns.AddRange(new DataGridViewColumn[] { ProductNameColumn, Category, Quantity, Unit, Price });
+            SupplieGridView.Columns.AddRange(new DataGridViewColumn[] { ProductNameColumn, Category, Unit });
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(197, 227, 132);
             dataGridViewCellStyle4.Font = new Font("Candara", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -226,13 +249,20 @@
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
             SupplieGridView.DefaultCellStyle = dataGridViewCellStyle4;
             SupplieGridView.EnableHeadersVisualStyles = false;
-            SupplieGridView.Location = new Point(11, 78);
+            SupplieGridView.Location = new Point(13, 10);
             SupplieGridView.Name = "SupplieGridView";
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Candara", 14F);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            SupplieGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             SupplieGridView.RowHeadersVisible = false;
             SupplieGridView.RowHeadersWidth = 56;
-            SupplieGridView.Size = new Size(595, 328);
+            SupplieGridView.Size = new Size(339, 258);
             SupplieGridView.TabIndex = 6;
-            SupplieGridView.CellContentClick += SupplieGridView_CellContentClick;
             // 
             // ProductNameColumn
             // 
@@ -252,15 +282,6 @@
             Category.Name = "Category";
             Category.Width = 135;
             // 
-            // Quantity
-            // 
-            Quantity.DataPropertyName = "stock";
-            Quantity.FillWeight = 22.3751926F;
-            Quantity.HeaderText = "Кол-во";
-            Quantity.MinimumWidth = 7;
-            Quantity.Name = "Quantity";
-            Quantity.Width = 67;
-            // 
             // Unit
             // 
             Unit.DataPropertyName = "unit";
@@ -270,15 +291,6 @@
             Unit.Name = "Unit";
             Unit.Width = 67;
             // 
-            // Price
-            // 
-            Price.DataPropertyName = "price";
-            Price.FillWeight = 22.3751926F;
-            Price.HeaderText = "Цена";
-            Price.MinimumWidth = 7;
-            Price.Name = "Price";
-            Price.Width = 67;
-            // 
             // ImportButton
             // 
             ImportButton.BackColor = Color.DarkOliveGreen;
@@ -286,26 +298,97 @@
             ImportButton.FlatStyle = FlatStyle.Popup;
             ImportButton.Font = new Font("Candara", 12.1846151F);
             ImportButton.ForeColor = Color.White;
-            ImportButton.Location = new Point(380, 424);
+            ImportButton.Location = new Point(300, 424);
             ImportButton.Name = "ImportButton";
-            ImportButton.Size = new Size(235, 41);
+            ImportButton.Size = new Size(162, 41);
             ImportButton.TabIndex = 7;
-            ImportButton.Text = "Импортировать файлы";
+            ImportButton.Text = "Импорт файла";
             ImportButton.UseVisualStyleBackColor = false;
             // 
-            // DeleteButton
+            // NewCardButton
             // 
-            DeleteButton.BackColor = Color.DarkOliveGreen;
-            DeleteButton.Cursor = Cursors.Hand;
-            DeleteButton.FlatStyle = FlatStyle.Popup;
-            DeleteButton.Font = new Font("Candara", 11.1846151F);
-            DeleteButton.ForeColor = Color.White;
-            DeleteButton.Location = new Point(130, 289);
-            DeleteButton.Name = "DeleteButton";
-            DeleteButton.Size = new Size(88, 34);
-            DeleteButton.TabIndex = 5;
-            DeleteButton.Text = "Убрать";
-            DeleteButton.UseVisualStyleBackColor = false;
+            NewCardButton.BackColor = Color.DarkOliveGreen;
+            NewCardButton.Cursor = Cursors.Hand;
+            NewCardButton.FlatStyle = FlatStyle.Popup;
+            NewCardButton.Font = new Font("Candara", 12.1846151F);
+            NewCardButton.ForeColor = Color.White;
+            NewCardButton.Location = new Point(536, 424);
+            NewCardButton.Name = "NewCardButton";
+            NewCardButton.Size = new Size(147, 41);
+            NewCardButton.TabIndex = 8;
+            NewCardButton.Text = "Новый товар";
+            NewCardButton.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(152, 159, 105);
+            panel1.Controls.Add(DateBox);
+            panel1.Controls.Add(RelevanceBox);
+            panel1.Controls.Add(PurchasePriceBox);
+            panel1.Controls.Add(QuantityBox);
+            panel1.Controls.Add(AddButton);
+            panel1.Controls.Add(SupplieGridView);
+            panel1.ImeMode = ImeMode.On;
+            panel1.Location = new Point(12, 75);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(612, 328);
+            panel1.TabIndex = 9;
+            // 
+            // DateBox
+            // 
+            DateBox.CalendarMonthBackground = Color.FromArgb(212, 222, 149);
+            DateBox.Font = new Font("Candara", 14.1846151F);
+            DateBox.Location = new Point(371, 185);
+            DateBox.Name = "DateBox";
+            DateBox.Size = new Size(228, 36);
+            DateBox.TabIndex = 14;
+            // 
+            // RelevanceBox
+            // 
+            RelevanceBox.BackColor = Color.FromArgb(212, 222, 149);
+            RelevanceBox.BorderStyle = BorderStyle.FixedSingle;
+            RelevanceBox.Font = new Font("Candara", 14.1846151F);
+            RelevanceBox.Location = new Point(371, 125);
+            RelevanceBox.Name = "RelevanceBox";
+            RelevanceBox.PlaceholderText = " Актуальность";
+            RelevanceBox.Size = new Size(228, 36);
+            RelevanceBox.TabIndex = 12;
+            // 
+            // PurchasePriceBox
+            // 
+            PurchasePriceBox.BackColor = Color.FromArgb(212, 222, 149);
+            PurchasePriceBox.BorderStyle = BorderStyle.FixedSingle;
+            PurchasePriceBox.Font = new Font("Candara", 14.1846151F);
+            PurchasePriceBox.Location = new Point(371, 73);
+            PurchasePriceBox.Name = "PurchasePriceBox";
+            PurchasePriceBox.PlaceholderText = " Закупочная цена";
+            PurchasePriceBox.Size = new Size(228, 36);
+            PurchasePriceBox.TabIndex = 11;
+            // 
+            // QuantityBox
+            // 
+            QuantityBox.BackColor = Color.FromArgb(212, 222, 149);
+            QuantityBox.BorderStyle = BorderStyle.FixedSingle;
+            QuantityBox.Font = new Font("Candara", 14.1846151F);
+            QuantityBox.Location = new Point(371, 20);
+            QuantityBox.Name = "QuantityBox";
+            QuantityBox.PlaceholderText = " Количество";
+            QuantityBox.Size = new Size(228, 36);
+            QuantityBox.TabIndex = 10;
+            // 
+            // AddButton
+            // 
+            AddButton.BackColor = Color.DarkOliveGreen;
+            AddButton.Cursor = Cursors.Hand;
+            AddButton.FlatStyle = FlatStyle.Popup;
+            AddButton.Font = new Font("Candara", 11.1846151F);
+            AddButton.ForeColor = Color.White;
+            AddButton.Location = new Point(13, 280);
+            AddButton.Name = "AddButton";
+            AddButton.Size = new Size(200, 34);
+            AddButton.TabIndex = 6;
+            AddButton.Text = "Добавить в корзину";
+            AddButton.UseVisualStyleBackColor = false;
             // 
             // SupplieForm
             // 
@@ -313,8 +396,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
             ClientSize = new Size(924, 476);
+            Controls.Add(panel1);
+            Controls.Add(NewCardButton);
             Controls.Add(ImportButton);
-            Controls.Add(SupplieGridView);
             Controls.Add(BasketPanel);
             Controls.Add(FindButton);
             Controls.Add(FindBox);
@@ -330,6 +414,8 @@
             BasketPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)BasketGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)SupplieGridView).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -346,15 +432,20 @@
         private Npgsql.NpgsqlDataAdapter npgsqlDataAdapter1;
         private DataGridView SupplieGridView;
         private DataGridView BasketGridView;
+        private Button ImportButton;
+        private Button DeleteButton;
+        private Button NewCardButton;
+        private Panel panel1;
         private DataGridViewTextBoxColumn Namee;
         private DataGridViewTextBoxColumn Quantityy;
         private DataGridViewTextBoxColumn Pricee;
+        private TextBox PurchasePriceBox;
+        private TextBox QuantityBox;
+        private Button AddButton;
+        private TextBox RelevanceBox;
+        private DateTimePicker DateBox;
         private DataGridViewTextBoxColumn ProductNameColumn;
         private DataGridViewTextBoxColumn Category;
-        private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn Unit;
-        private DataGridViewTextBoxColumn Price;
-        private Button ImportButton;
-        private Button DeleteButton;
     }
 }

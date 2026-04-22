@@ -78,8 +78,10 @@ namespace ComputerAccessoriesApp.Forms
                     name = NameBox.Text,
                     category = CategoryBox.Text,
                     stock = 0,
-                    unit = "шт.",
-                    Price = price
+                    unit = "шт",
+                    Price = price,
+                    relevancemonth = 0,
+                    purchaseprice = 0
                 };
                 db.products.Add(product);
                 db.SaveChanges();

@@ -1,6 +1,6 @@
 ﻿namespace ComputerAccessoriesApp
 {
-    partial class CatalogForStorekeepers
+    partial class Reports
     {
         /// <summary>
         /// Required designer variable.
@@ -30,11 +30,10 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            AdminLabel = new Label();
+            ReportsLabel = new Label();
             SearchBoxStorekep = new TextBox();
-            SearchButtonStorekep = new Button();
+            FilterButton = new Button();
             ExitButton = new Button();
-            DispatchButton = new Button();
             ProductsGridViewStorekep = new DataGridView();
             ProductName = new DataGridViewTextBoxColumn();
             Category = new DataGridViewTextBoxColumn();
@@ -43,46 +42,50 @@
             Price = new DataGridViewTextBoxColumn();
             Relevance = new DataGridViewTextBoxColumn();
             Sale = new DataGridViewTextBoxColumn();
-            SupplieButton = new Button();
+            dateTimePicker1 = new DateTimePicker();
+            dateTimePicker2 = new DateTimePicker();
+            label1 = new Label();
+            ExportButton = new Button();
+            TotalBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)ProductsGridViewStorekep).BeginInit();
             SuspendLayout();
             // 
-            // AdminLabel
+            // ReportsLabel
             // 
-            AdminLabel.AutoSize = true;
-            AdminLabel.Font = new Font("Candara", 22.1538467F);
-            AdminLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            AdminLabel.Location = new Point(12, 22);
-            AdminLabel.Name = "AdminLabel";
-            AdminLabel.Size = new Size(288, 45);
-            AdminLabel.TabIndex = 0;
-            AdminLabel.Text = "Каталог товаров";
+            ReportsLabel.AutoSize = true;
+            ReportsLabel.Font = new Font("Candara", 22.1538467F);
+            ReportsLabel.ForeColor = Color.FromArgb(61, 65, 39);
+            ReportsLabel.Location = new Point(12, 30);
+            ReportsLabel.Name = "ReportsLabel";
+            ReportsLabel.Size = new Size(311, 45);
+            ReportsLabel.TabIndex = 0;
+            ReportsLabel.Text = "История отгрузок";
             // 
             // SearchBoxStorekep
             // 
             SearchBoxStorekep.BackColor = Color.FromArgb(212, 222, 149);
             SearchBoxStorekep.BorderStyle = BorderStyle.FixedSingle;
             SearchBoxStorekep.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            SearchBoxStorekep.Location = new Point(285, 79);
+            SearchBoxStorekep.Location = new Point(451, 89);
             SearchBoxStorekep.Name = "SearchBoxStorekep";
-            SearchBoxStorekep.PlaceholderText = "  Поиск";
-            SearchBoxStorekep.Size = new Size(313, 32);
+            SearchBoxStorekep.PlaceholderText = "  Покупатель";
+            SearchBoxStorekep.Size = new Size(178, 32);
             SearchBoxStorekep.TabIndex = 3;
             // 
-            // SearchButtonStorekep
+            // FilterButton
             // 
-            SearchButtonStorekep.BackColor = Color.DarkOliveGreen;
-            SearchButtonStorekep.Cursor = Cursors.Hand;
-            SearchButtonStorekep.FlatStyle = FlatStyle.Popup;
-            SearchButtonStorekep.Font = new Font("Candara", 12.1846151F);
-            SearchButtonStorekep.ForeColor = Color.White;
-            SearchButtonStorekep.Location = new Point(604, 79);
-            SearchButtonStorekep.Name = "SearchButtonStorekep";
-            SearchButtonStorekep.Size = new Size(99, 32);
-            SearchButtonStorekep.TabIndex = 4;
-            SearchButtonStorekep.Text = "Найти";
-            SearchButtonStorekep.UseVisualStyleBackColor = false;
-            SearchButtonStorekep.Click += SearchButtonStorekep_Click;
+            FilterButton.BackColor = Color.DarkOliveGreen;
+            FilterButton.Cursor = Cursors.Hand;
+            FilterButton.FlatStyle = FlatStyle.Popup;
+            FilterButton.Font = new Font("Candara", 12.1846151F);
+            FilterButton.ForeColor = Color.White;
+            FilterButton.Location = new Point(635, 87);
+            FilterButton.Name = "FilterButton";
+            FilterButton.Size = new Size(99, 32);
+            FilterButton.TabIndex = 4;
+            FilterButton.Text = "Фильтр";
+            FilterButton.UseVisualStyleBackColor = false;
+            FilterButton.Click += SearchButtonStorekep_Click;
             // 
             // ExitButton
             // 
@@ -91,28 +94,13 @@
             ExitButton.FlatStyle = FlatStyle.Popup;
             ExitButton.Font = new Font("Candara", 12.1846151F);
             ExitButton.ForeColor = Color.White;
-            ExitButton.Location = new Point(604, 496);
+            ExitButton.Location = new Point(635, 546);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(99, 32);
             ExitButton.TabIndex = 5;
             ExitButton.Text = "Выход";
             ExitButton.UseVisualStyleBackColor = false;
             ExitButton.Click += ExitButton_Click;
-            // 
-            // DispatchButton
-            // 
-            DispatchButton.BackColor = Color.DarkOliveGreen;
-            DispatchButton.Cursor = Cursors.Hand;
-            DispatchButton.FlatStyle = FlatStyle.Popup;
-            DispatchButton.Font = new Font("Candara", 12.1846151F);
-            DispatchButton.ForeColor = Color.White;
-            DispatchButton.Location = new Point(424, 34);
-            DispatchButton.Name = "DispatchButton";
-            DispatchButton.Size = new Size(124, 32);
-            DispatchButton.TabIndex = 6;
-            DispatchButton.Text = "Отгрузка";
-            DispatchButton.UseVisualStyleBackColor = false;
-            DispatchButton.Click += DispatchButton_Click;
             // 
             // ProductsGridViewStorekep
             // 
@@ -137,11 +125,11 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             ProductsGridViewStorekep.DefaultCellStyle = dataGridViewCellStyle2;
             ProductsGridViewStorekep.EnableHeadersVisualStyles = false;
-            ProductsGridViewStorekep.Location = new Point(44, 136);
+            ProductsGridViewStorekep.Location = new Point(12, 144);
             ProductsGridViewStorekep.Name = "ProductsGridViewStorekep";
             ProductsGridViewStorekep.RowHeadersVisible = false;
             ProductsGridViewStorekep.RowHeadersWidth = 56;
-            ProductsGridViewStorekep.Size = new Size(659, 346);
+            ProductsGridViewStorekep.Size = new Size(722, 318);
             ProductsGridViewStorekep.TabIndex = 7;
             ProductsGridViewStorekep.CellDoubleClick += ProductsGridViewStorekep_CellDoubleClick;
             // 
@@ -149,7 +137,7 @@
             // 
             ProductName.DataPropertyName = "name";
             ProductName.FillWeight = 112F;
-            ProductName.HeaderText = "Название";
+            ProductName.HeaderText = "Дата";
             ProductName.MinimumWidth = 7;
             ProductName.Name = "ProductName";
             ProductName.ReadOnly = true;
@@ -159,7 +147,7 @@
             // 
             Category.DataPropertyName = "category";
             Category.FillWeight = 112F;
-            Category.HeaderText = "Категория";
+            Category.HeaderText = "Покупатель";
             Category.MinimumWidth = 7;
             Category.Name = "Category";
             Category.ReadOnly = true;
@@ -169,7 +157,7 @@
             // 
             Quantity.DataPropertyName = "stock";
             Quantity.FillWeight = 112F;
-            Quantity.HeaderText = "Количество";
+            Quantity.HeaderText = "Товар";
             Quantity.MinimumWidth = 7;
             Quantity.Name = "Quantity";
             Quantity.ReadOnly = true;
@@ -179,7 +167,7 @@
             // 
             Unit.DataPropertyName = "unit";
             Unit.FillWeight = 112F;
-            Unit.HeaderText = "Ед. Изм.";
+            Unit.HeaderText = "Кол-во";
             Unit.MinimumWidth = 7;
             Unit.Name = "Unit";
             Unit.ReadOnly = true;
@@ -198,51 +186,96 @@
             // Relevance
             // 
             Relevance.FillWeight = 112F;
-            Relevance.HeaderText = "Актуальность";
+            Relevance.HeaderText = "Закуп. цена";
             Relevance.MinimumWidth = 7;
             Relevance.Name = "Relevance";
             Relevance.Width = 123;
             // 
             // Sale
             // 
-            Sale.HeaderText = "Скидка";
+            Sale.HeaderText = "Прибыль";
             Sale.MinimumWidth = 6;
             Sale.Name = "Sale";
             Sale.Width = 125;
             // 
-            // SupplieButton
+            // dateTimePicker1
             // 
-            SupplieButton.BackColor = Color.DarkOliveGreen;
-            SupplieButton.Cursor = Cursors.Hand;
-            SupplieButton.FlatStyle = FlatStyle.Popup;
-            SupplieButton.Font = new Font("Candara", 12.1846151F);
-            SupplieButton.ForeColor = Color.White;
-            SupplieButton.Location = new Point(554, 34);
-            SupplieButton.Name = "SupplieButton";
-            SupplieButton.Size = new Size(149, 32);
-            SupplieButton.TabIndex = 9;
-            SupplieButton.Text = "Поставка";
-            SupplieButton.UseVisualStyleBackColor = false;
+            dateTimePicker1.CalendarFont = new Font("Candara", 12.1846151F);
+            dateTimePicker1.CalendarMonthBackground = Color.FromArgb(212, 222, 149);
+            dateTimePicker1.Font = new Font("Candara", 12.1846151F);
+            dateTimePicker1.Location = new Point(12, 89);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(180, 32);
+            dateTimePicker1.TabIndex = 8;
             // 
-            // CatalogForStorekeepers
+            // dateTimePicker2
+            // 
+            dateTimePicker2.CalendarFont = new Font("Candara", 12.1846151F);
+            dateTimePicker2.CalendarMonthBackground = Color.FromArgb(212, 222, 149);
+            dateTimePicker2.Font = new Font("Candara", 12.1846151F);
+            dateTimePicker2.Location = new Point(265, 89);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(180, 32);
+            dateTimePicker2.TabIndex = 9;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Candara", 22.1538467F);
+            label1.ForeColor = Color.FromArgb(61, 65, 39);
+            label1.Location = new Point(216, 79);
+            label1.Name = "label1";
+            label1.Size = new Size(29, 45);
+            label1.TabIndex = 10;
+            label1.Text = "-";
+            // 
+            // ExportButton
+            // 
+            ExportButton.BackColor = Color.DarkOliveGreen;
+            ExportButton.Cursor = Cursors.Hand;
+            ExportButton.FlatStyle = FlatStyle.Popup;
+            ExportButton.Font = new Font("Candara", 12.1846151F);
+            ExportButton.ForeColor = Color.White;
+            ExportButton.Location = new Point(12, 546);
+            ExportButton.Name = "ExportButton";
+            ExportButton.Size = new Size(99, 32);
+            ExportButton.TabIndex = 11;
+            ExportButton.Text = "Экспорт";
+            ExportButton.UseVisualStyleBackColor = false;
+            // 
+            // TotalBox
+            // 
+            TotalBox.BackColor = Color.FromArgb(212, 222, 149);
+            TotalBox.BorderStyle = BorderStyle.FixedSingle;
+            TotalBox.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            TotalBox.Location = new Point(556, 486);
+            TotalBox.Name = "TotalBox";
+            TotalBox.PlaceholderText = "Итого";
+            TotalBox.Size = new Size(178, 32);
+            TotalBox.TabIndex = 12;
+            // 
+            // Reports
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(746, 540);
-            Controls.Add(SupplieButton);
+            ClientSize = new Size(746, 582);
+            Controls.Add(TotalBox);
+            Controls.Add(ExportButton);
+            Controls.Add(label1);
+            Controls.Add(dateTimePicker2);
+            Controls.Add(dateTimePicker1);
             Controls.Add(ProductsGridViewStorekep);
-            Controls.Add(DispatchButton);
             Controls.Add(ExitButton);
-            Controls.Add(SearchButtonStorekep);
+            Controls.Add(FilterButton);
             Controls.Add(SearchBoxStorekep);
-            Controls.Add(AdminLabel);
+            Controls.Add(ReportsLabel);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "CatalogForStorekeepers";
-            Text = "catalogForStorekeepers";
-            Load += CatalogForStorekeepers_Load;
-            MouseDown += CatalogForStorekeepers_MouseDown;
-            MouseMove += CatalogForStorekeepers_MouseMove;
+            Name = "Reports";
+            Text = "Reports";
+            Load += Reports_Load;
+            MouseDown += Reports_MouseDown;
+            MouseMove += Reports_MouseMove;
             ((System.ComponentModel.ISupportInitialize)ProductsGridViewStorekep).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -250,13 +283,14 @@
 
         #endregion
 
-        private Label AdminLabel;
+        private Label ReportsLabel;
         private TextBox SearchBoxStorekep;
-        private Button SearchButtonStorekep;
+        private Button FilterButton;
         private Button ExitButton;
-        private Button DispatchButton;
         private DataGridView ProductsGridViewStorekep;
-        private Button SupplieButton;
+        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePicker2;
+        private Label label1;
         private DataGridViewTextBoxColumn ProductName;
         private DataGridViewTextBoxColumn Category;
         private DataGridViewTextBoxColumn Quantity;
@@ -264,5 +298,7 @@
         private DataGridViewTextBoxColumn Price;
         private DataGridViewTextBoxColumn Relevance;
         private DataGridViewTextBoxColumn Sale;
+        private Button ExportButton;
+        private TextBox TotalBox;
     }
 }

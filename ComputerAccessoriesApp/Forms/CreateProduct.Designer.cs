@@ -46,11 +46,11 @@
             CreateProductLabel.AutoSize = true;
             CreateProductLabel.Font = new Font("Candara", 23.8153839F, FontStyle.Regular, GraphicsUnit.Point, 204);
             CreateProductLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            CreateProductLabel.Location = new Point(221, 9);
+            CreateProductLabel.Location = new Point(235, 9);
             CreateProductLabel.Name = "CreateProductLabel";
-            CreateProductLabel.Size = new Size(300, 49);
+            CreateProductLabel.Size = new Size(248, 49);
             CreateProductLabel.TabIndex = 6;
-            CreateProductLabel.Text = "Новая карточка";
+            CreateProductLabel.Text = "Новый товар";
             // 
             // NameLabel
             // 

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using StatusEnum;
 namespace Products
 {
     /// <summary>
@@ -32,7 +33,7 @@ namespace Products
         /// <summary>
         /// Единица измерения (шт.)
         /// </summary>
-        public string unit = "шт.";
+        public string unit { get; set; }
 
         /// <summary>
         /// Цена продажи товара
@@ -65,11 +66,13 @@ namespace Products
         /// <summary>
         /// Актуальность товара
         /// </summary>
-        public int relevancemonth;
+        public int relevancemonth { get; set; }
 
         /// <summary>
         /// Цена закупки товара
         /// </summary>
-        public decimal purchaseprice;
+        public decimal purchaseprice { get; set; }
+        public DateTime suppliedate { get; set; }
+        public Status status { get; set; }
     }
 }
