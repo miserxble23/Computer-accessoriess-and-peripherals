@@ -19,8 +19,7 @@ namespace ComputerAccessoriesApp
                     p.stock,
                     p.unit,
                     p.Price,
-                    p.ValidityMonths,
-                    p.purchaseprice
+                    p.ValidityStatus
                 }).ToList();
                 ProductsGridViewStorekep.DataSource = products;
             }
@@ -55,8 +54,8 @@ namespace ComputerAccessoriesApp
             }
             var row = ProductsGridViewStorekep.Rows[e.RowIndex]; //[e.RowIndex] — берём строку по которой кликнули
             CardStorekep form = new CardStorekep(
-                row.Cells[0].Value.ToString(),
-                row.Cells[1].Value.ToString(), //Cells - это ячейки строки
+                row.Cells[0].Value.ToString(),//Cells - это ячейки строки
+                row.Cells[1].Value.ToString(),
                 row.Cells[2].Value.ToString(),
                 row.Cells[3].Value.ToString(),
                 row.Cells[4].Value.ToString(),

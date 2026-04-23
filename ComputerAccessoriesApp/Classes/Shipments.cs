@@ -22,10 +22,6 @@ namespace Shipments
         /// </summary>
         public Guid product_id { get; set; }
         ///<summary>
-        /// Имя или название покупателя
-        /// </summary>
-        public string customer {  get; set; }
-        ///<summary>
         /// Количество отгруженного товара
         /// </summary>
         public int quantity { get; set; }
@@ -46,7 +42,7 @@ namespace Shipments
             {
                 return (saleprice - purchaseprice) * quantity;
             }
-            private set;
+            set { }
         }
     }
 }

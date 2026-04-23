@@ -29,6 +29,6 @@ namespace Supplies
         ///<summary>
         /// Дата окончания актуальности партии
         /// </summary>
-        public DateTime relevance_until { get; set; }
+        public int relevance_until { get; set; }
     }
 }

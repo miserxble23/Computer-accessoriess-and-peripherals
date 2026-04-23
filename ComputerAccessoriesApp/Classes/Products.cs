@@ -48,7 +48,7 @@ namespace Products
         {
             get
             {
-                return (CalculateValidityStatus() == ValidityStatus.Скидка) ? price*0.7m: price;
+                return (this.ValidityStatus == ValidityStatus.Скидка)?price*0.7m:price;
             }
             set
             {

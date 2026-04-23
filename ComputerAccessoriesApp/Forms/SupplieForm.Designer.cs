@@ -426,7 +426,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "SupplieForm";
             Text = "SupplieForm";
-            VisibleChanged += SupplieForm_VisibleChanged;
+            Activated += SupplieForm_Activated;
             MouseDown += SupplieForm_MouseDown;
             MouseMove += SupplieForm_MouseMove;
             BasketPanel.ResumeLayout(false);

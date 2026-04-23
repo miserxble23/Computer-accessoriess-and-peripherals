@@ -204,6 +204,7 @@ namespace ComputerAccessoriesApp
                             quantity = qty,
                             purchase_price = purchasePrice, // Исправленное имя!
                             supply_date = DateTime.Now.ToUniversalTime(),
+                            relevance_until = validity
                         });
                     }
                 }
@@ -220,7 +221,7 @@ namespace ComputerAccessoriesApp
             crPr.Show();
             this.Hide();
         }
-        private void SupplieForm_VisibleChanged(object sender, EventArgs e)
+        private void SupplieForm_Activated(object sender, EventArgs e)
         {
             LoadProducts();
         }

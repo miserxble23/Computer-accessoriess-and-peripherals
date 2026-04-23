@@ -19,7 +19,6 @@ namespace ComputerAccessoriesApp
                 var reports = db.shipments.Select(p => new
                 {
                     p.shipment_date,
-                    p.customer,
                     p.product_id,
                     p.quantity,
                     p.saleprice,
@@ -72,10 +71,9 @@ namespace ComputerAccessoriesApp
             string customer = FilterBox.Text;
             using (var db = new DbContext())
             {
-                var reports = db.shipments.Where(s => s.shipment_date >= start && s.shipment_date <= end && s.customer.ToLower().Contains(customer.ToLower())).Select(s => new
+                var reports = db.shipments.Where(s => s.shipment_date >= start && s.shipment_date <= end).Select(s => new
                     {
                         Date = s.shipment_date.ToString("dd.MM.yyyy"),
-                        Customer = s.customer,
                         ProductName = db.products.FirstOrDefault(p => p.id == s.product_id).name,
                         Qty = s.quantity,
                         // Цена продажи (из отгрузки)

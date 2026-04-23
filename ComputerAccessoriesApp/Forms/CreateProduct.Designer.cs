@@ -167,6 +167,7 @@
             // CategoryBox
             // 
             CategoryBox.BackColor = Color.FromArgb(212, 222, 149);
+            CategoryBox.DropDownStyle = ComboBoxStyle.DropDownList;
             CategoryBox.Font = new Font("Candara", 14.1846151F);
             CategoryBox.ForeColor = Color.DimGray;
             CategoryBox.FormattingEnabled = true;
@@ -174,7 +175,6 @@
             CategoryBox.Name = "CategoryBox";
             CategoryBox.Size = new Size(455, 37);
             CategoryBox.TabIndex = 31;
-            CategoryBox.Text = "Выберите категорию";
             // 
             // CreateProduct
             // 

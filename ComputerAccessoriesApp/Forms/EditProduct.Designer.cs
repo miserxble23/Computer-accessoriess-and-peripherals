@@ -154,6 +154,7 @@
             // CategoryBox
             // 
             CategoryBox.BackColor = Color.FromArgb(212, 222, 149);
+            CategoryBox.DropDownStyle = ComboBoxStyle.DropDownList;
             CategoryBox.Font = new Font("Candara", 14.1846151F);
             CategoryBox.FormattingEnabled = true;
             CategoryBox.Location = new Point(230, 161);

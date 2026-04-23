@@ -3,19 +3,22 @@
     public partial class EditProduct : Form
     {
         Point LastPoint;
+        Guid id;
+        Form parent;
         private string name;
         public EditProduct()
         {
             InitializeComponent();
         }
-        public EditProduct(string name, string category, string price)
+        public EditProduct(Guid id,string name, string category, string price, Form form)
         {
             InitializeComponent();
-            this.name = name;
+            this.id = id;
             NameBox.Text = name;
             CategoryBox.Text = category;
             PriceBox.Text = price;
             LoadElementsToCategoryBox();
+            parent = form;
         }
         public void LoadElementsToCategoryBox()
         {
@@ -40,6 +43,7 @@
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+            parent.Show();
         }
         private void SaveButton_Click(object sender, EventArgs e)
         {
@@ -51,7 +55,7 @@
             }
             using (var db = new DbContext())
             {
-                var product = db.products.FirstOrDefault(p => p.name == name);
+                var product = db.products.FirstOrDefault(p => p.id == id);
                 if (product == null)
                 {
                     return;
@@ -70,12 +74,12 @@
                 db.SaveChanges();
             }
             this.Close();
+            parent.Show();
         }
         private void ListCategoryButton_Click(object sender, EventArgs e)
         {
             var list = new ListCategoryForm();
             list.ShowDialog();
-            this.Hide();
         }
     }
 }

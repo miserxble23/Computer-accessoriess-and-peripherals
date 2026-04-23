@@ -4,15 +4,15 @@ namespace ComputerAccessoriesApp
     public partial class CardAdmin : Form
     {
         Point LastPoint;
-        private string name;
+        Guid id;
         public CardAdmin()
         {
             InitializeComponent();
         }
-        public CardAdmin(string name, string category, string stock, string unit, string price, string purchaseprice, DateTime relevancemonth)
+        public CardAdmin(Guid id,string name, string category, string stock, string unit, string price, string purchaseprice, DateTime relevancemonth)
         {
             InitializeComponent();
-            this.name = name;
+            this.id = id;
             NameBox.Text = name;
             CategoryBox.Text = category;
             QuantityBox.Text = stock;
@@ -27,7 +27,7 @@ namespace ComputerAccessoriesApp
         }
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
         private void CardAdmin_MouseDown(object sender, MouseEventArgs e)
         {
@@ -41,11 +41,11 @@ namespace ComputerAccessoriesApp
                 this.Top += e.Y - LastPoint.Y;
             }
         }
-        private void LoadProduct(string name)
+        private void LoadProduct(Guid id)
         {
             using (var db = new DbContext())
             {
-                var product = db.products.FirstOrDefault(p => p.name == name);
+                var product = db.products.FirstOrDefault(p => p.id == id);
                 if (product == null)
                 {
                     return;
@@ -61,20 +61,21 @@ namespace ComputerAccessoriesApp
         private void ChangeButton_Click(object sender, EventArgs e)
         {
             EditProduct edPr = new EditProduct(
+                id,
                 NameBox.Text,
                 CategoryBox.Text,
-                PriceBox.Text
+                PriceBox.Text,
+                this
             );
             this.Hide();
-            edPr.ShowDialog();
-            LoadProduct(name);
-            this.Show();
+            edPr.Show();
+            LoadProduct(id);
         }
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             using (var db = new DbContext())
             {
-                var product = db.products.FirstOrDefault(p => p.name == name);
+                var product = db.products.FirstOrDefault(p => p.id == id);
                 if (product == null)
                 {
                     return;
@@ -87,7 +88,7 @@ namespace ComputerAccessoriesApp
 
         private void CardAdmin_VisibleChanged(object sender, EventArgs e)
         {
-            
+            LoadProduct(id);
         }
     }
 }

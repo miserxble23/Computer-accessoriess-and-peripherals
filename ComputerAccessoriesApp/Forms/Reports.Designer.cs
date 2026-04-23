@@ -28,25 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             ReportsLabel = new Label();
             FilterBox = new TextBox();
             FilterButton = new Button();
             ExitButton = new Button();
             ReportsGridView = new DataGridView();
-            Date = new DataGridViewTextBoxColumn();
-            Customer = new DataGridViewTextBoxColumn();
-            product = new DataGridViewTextBoxColumn();
-            Quantity = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
-            PurchasePrice = new DataGridViewTextBoxColumn();
-            Impact = new DataGridViewTextBoxColumn();
             dateTimePicker1 = new DateTimePicker();
             dateTimePicker2 = new DateTimePicker();
             label1 = new Label();
             ExportButton = new Button();
             TotalBox = new TextBox();
+            Date = new DataGridViewTextBoxColumn();
+            product = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            Price = new DataGridViewTextBoxColumn();
+            PurchasePrice = new DataGridViewTextBoxColumn();
+            Impact = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)ReportsGridView).BeginInit();
             SuspendLayout();
             // 
@@ -105,24 +104,24 @@
             // 
             ReportsGridView.BackgroundColor = Color.FromArgb(197, 227, 132);
             ReportsGridView.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(197, 227, 132);
-            dataGridViewCellStyle3.Font = new Font("Candara", 10.1846151F);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            ReportsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(197, 227, 132);
+            dataGridViewCellStyle1.Font = new Font("Candara", 10.1846151F);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            ReportsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             ReportsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ReportsGridView.Columns.AddRange(new DataGridViewColumn[] { Date, Customer, product, Quantity, Price, PurchasePrice, Impact });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(197, 227, 132);
-            dataGridViewCellStyle4.Font = new Font("Candara", 10.1846151F);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            ReportsGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            ReportsGridView.Columns.AddRange(new DataGridViewColumn[] { Date, product, Quantity, Price, PurchasePrice, Impact });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(197, 227, 132);
+            dataGridViewCellStyle2.Font = new Font("Candara", 10.1846151F);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            ReportsGridView.DefaultCellStyle = dataGridViewCellStyle2;
             ReportsGridView.EnableHeadersVisualStyles = false;
             ReportsGridView.Location = new Point(12, 144);
             ReportsGridView.Name = "ReportsGridView";
@@ -130,73 +129,6 @@
             ReportsGridView.RowHeadersWidth = 56;
             ReportsGridView.Size = new Size(722, 318);
             ReportsGridView.TabIndex = 7;
-            // 
-            // Date
-            // 
-            Date.DataPropertyName = "date";
-            Date.FillWeight = 112F;
-            Date.HeaderText = "Дата";
-            Date.MinimumWidth = 7;
-            Date.Name = "Date";
-            Date.ReadOnly = true;
-            Date.Width = 146;
-            // 
-            // Customer
-            // 
-            Customer.DataPropertyName = "customer";
-            Customer.FillWeight = 112F;
-            Customer.HeaderText = "Покупатель";
-            Customer.MinimumWidth = 7;
-            Customer.Name = "Customer";
-            Customer.ReadOnly = true;
-            Customer.Width = 143;
-            // 
-            // product
-            // 
-            product.DataPropertyName = "product_id";
-            product.FillWeight = 112F;
-            product.HeaderText = "Товар";
-            product.MinimumWidth = 7;
-            product.Name = "product";
-            product.ReadOnly = true;
-            product.Width = 123;
-            // 
-            // Quantity
-            // 
-            Quantity.DataPropertyName = "quantity";
-            Quantity.FillWeight = 112F;
-            Quantity.HeaderText = "Кол-во";
-            Quantity.MinimumWidth = 7;
-            Quantity.Name = "Quantity";
-            Quantity.ReadOnly = true;
-            Quantity.Width = 123;
-            // 
-            // Price
-            // 
-            Price.DataPropertyName = "saleprice";
-            Price.FillWeight = 112F;
-            Price.HeaderText = "Цена";
-            Price.MinimumWidth = 7;
-            Price.Name = "Price";
-            Price.ReadOnly = true;
-            Price.Width = 123;
-            // 
-            // PurchasePrice
-            // 
-            PurchasePrice.DataPropertyName = "purchaseprice";
-            PurchasePrice.FillWeight = 112F;
-            PurchasePrice.HeaderText = "Закуп. цена";
-            PurchasePrice.MinimumWidth = 7;
-            PurchasePrice.Name = "PurchasePrice";
-            PurchasePrice.Width = 123;
-            // 
-            // Impact
-            // 
-            Impact.DataPropertyName = "impactsum";
-            Impact.HeaderText = "Прибыль";
-            Impact.MinimumWidth = 6;
-            Impact.Name = "Impact";
-            Impact.Width = 125;
             // 
             // dateTimePicker1
             // 
@@ -254,6 +186,63 @@
             TotalBox.Size = new Size(178, 32);
             TotalBox.TabIndex = 12;
             // 
+            // Date
+            // 
+            Date.DataPropertyName = "date";
+            Date.FillWeight = 112F;
+            Date.HeaderText = "Дата";
+            Date.MinimumWidth = 7;
+            Date.Name = "Date";
+            Date.ReadOnly = true;
+            Date.Width = 146;
+            // 
+            // product
+            // 
+            product.DataPropertyName = "product_id";
+            product.FillWeight = 112F;
+            product.HeaderText = "Товар";
+            product.MinimumWidth = 7;
+            product.Name = "product";
+            product.ReadOnly = true;
+            product.Width = 123;
+            // 
+            // Quantity
+            // 
+            Quantity.DataPropertyName = "quantity";
+            Quantity.FillWeight = 112F;
+            Quantity.HeaderText = "Кол-во";
+            Quantity.MinimumWidth = 7;
+            Quantity.Name = "Quantity";
+            Quantity.ReadOnly = true;
+            Quantity.Width = 123;
+            // 
+            // Price
+            // 
+            Price.DataPropertyName = "saleprice";
+            Price.FillWeight = 112F;
+            Price.HeaderText = "Цена";
+            Price.MinimumWidth = 7;
+            Price.Name = "Price";
+            Price.ReadOnly = true;
+            Price.Width = 123;
+            // 
+            // PurchasePrice
+            // 
+            PurchasePrice.DataPropertyName = "purchaseprice";
+            PurchasePrice.FillWeight = 112F;
+            PurchasePrice.HeaderText = "Закуп. цена";
+            PurchasePrice.MinimumWidth = 7;
+            PurchasePrice.Name = "PurchasePrice";
+            PurchasePrice.Width = 123;
+            // 
+            // Impact
+            // 
+            Impact.DataPropertyName = "impactsum";
+            Impact.HeaderText = "Прибыль";
+            Impact.MinimumWidth = 6;
+            Impact.Name = "Impact";
+            Impact.Width = 125;
+            // 
             // Reports
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -293,7 +282,6 @@
         private Button ExportButton;
         private TextBox TotalBox;
         private DataGridViewTextBoxColumn Date;
-        private DataGridViewTextBoxColumn Customer;
         private DataGridViewTextBoxColumn product;
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn Price;

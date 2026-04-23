@@ -1,4 +1,5 @@
 ﻿using ComputerAccessoriesApp.Forms;
+using System.Xml.Linq;
 namespace ComputerAccessoriesApp
 {
     public partial class CatalogForAdmin : Form
@@ -48,9 +49,16 @@ namespace ComputerAccessoriesApp
         }
         private void ProductsGridViewAdmin_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            Guid id;
             if (e.RowIndex < 0) return;
             var row = ProductsGridViewAdmin.Rows[e.RowIndex]; //[e.RowIndex] — берём строку по которой кликнули
+            using (var db = new DbContext())
+            {
+                var product = db.products.FirstOrDefault(p => p.name == row.Cells[0].Value.ToString());
+                id = product.id;
+            }
             CardAdmin form = new CardAdmin(
+                id,
                 row.Cells[0].Value.ToString(),//Cells - это ячейки строки
                 row.Cells[1].Value.ToString(),
                 row.Cells[2].Value.ToString(),
@@ -103,6 +111,11 @@ namespace ComputerAccessoriesApp
             this.Hide();
         }
         private void CatalogForAdmin_VisibleChanged(object sender, EventArgs e)
+        {
+            LoadProducts();
+        }
+
+        private void CatalogForAdmin_Activated(object sender, EventArgs e)
         {
             LoadProducts();
         }

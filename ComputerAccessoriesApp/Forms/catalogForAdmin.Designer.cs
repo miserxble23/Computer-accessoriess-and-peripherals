@@ -284,6 +284,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "CatalogForAdmin";
             Text = "catalogForStorekeepers";
+            Activated += CatalogForAdmin_Activated;
             VisibleChanged += CatalogForAdmin_VisibleChanged;
             MouseDown += CatalogForAdmin_MouseDown;
             MouseMove += CatalogForAdmin_MouseMove;

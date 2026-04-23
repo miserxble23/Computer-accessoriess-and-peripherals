@@ -59,6 +59,11 @@
             }
             var row = ListCategoryGridView.Rows[e.RowIndex];
             NameBox.Text = row.Cells[0].Value.ToString();
+            using (var db = new DbContext())
+            {
+                var category = db.categories.FirstOrDefault(p => p.name == row.Cells[0].Value.ToString());
+                selectedCategoryId = category.id;            
+            }
         }
         private void SaveButton_Click(object sender, EventArgs e)
         {
