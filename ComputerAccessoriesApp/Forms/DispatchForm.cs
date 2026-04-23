@@ -1,4 +1,6 @@
-﻿namespace ComputerAccessoriesApp
+﻿using Shipments;
+
+namespace ComputerAccessoriesApp
 {
     public partial class DispatchForm : Form
     {
@@ -20,7 +22,6 @@
             {
                 var products = db.products.Select(p => new
                 {
-                    p.id,
                     p.name,
                     p.category,
                     p.stock,
@@ -51,7 +52,6 @@
             {
                 var products = db.products.Where(p => p.name.ToLower().Contains(search.ToLower())).Select(p => new
                 {
-                    p.id,
                     p.name,
                     p.category,
                     p.stock,
@@ -152,9 +152,19 @@
                     {
                         continue;
                     }
+                    var shipment = new Shipment
+                    {
+                        shipment_date = DateTime.Now.ToUniversalTime(),
+                        product_id = product.id,
+                        quantity = count,
+                        saleprice = product.Price,
+                        purchaseprice = product.purchaseprice,
+                        impactsum = (product.Price-product.purchaseprice)*count
+                    };
+                    db.shipments.Add(shipment);
                     product.stock -= count;
+                    db.SaveChanges();
                 }
-                db.SaveChanges();
             }
             BasketGridView.Rows.Clear();
             LoadProducts();

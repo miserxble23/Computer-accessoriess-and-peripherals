@@ -31,7 +31,6 @@
             {
                 var categories = db.categories.Select(c => new
                 {
-                    c.id,
                     c.name
                 }).ToList();
                 ListCategoryGridView.DataSource = categories;
@@ -41,6 +40,7 @@
         {
             if (parentCreate != null)
             {
+                parentCreate.LoadElementsToCategoryBox();
                 parentCreate.Show();
             }
             this.Close();
@@ -58,8 +58,12 @@
                 return;
             }
             var row = ListCategoryGridView.Rows[e.RowIndex];
-            selectedCategoryId = Guid.Parse(row.Cells[0].Value.ToString());
-            NameBox.Text = row.Cells[1].Value.ToString();
+            NameBox.Text = row.Cells[0].Value.ToString();
+            using (var db = new DbContext())
+            {
+                var category = db.categories.FirstOrDefault(p => p.name == row.Cells[0].Value.ToString());
+                selectedCategoryId = category.id;            
+            }
         }
         private void SaveButton_Click(object sender, EventArgs e)
         {

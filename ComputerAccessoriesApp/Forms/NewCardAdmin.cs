@@ -4,23 +4,30 @@ namespace ComputerAccessoriesApp
     public partial class CardAdmin : Form
     {
         Point LastPoint;
+        Guid id;
         public CardAdmin()
         {
             InitializeComponent();
         }
-        public CardAdmin(string id, string name, string category, string stock, string unit, string price)
+        public CardAdmin(Guid id,string name, string category, string stock, string unit, string price, string purchaseprice, DateTime relevancemonth)
         {
             InitializeComponent();
-            IDBox.Text = id;
+            this.id = id;
             NameBox.Text = name;
             CategoryBox.Text = category;
-            StockBox.Text = stock;
+            QuantityBox.Text = stock;
             UnitBox.Text = unit;
             PriceBox.Text = price;
+            PurchasePriceBox.Text = purchaseprice;
+            if (relevancemonth < DateTime.Now)
+            {
+                RelevanceBox.Text = (relevancemonth - DateTime.Now).ToString();
+            }
+            RelevanceBox.Text = relevancemonth.ToString();
         }
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
         private void CardAdmin_MouseDown(object sender, MouseEventArgs e)
         {
@@ -43,38 +50,29 @@ namespace ComputerAccessoriesApp
                 {
                     return;
                 }
-                IDBox.Text = product.id.ToString();
                 NameBox.Text = product.name;
+                QuantityBox.Text = product.stock.ToString();
                 CategoryBox.Text = product.category;
-                StockBox.Text = product.stock.ToString();
-                UnitBox.Text = product.unit;
                 PriceBox.Text = product.Price.ToString();
+                PurchasePriceBox.Text = product.purchaseprice.ToString();
+                RelevanceBox.Text = product.ValidityMonths.ToString();
             }
         }
         private void ChangeButton_Click(object sender, EventArgs e)
         {
-            if (!Guid.TryParse(IDBox.Text, out Guid id))
-            {
-                return;
-            }
             EditProduct edPr = new EditProduct(
                 id,
                 NameBox.Text,
                 CategoryBox.Text,
-                UnitBox.Text,
-                PriceBox.Text
+                PriceBox.Text,
+                this
             );
             this.Hide();
-            edPr.ShowDialog();
+            edPr.Show();
             LoadProduct(id);
-            this.Show();
         }
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            if (!Guid.TryParse(IDBox.Text, out Guid id))
-            {
-                return;
-            }
             using (var db = new DbContext())
             {
                 var product = db.products.FirstOrDefault(p => p.id == id);
@@ -86,6 +84,11 @@ namespace ComputerAccessoriesApp
                 db.SaveChanges();
             }
             this.Close();
+        }
+
+        private void CardAdmin_VisibleChanged(object sender, EventArgs e)
+        {
+            LoadProduct(id);
         }
     }
 }

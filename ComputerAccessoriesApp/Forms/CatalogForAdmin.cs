@@ -1,5 +1,5 @@
 ﻿using ComputerAccessoriesApp.Forms;
-using System.Data;
+using System.Xml.Linq;
 namespace ComputerAccessoriesApp
 {
     public partial class CatalogForAdmin : Form
@@ -8,19 +8,22 @@ namespace ComputerAccessoriesApp
         public CatalogForAdmin()
         {
             InitializeComponent();
+            LoadProducts();
         }
-        public void LoadProducts()
+        public virtual void LoadProducts()
         {
             using (var db = new DbContext())
             {
                 var products = db.products.Select(p => new
                 {
-                    p.id,
                     p.name,
                     p.category,
                     p.stock,
                     p.unit,
-                    p.Price
+                    p.Price,
+                    p.purchaseprice,
+                    p.ValidityStatus,
+                    p.suppliedate
                 }).ToList();
                 ProductsGridViewAdmin.DataSource = products;
             }
@@ -44,21 +47,25 @@ namespace ComputerAccessoriesApp
                 this.Top += e.Y - LastPoint.Y;
             }
         }
-        private void CatalogForAdmin_Load(object sender, EventArgs e)
-        {
-            LoadProducts();
-        }
         private void ProductsGridViewAdmin_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            Guid id;
             if (e.RowIndex < 0) return;
             var row = ProductsGridViewAdmin.Rows[e.RowIndex]; //[e.RowIndex] — берём строку по которой кликнули
+            using (var db = new DbContext())
+            {
+                var product = db.products.FirstOrDefault(p => p.name == row.Cells[0].Value.ToString());
+                id = product.id;
+            }
             CardAdmin form = new CardAdmin(
+                id,
                 row.Cells[0].Value.ToString(),//Cells - это ячейки строки
                 row.Cells[1].Value.ToString(),
                 row.Cells[2].Value.ToString(),
                 row.Cells[3].Value.ToString(),
                 row.Cells[4].Value.ToString(),
-                row.Cells[5].Value.ToString()
+                row.Cells[5].Value.ToString(),
+                (DateTime)row.Cells[7].Value
             );
             form.Show();
         }
@@ -69,20 +76,20 @@ namespace ComputerAccessoriesApp
             {
                 var products = db.products.Where(p => p.name.ToLower().Contains(search.ToLower())).Select(p => new
                 {
-                    p.id,
                     p.name,
                     p.category,
                     p.stock,
                     p.unit,
-                    p.Price
+                    p.Price,
+                    p.purchaseprice
                 }).ToList();
                 ProductsGridViewAdmin.DataSource = products;
             }
         }
-        private void DispatchButton_Click(object sender, EventArgs e)
+        private void SupplieButton_Click(object sender, EventArgs e)
         {
-            var disp = new DispatchForm(this);
-            disp.Show();
+            var supp = new SupplieForm(this);
+            supp.Show();
             this.Hide();
         }
         private void NewCardButton_Click(object sender, EventArgs e)
@@ -90,6 +97,27 @@ namespace ComputerAccessoriesApp
             var crPr = new CreateProduct(this);
             crPr.Show();
             this.Hide();
+        }
+        private void ReportsButton_Click(object sender, EventArgs e)
+        {
+            var repo = new Reports(this);
+            repo.Show();
+            this.Hide();
+        }
+        private void SettingsButton_Click(object sender, EventArgs e)
+        {
+            var set = new Settings(this);
+            set.Show();
+            this.Hide();
+        }
+        private void CatalogForAdmin_VisibleChanged(object sender, EventArgs e)
+        {
+            LoadProducts();
+        }
+
+        private void CatalogForAdmin_Activated(object sender, EventArgs e)
+        {
+            LoadProducts();
         }
     }
 }

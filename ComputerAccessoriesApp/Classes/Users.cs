@@ -18,7 +18,6 @@ namespace Users
         /// Имя пользователя (логин)
         /// </summary>
         public string username { get; set; }
-
         /// <summary>
         /// Пароль пользователя
         /// </summary>

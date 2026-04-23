@@ -4,16 +4,26 @@ namespace ComputerAccessoriesApp.Forms
     public partial class CreateProduct : Form
     {
         Point LastPoint;
-        private CatalogForAdmin parentForm;
-        public CreateProduct(CatalogForAdmin form)
+        private DateTime date = new DateTime(2000,01,01);
+        private Form parentForm;
+        public CreateProduct(Form form)
         {
             InitializeComponent();
             parentForm = form;
             this.Load += CreateProduct_Load;
+            date = this.date.ToUniversalTime();
         }
         private void CreateProduct_Load(object sender, EventArgs e)
         {
-            UnitBox.Text = "шт";
+            LoadElementsToCategoryBox();
+        }
+        public void LoadElementsToCategoryBox()
+        {
+            using (var db = new DbContext())
+            {
+                List<string> products = db.categories.Select(p => p.name).ToList();
+                CategoryBox.DataSource = products;
+            }
         }
         private void CreateProduct_MouseMove(object sender, MouseEventArgs e)
         {
@@ -46,7 +56,6 @@ namespace ComputerAccessoriesApp.Forms
         {
             if (string.IsNullOrWhiteSpace(NameBox.Text) ||
                 string.IsNullOrWhiteSpace(CategoryBox.Text) ||
-                string.IsNullOrWhiteSpace(UnitBox.Text) ||
                 string.IsNullOrWhiteSpace(PriceBox.Text))
             {
                 return;
@@ -70,16 +79,18 @@ namespace ComputerAccessoriesApp.Forms
                     name = NameBox.Text,
                     category = CategoryBox.Text,
                     stock = 0,
-                    unit = UnitBox.Text,
-                    Price = price
+                    unit = "шт",
+                    Price = price,
+                    ValidityMonths = 0,
+                    purchaseprice = 0,
+                    suppliedate = date
                 };
                 db.products.Add(product);
                 db.SaveChanges();
             }
+            parentForm.Show();
             var result = new ResultDispatchForm();
             result.ShowDialog();
-            parentForm.Show();
-            parentForm.LoadProducts();
             this.Close();
         }
     }

@@ -14,12 +14,12 @@ namespace ComputerAccessoriesApp
             {
                 var products = db.products.Select(p => new
                 {
-                    p.id,
                     p.name,
                     p.category,
                     p.stock,
                     p.unit,
-                    p.Price
+                    p.Price,
+                    p.ValidityStatus
                 }).ToList();
                 ProductsGridViewStorekep.DataSource = products;
             }
@@ -54,8 +54,8 @@ namespace ComputerAccessoriesApp
             }
             var row = ProductsGridViewStorekep.Rows[e.RowIndex]; //[e.RowIndex] — берём строку по которой кликнули
             CardStorekep form = new CardStorekep(
-                row.Cells[0].Value.ToString(),
-                row.Cells[1].Value.ToString(), //Cells - это ячейки строки
+                row.Cells[0].Value.ToString(),//Cells - это ячейки строки
+                row.Cells[1].Value.ToString(),
                 row.Cells[2].Value.ToString(),
                 row.Cells[3].Value.ToString(),
                 row.Cells[4].Value.ToString(),
@@ -70,7 +70,6 @@ namespace ComputerAccessoriesApp
             {
                 var products = db.products.Where(p => p.name.ToLower().Contains(search.ToLower())).Select(p => new
                 {
-                    p.id,
                     p.name,
                     p.category,
                     p.stock,
@@ -84,6 +83,13 @@ namespace ComputerAccessoriesApp
         {
             var disp = new DispatchForm(this);
             disp.Show();
+            this.Hide();
+        }
+
+        private void SupplieButton_Click(object sender, EventArgs e)
+        {
+            var supp = new SupplieForm(this);
+            supp.Show();
             this.Hide();
         }
     }

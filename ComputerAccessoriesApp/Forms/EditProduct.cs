@@ -3,19 +3,30 @@
     public partial class EditProduct : Form
     {
         Point LastPoint;
-        private Guid productId;
+        Guid id;
+        Form parent;
+        private string name;
         public EditProduct()
         {
             InitializeComponent();
         }
-        public EditProduct(Guid id, string name, string category, string unit, string price)
+        public EditProduct(Guid id,string name, string category, string price, Form form)
         {
             InitializeComponent();
-            productId = id;
+            this.id = id;
             NameBox.Text = name;
             CategoryBox.Text = category;
-            UnitBox.Text = unit;
             PriceBox.Text = price;
+            LoadElementsToCategoryBox();
+            parent = form;
+        }
+        public void LoadElementsToCategoryBox()
+        {
+            using (var db = new DbContext())
+            {
+                List<string> products = db.categories.Select(p => p.name).ToList();
+                CategoryBox.DataSource = products;
+            }
         }
         private void EditProduct_MouseMove(object sender, MouseEventArgs e)
         {
@@ -32,26 +43,26 @@
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+            parent.Show();
         }
         private void SaveButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(NameBox.Text) ||
                 string.IsNullOrWhiteSpace(CategoryBox.Text) ||
-                string.IsNullOrWhiteSpace(UnitBox.Text) ||
                 string.IsNullOrWhiteSpace(PriceBox.Text))
             {
                 return;
             }
             using (var db = new DbContext())
             {
-                var product = db.products.FirstOrDefault(p => p.id == productId);
+                var product = db.products.FirstOrDefault(p => p.id == id);
                 if (product == null)
                 {
                     return;
                 }
                 product.name = NameBox.Text;
                 product.category = CategoryBox.Text;
-                product.unit = UnitBox.Text;
+                product.unit = "шт.";
                 if (decimal.TryParse(PriceBox.Text, out decimal price))
                 {
                     product.Price = price;
@@ -63,12 +74,12 @@
                 db.SaveChanges();
             }
             this.Close();
+            parent.Show();
         }
         private void ListCategoryButton_Click(object sender, EventArgs e)
         {
             var list = new ListCategoryForm();
             list.ShowDialog();
-            this.Hide();
         }
     }
 }

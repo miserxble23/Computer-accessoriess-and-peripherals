@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace Products
+namespace Categories
 {
     /// <summary>
     /// Категория товара (например: клавиатуры, мыши и т.д.)
