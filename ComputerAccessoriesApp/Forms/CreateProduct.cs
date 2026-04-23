@@ -4,14 +4,15 @@ namespace ComputerAccessoriesApp.Forms
     public partial class CreateProduct : Form
     {
         Point LastPoint;
-        private ComputerAccessoriesApp.CatalogForAdmin parentForm;
-        public CreateProduct(ComputerAccessoriesApp.CatalogForAdmin form)
+        private DateTime date = new DateTime(2000,01,01);
+        private Form parentForm;
+        public CreateProduct(Form form)
         {
             InitializeComponent();
             parentForm = form;
             this.Load += CreateProduct_Load;
+            date = this.date.ToUniversalTime();
         }
-
         private void CreateProduct_Load(object sender, EventArgs e)
         {
             LoadElementsToCategoryBox();
@@ -80,16 +81,16 @@ namespace ComputerAccessoriesApp.Forms
                     stock = 0,
                     unit = "шт",
                     Price = price,
-                    relevancemonth = 0,
-                    purchaseprice = 0
+                    ValidityMonths = 0,
+                    purchaseprice = 0,
+                    suppliedate = date
                 };
                 db.products.Add(product);
                 db.SaveChanges();
             }
+            parentForm.Show();
             var result = new ResultDispatchForm();
             result.ShowDialog();
-            parentForm.Show();
-            parentForm.LoadProducts();
             this.Close();
         }
     }

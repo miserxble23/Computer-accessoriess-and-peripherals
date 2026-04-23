@@ -2,11 +2,11 @@
 {
     public partial class AuthorizationForm : Form
     {
+        Point LastPoint;
         public AuthorizationForm()
         {
             InitializeComponent();
         }
-        Point LastPoint;
         private void authorizationForm_MouseDown(object sender, MouseEventArgs e)
         {
             LastPoint = new Point(e.X, e.Y);

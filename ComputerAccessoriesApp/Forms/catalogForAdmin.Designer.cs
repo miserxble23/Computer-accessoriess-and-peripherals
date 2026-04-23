@@ -144,6 +144,7 @@
             SettingsButton.TabIndex = 10;
             SettingsButton.Text = "Настройки";
             SettingsButton.UseVisualStyleBackColor = false;
+            SettingsButton.Click += SettingsButton_Click;
             // 
             // ReportsButton
             // 
@@ -251,6 +252,7 @@
             // 
             // Status
             // 
+            Status.DataPropertyName = "ValidityStatus";
             Status.HeaderText = "Статус";
             Status.MinimumWidth = 6;
             Status.Name = "Status";
@@ -258,6 +260,7 @@
             // 
             // SupplieDate
             // 
+            SupplieDate.DataPropertyName = "suppliedate";
             SupplieDate.HeaderText = "Дата закупки";
             SupplieDate.MinimumWidth = 6;
             SupplieDate.Name = "SupplieDate";
@@ -281,7 +284,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "CatalogForAdmin";
             Text = "catalogForStorekeepers";
-            Load += CatalogForAdmin_Load;
+            VisibleChanged += CatalogForAdmin_VisibleChanged;
             MouseDown += CatalogForAdmin_MouseDown;
             MouseMove += CatalogForAdmin_MouseMove;
             ((System.ComponentModel.ISupportInitialize)ProductsGridViewAdmin).EndInit();

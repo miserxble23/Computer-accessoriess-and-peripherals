@@ -2,14 +2,17 @@
 {
     public partial class Settings : Form
     {
+        Form parentForm;
         Point LastPoint;
-        public Settings()
+        public Settings(Form parentForm)
         {
             InitializeComponent();
+            this.parentForm = parentForm;
         }
-        private void ExitButton_Click(object sender, EventArgs e)
+        private void SaveButton_Click(object sender, EventArgs e)
         {
             this.Close();
+            parentForm.Show();
         }
         private void Settings_MouseDown(object sender, MouseEventArgs e)
         {

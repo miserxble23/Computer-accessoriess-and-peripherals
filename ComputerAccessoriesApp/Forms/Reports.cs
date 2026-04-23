@@ -11,27 +11,27 @@ namespace ComputerAccessoriesApp
             parentForm = parent;
             LoadProducts();
         }
+        //db.products.FirstOrDefault(s => s.id == p.product_id).name
         private void LoadProducts()
         {
             using (var db = new DbContext())
             {
-                var products = db.products.Select(p => new
+                var reports = db.shipments.Select(p => new
                 {
-                    p.name,
-                    p.category,
-                    p.stock,
-                    p.unit,
-                    p.Price,
-                    p.relevancemonth,
-                    p.purchaseprice
+                    p.shipment_date,
+                    p.customer,
+                    p.product_id,
+                    p.quantity,
+                    p.saleprice,
+                    p.purchaseprice,
+                    p.impactsum
                 }).ToList();
-                ProductsGridViewStorekep.DataSource = products;
+                ReportsGridView.DataSource = reports;
             }
         }
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            var form = new AuthorizationForm();
-            form.Show();
+            parentForm.Show();
             this.Close();
         }
         private void Reports_MouseDown(object sender, MouseEventArgs e)
@@ -46,17 +46,14 @@ namespace ComputerAccessoriesApp
                 this.Top += e.Y - LastPoint.Y;
             }
         }
-        private void Reports_Load(object sender, EventArgs e)
-        {
-            LoadProducts();
-        }
+        /*
         private void ProductsGridViewStorekep_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
             {
                 return;
             }
-            var row = ProductsGridViewStorekep.Rows[e.RowIndex]; //[e.RowIndex] — берём строку по которой кликнули
+            var row = ReportsGridView.Rows[e.RowIndex]; //[e.RowIndex] — берём строку по которой кликнули
             CardStorekep form = new CardStorekep(
                 row.Cells[0].Value.ToString(),
                 row.Cells[1].Value.ToString(), //Cells - это ячейки строки
@@ -67,28 +64,35 @@ namespace ComputerAccessoriesApp
             );
             form.Show();
         }
-        private void SearchButtonStorekep_Click(object sender, EventArgs e)
+        */
+        private void FilterButton_Click(object sender, EventArgs e)
         {
-            var search = SearchBoxStorekep.Text;
+            DateTime start = dateTimePicker1.Value.Date;
+            DateTime end = dateTimePicker2.Value.Date.AddDays(1).AddSeconds(-1);
+            string customer = FilterBox.Text;
             using (var db = new DbContext())
             {
-                var products = db.products.Where(p => p.name.ToLower().Contains(search.ToLower())).Select(p => new
-                {
-                    p.name,
-                    p.category,
-                    p.stock,
-                    p.unit,
-                    p.Price
-                }).ToList();
-                ProductsGridViewStorekep.DataSource = products;
+                var reports = db.shipments.Where(s => s.shipment_date >= start && s.shipment_date <= end && s.customer.ToLower().Contains(customer.ToLower())).Select(s => new
+                    {
+                        Date = s.shipment_date.ToString("dd.MM.yyyy"),
+                        Customer = s.customer,
+                        ProductName = db.products.FirstOrDefault(p => p.id == s.product_id).name,
+                        Qty = s.quantity,
+                        // Цена продажи (из отгрузки)
+                        SalePrice = s.saleprice, // Исправленное имя!
+                                                  // Цена закупки (берем из товара на момент отгрузки или текущую)
+                        BuyPrice = db.products.FirstOrDefault(p => p.id == s.product_id).purchaseprice,
+
+                        // Расчеты
+                        Sum = s.saleprice,
+                        // Прибыль = (Продажа - Закупка) * Кол-во
+                        Profit = (s.saleprice - db.products.FirstOrDefault(p => p.id == s.product_id).purchaseprice) * s.quantity
+                    })
+                    .ToList();
+                ReportsGridView.DataSource = reports;
+                var totalProfit = reports.Sum(x => x.Profit);
+                TotalBox.Text = $"Итого:{totalProfit:F2}руб.";
             }
         }
-        private void DispatchButton_Click(object sender, EventArgs e)
-        {
-            var disp = new DispatchForm(this);
-            disp.Show();
-            this.Hide();
-        }
-
     }
 }

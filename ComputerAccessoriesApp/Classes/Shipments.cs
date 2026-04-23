@@ -5,7 +5,7 @@ namespace Shipments
     /// <summary>
     /// Отгрузка товара
     /// </summary>
-    [Table("sshipments")]
+    [Table("shipments")]
     public class Shipment
     {
         ///<summary>
@@ -13,6 +13,10 @@ namespace Shipments
         /// </summary>
         [Key]
         public Guid id { get; set; }
+        ///<summary>
+        /// Дата отгрузки товара
+        /// </summary>
+        public DateTime shipment_date { get; set; }
         ///<summary>
         /// Ссылка на товар
         /// </summary>
@@ -28,14 +32,21 @@ namespace Shipments
         ///<summary>
         /// Цена продажи на момент отгрузки
         /// </summary>
-        public decimal sale_ptice { get; set; }
+        public decimal saleprice { get; set; }
         ///<summary>
         /// Дата отгрузки
         /// </summary>
-        public DateTime shipment_date { get; set; }
+        public decimal purchaseprice { get; set; }
         ///<summary>
-        /// Сумма отгрузки (quantity × sale_price)
+        /// Сумма прибыли
         /// </summary>
-        public decimal total_sum { get; set; }
+        public decimal impactsum 
+        {
+            get
+            {
+                return (saleprice - purchaseprice) * quantity;
+            }
+            private set;
+        }
     }
 }

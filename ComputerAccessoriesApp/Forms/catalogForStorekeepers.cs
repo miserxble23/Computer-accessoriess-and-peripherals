@@ -19,7 +19,7 @@ namespace ComputerAccessoriesApp
                     p.stock,
                     p.unit,
                     p.Price,
-                    p.relevancemonth,
+                    p.ValidityMonths,
                     p.purchaseprice
                 }).ToList();
                 ProductsGridViewStorekep.DataSource = products;
@@ -84,6 +84,13 @@ namespace ComputerAccessoriesApp
         {
             var disp = new DispatchForm(this);
             disp.Show();
+            this.Hide();
+        }
+
+        private void SupplieButton_Click(object sender, EventArgs e)
+        {
+            var supp = new SupplieForm(this);
+            supp.Show();
             this.Hide();
         }
     }

@@ -1,7 +1,8 @@
 ﻿namespace StatusEnum
 {
-    public enum Status
+    public enum ValidityStatus
     {
+        Отсутствует,
         Актуально,
         Скидка,
         Устарело

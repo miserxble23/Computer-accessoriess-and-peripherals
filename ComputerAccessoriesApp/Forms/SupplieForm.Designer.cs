@@ -44,6 +44,8 @@
             Namee = new DataGridViewTextBoxColumn();
             Quantityy = new DataGridViewTextBoxColumn();
             Pricee = new DataGridViewTextBoxColumn();
+            Validity = new DataGridViewTextBoxColumn();
+            SupplieDate = new DataGridViewTextBoxColumn();
             BasketLabel = new Label();
             npgsqlDataAdapter1 = new Npgsql.NpgsqlDataAdapter();
             SupplieGridView = new DataGridView();
@@ -170,7 +172,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             BasketGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             BasketGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            BasketGridView.Columns.AddRange(new DataGridViewColumn[] { Namee, Quantityy, Pricee });
+            BasketGridView.Columns.AddRange(new DataGridViewColumn[] { Namee, Quantityy, Pricee, Validity, SupplieDate });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(197, 227, 132);
             dataGridViewCellStyle2.Font = new Font("Candara", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -204,10 +206,24 @@
             // 
             // Pricee
             // 
-            Pricee.HeaderText = "Цена";
+            Pricee.HeaderText = "Цена закупки";
             Pricee.MinimumWidth = 7;
             Pricee.Name = "Pricee";
             Pricee.Width = 57;
+            // 
+            // Validity
+            // 
+            Validity.HeaderText = "Актуальность";
+            Validity.MinimumWidth = 6;
+            Validity.Name = "Validity";
+            Validity.Width = 125;
+            // 
+            // SupplieDate
+            // 
+            SupplieDate.HeaderText = "Дата";
+            SupplieDate.MinimumWidth = 6;
+            SupplieDate.Name = "SupplieDate";
+            SupplieDate.Width = 125;
             // 
             // BasketLabel
             // 
@@ -318,6 +334,7 @@
             NewCardButton.TabIndex = 8;
             NewCardButton.Text = "Новый товар";
             NewCardButton.UseVisualStyleBackColor = false;
+            NewCardButton.Click += NewCardButton_Click;
             // 
             // panel1
             // 
@@ -389,6 +406,7 @@
             AddButton.TabIndex = 6;
             AddButton.Text = "Добавить в корзину";
             AddButton.UseVisualStyleBackColor = false;
+            AddButton.Click += AddButton_Click;
             // 
             // SupplieForm
             // 
@@ -408,6 +426,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "SupplieForm";
             Text = "SupplieForm";
+            VisibleChanged += SupplieForm_VisibleChanged;
             MouseDown += SupplieForm_MouseDown;
             MouseMove += SupplieForm_MouseMove;
             BasketPanel.ResumeLayout(false);
@@ -436,9 +455,6 @@
         private Button DeleteButton;
         private Button NewCardButton;
         private Panel panel1;
-        private DataGridViewTextBoxColumn Namee;
-        private DataGridViewTextBoxColumn Quantityy;
-        private DataGridViewTextBoxColumn Pricee;
         private TextBox PurchasePriceBox;
         private TextBox QuantityBox;
         private Button AddButton;
@@ -447,5 +463,10 @@
         private DataGridViewTextBoxColumn ProductNameColumn;
         private DataGridViewTextBoxColumn Category;
         private DataGridViewTextBoxColumn Unit;
+        private DataGridViewTextBoxColumn Namee;
+        private DataGridViewTextBoxColumn Quantityy;
+        private DataGridViewTextBoxColumn Pricee;
+        private DataGridViewTextBoxColumn Validity;
+        private DataGridViewTextBoxColumn SupplieDate;
     }
 }

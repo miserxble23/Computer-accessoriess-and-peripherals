@@ -3,15 +3,15 @@
     public partial class EditProduct : Form
     {
         Point LastPoint;
-        private Guid productId;
+        private string name;
         public EditProduct()
         {
             InitializeComponent();
         }
-        public EditProduct(Guid id, string name, string category, string price)
+        public EditProduct(string name, string category, string price)
         {
             InitializeComponent();
-            productId = id;
+            this.name = name;
             NameBox.Text = name;
             CategoryBox.Text = category;
             PriceBox.Text = price;
@@ -51,7 +51,7 @@
             }
             using (var db = new DbContext())
             {
-                var product = db.products.FirstOrDefault(p => p.id == productId);
+                var product = db.products.FirstOrDefault(p => p.name == name);
                 if (product == null)
                 {
                     return;

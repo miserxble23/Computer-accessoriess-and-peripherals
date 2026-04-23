@@ -38,7 +38,7 @@ namespace Products
         /// <summary>
         /// Цена продажи товара
         /// </summary>
-        private decimal price;
+        private decimal price = 0;
 
         /// <summary>
         /// Цена товара (не может быть отрицательной)
@@ -48,7 +48,7 @@ namespace Products
         {
             get
             {
-                return price;
+                return (CalculateValidityStatus() == ValidityStatus.Скидка) ? price*0.7m: price;
             }
             set
             {
@@ -64,15 +64,43 @@ namespace Products
         }
 
         /// <summary>
-        /// Актуальность товара
-        /// </summary>
-        public int relevancemonth { get; set; }
-
-        /// <summary>
         /// Цена закупки товара
         /// </summary>
         public decimal purchaseprice { get; set; }
         public DateTime suppliedate { get; set; }
-        public Status status { get; set; }
+
+        /// <summary>
+        /// Срок актуальности товара в месяцах (задаётся при поставке)
+        /// </summary>
+        public int? ValidityMonths { get; set; }
+        public ValidityStatus ValidityStatus
+        {
+            get => CalculateValidityStatus();
+        }
+
+        /// <summary>
+        /// Процент скидки (рассчитывается автоматически)
+        /// </summary>
+
+        // Метод расчёта статуса
+        private ValidityStatus CalculateValidityStatus()
+        {
+            if (!ValidityMonths.HasValue || suppliedate == new DateTime(2000, 01, 01))
+                return ValidityStatus.Отсутствует;
+
+            var elapsedDays = (decimal)(DateTime.Now - suppliedate).TotalDays;
+            var daysPerMonth = 30.44m;
+            var elapsedMonths = elapsedDays / daysPerMonth;
+
+            var totalMonths = (decimal)ValidityMonths.Value;
+            var threshold = totalMonths * 2 / 3; // 2/3 срока
+
+            if (elapsedMonths >= totalMonths)
+                return ValidityStatus.Устарело;
+            else if (elapsedMonths >= threshold)
+                return ValidityStatus.Скидка;
+            else
+                return ValidityStatus.Актуально;
+        }
     }
 }

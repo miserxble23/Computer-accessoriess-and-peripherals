@@ -4,21 +4,26 @@ namespace ComputerAccessoriesApp
     public partial class CardAdmin : Form
     {
         Point LastPoint;
-        private Guid _id;
+        private string name;
         public CardAdmin()
         {
             InitializeComponent();
         }
-        public CardAdmin(string name, string category, string stock, string unit, string price, string relevancemonth, string purchaseprice)
+        public CardAdmin(string name, string category, string stock, string unit, string price, string purchaseprice, DateTime relevancemonth)
         {
             InitializeComponent();
+            this.name = name;
             NameBox.Text = name;
             CategoryBox.Text = category;
             QuantityBox.Text = stock;
             UnitBox.Text = unit;
             PriceBox.Text = price;
             PurchasePriceBox.Text = purchaseprice;
-            RelevanceBox.Text = relevancemonth;
+            if (relevancemonth < DateTime.Now)
+            {
+                RelevanceBox.Text = (relevancemonth - DateTime.Now).ToString();
+            }
+            RelevanceBox.Text = relevancemonth.ToString();
         }
         private void CancelButton_Click(object sender, EventArgs e)
         {
@@ -36,11 +41,11 @@ namespace ComputerAccessoriesApp
                 this.Top += e.Y - LastPoint.Y;
             }
         }
-        private void LoadProduct(Guid id)
+        private void LoadProduct(string name)
         {
             using (var db = new DbContext())
             {
-                var product = db.products.FirstOrDefault(p => p.id == id);
+                var product = db.products.FirstOrDefault(p => p.name == name);
                 if (product == null)
                 {
                     return;
@@ -50,27 +55,26 @@ namespace ComputerAccessoriesApp
                 CategoryBox.Text = product.category;
                 PriceBox.Text = product.Price.ToString();
                 PurchasePriceBox.Text = product.purchaseprice.ToString();
-                RelevanceBox.Text = product.relevancemonth.ToString();
+                RelevanceBox.Text = product.ValidityMonths.ToString();
             }
         }
         private void ChangeButton_Click(object sender, EventArgs e)
         {
             EditProduct edPr = new EditProduct(
-                _id,
                 NameBox.Text,
                 CategoryBox.Text,
                 PriceBox.Text
             );
             this.Hide();
             edPr.ShowDialog();
-            LoadProduct(_id);
+            LoadProduct(name);
             this.Show();
         }
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             using (var db = new DbContext())
             {
-                var product = db.products.FirstOrDefault(p => p.id == _id);
+                var product = db.products.FirstOrDefault(p => p.name == name);
                 if (product == null)
                 {
                     return;
@@ -79,6 +83,11 @@ namespace ComputerAccessoriesApp
                 db.SaveChanges();
             }
             this.Close();
+        }
+
+        private void CardAdmin_VisibleChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

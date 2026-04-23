@@ -21,7 +21,7 @@ namespace Supplies
         ///<summary>
         /// Цена закупки за единицу
         /// </summary>
-        public decimal purchase_ptice { get; set; }
+        public decimal purchase_price { get; set; }
         ///<summary>
         /// Дата и время поставки
         /// </summary>

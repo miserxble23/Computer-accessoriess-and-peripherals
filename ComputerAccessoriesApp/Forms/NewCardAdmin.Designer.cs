@@ -226,9 +226,9 @@
             RelevanceLabel.ForeColor = Color.FromArgb(61, 65, 39);
             RelevanceLabel.Location = new Point(35, 301);
             RelevanceLabel.Name = "RelevanceLabel";
-            RelevanceLabel.Size = new Size(181, 35);
+            RelevanceLabel.Size = new Size(196, 35);
             RelevanceLabel.TabIndex = 27;
-            RelevanceLabel.Text = "Актуальность";
+            RelevanceLabel.Text = "Срок годности";
             // 
             // CategoryBox
             // 
@@ -292,6 +292,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "CardAdmin";
             Text = "NewCardAdmin";
+            VisibleChanged += CardAdmin_VisibleChanged;
             MouseDown += CardAdmin_MouseDown;
             MouseMove += CardAdmin_MouseMove;
             ResumeLayout(false);

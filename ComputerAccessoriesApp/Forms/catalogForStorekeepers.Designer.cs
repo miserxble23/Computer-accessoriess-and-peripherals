@@ -223,6 +223,7 @@
             SupplieButton.TabIndex = 9;
             SupplieButton.Text = "Поставка";
             SupplieButton.UseVisualStyleBackColor = false;
+            SupplieButton.Click += SupplieButton_Click;
             // 
             // CatalogForStorekeepers
             // 

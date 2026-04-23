@@ -56,7 +56,7 @@
             SaveButton.TabIndex = 3;
             SaveButton.Text = "Сохранить";
             SaveButton.UseVisualStyleBackColor = false;
-            SaveButton.Click += ExitButton_Click;
+            SaveButton.Click += SaveButton_Click;
             // 
             // CurrencyBox
             // 

@@ -1,5 +1,4 @@
 ﻿using ComputerAccessoriesApp.Forms;
-using System.Data;
 namespace ComputerAccessoriesApp
 {
     public partial class CatalogForAdmin : Form
@@ -8,8 +7,9 @@ namespace ComputerAccessoriesApp
         public CatalogForAdmin()
         {
             InitializeComponent();
+            LoadProducts();
         }
-        public void LoadProducts()
+        public virtual void LoadProducts()
         {
             using (var db = new DbContext())
             {
@@ -20,8 +20,9 @@ namespace ComputerAccessoriesApp
                     p.stock,
                     p.unit,
                     p.Price,
-                    p.relevancemonth,
-                    p.purchaseprice
+                    p.purchaseprice,
+                    p.ValidityStatus,
+                    p.suppliedate
                 }).ToList();
                 ProductsGridViewAdmin.DataSource = products;
             }
@@ -45,28 +46,10 @@ namespace ComputerAccessoriesApp
                 this.Top += e.Y - LastPoint.Y;
             }
         }
-        private void CatalogForAdmin_Load(object sender, EventArgs e)
-        {
-            LoadProducts();
-        }
         private void ProductsGridViewAdmin_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
             var row = ProductsGridViewAdmin.Rows[e.RowIndex]; //[e.RowIndex] — берём строку по которой кликнули
-            /*
-            if (row.Cells[2].Value == null)
-            {
-                CardAdmin otherform = new CardAdmin(
-                    row.Cells[0].Value.ToString(),//Cells - это ячейки строки
-                    row.Cells[1].Value.ToString(),
-                    "0",
-                    row.Cells[3].Value.ToString(),
-                    row.Cells[4].Value.ToString(),
-                    row.Cells[5].Value.ToString(),
-                    row.Cells[6].Value.ToString()
-                );
-                otherform.Show();
-            }*/
             CardAdmin form = new CardAdmin(
                 row.Cells[0].Value.ToString(),//Cells - это ячейки строки
                 row.Cells[1].Value.ToString(),
@@ -74,7 +57,7 @@ namespace ComputerAccessoriesApp
                 row.Cells[3].Value.ToString(),
                 row.Cells[4].Value.ToString(),
                 row.Cells[5].Value.ToString(),
-                row.Cells[6].Value.ToString()
+                (DateTime)row.Cells[7].Value
             );
             form.Show();
         }
@@ -90,7 +73,6 @@ namespace ComputerAccessoriesApp
                     p.stock,
                     p.unit,
                     p.Price,
-                    p.relevancemonth,
                     p.purchaseprice
                 }).ToList();
                 ProductsGridViewAdmin.DataSource = products;
@@ -108,12 +90,21 @@ namespace ComputerAccessoriesApp
             crPr.Show();
             this.Hide();
         }
-
         private void ReportsButton_Click(object sender, EventArgs e)
         {
             var repo = new Reports(this);
             repo.Show();
             this.Hide();
+        }
+        private void SettingsButton_Click(object sender, EventArgs e)
+        {
+            var set = new Settings(this);
+            set.Show();
+            this.Hide();
+        }
+        private void CatalogForAdmin_VisibleChanged(object sender, EventArgs e)
+        {
+            LoadProducts();
         }
     }
 }
