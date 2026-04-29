@@ -36,13 +36,13 @@
             ExitButton = new Button();
             DispatchButton = new Button();
             ProductsGridViewStorekep = new DataGridView();
-            SupplieButton = new Button();
             ProductName = new DataGridViewTextBoxColumn();
             Category = new DataGridViewTextBoxColumn();
             Quantity = new DataGridViewTextBoxColumn();
             Unit = new DataGridViewTextBoxColumn();
             Price = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
+            SupplieButton = new Button();
             ((System.ComponentModel.ISupportInitialize)ProductsGridViewStorekep).BeginInit();
             SuspendLayout();
             // 
@@ -51,7 +51,7 @@
             AdminLabel.AutoSize = true;
             AdminLabel.Font = new Font("Candara", 22.1538467F);
             AdminLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            AdminLabel.Location = new Point(12, 22);
+            AdminLabel.Location = new Point(44, 22);
             AdminLabel.Name = "AdminLabel";
             AdminLabel.Size = new Size(288, 45);
             AdminLabel.TabIndex = 0;
@@ -61,11 +61,11 @@
             // 
             SearchBoxStorekep.BackColor = Color.FromArgb(212, 222, 149);
             SearchBoxStorekep.BorderStyle = BorderStyle.FixedSingle;
-            SearchBoxStorekep.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            SearchBoxStorekep.Location = new Point(285, 79);
+            SearchBoxStorekep.Font = new Font("Candara", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            SearchBoxStorekep.Location = new Point(44, 81);
             SearchBoxStorekep.Name = "SearchBoxStorekep";
             SearchBoxStorekep.PlaceholderText = "  Поиск";
-            SearchBoxStorekep.Size = new Size(313, 32);
+            SearchBoxStorekep.Size = new Size(288, 36);
             SearchBoxStorekep.TabIndex = 3;
             // 
             // SearchButtonStorekep
@@ -73,9 +73,9 @@
             SearchButtonStorekep.BackColor = Color.DarkOliveGreen;
             SearchButtonStorekep.Cursor = Cursors.Hand;
             SearchButtonStorekep.FlatStyle = FlatStyle.Popup;
-            SearchButtonStorekep.Font = new Font("Candara", 12.1846151F);
+            SearchButtonStorekep.Font = new Font("Candara", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SearchButtonStorekep.ForeColor = Color.White;
-            SearchButtonStorekep.Location = new Point(604, 79);
+            SearchButtonStorekep.Location = new Point(370, 81);
             SearchButtonStorekep.Name = "SearchButtonStorekep";
             SearchButtonStorekep.Size = new Size(99, 32);
             SearchButtonStorekep.TabIndex = 4;
@@ -90,9 +90,9 @@
             ExitButton.FlatStyle = FlatStyle.Popup;
             ExitButton.Font = new Font("Candara", 12.1846151F);
             ExitButton.ForeColor = Color.White;
-            ExitButton.Location = new Point(604, 496);
+            ExitButton.Location = new Point(711, 497);
             ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(99, 32);
+            ExitButton.Size = new Size(99, 41);
             ExitButton.TabIndex = 5;
             ExitButton.Text = "Выход";
             ExitButton.UseVisualStyleBackColor = false;
@@ -103,9 +103,9 @@
             DispatchButton.BackColor = Color.DarkOliveGreen;
             DispatchButton.Cursor = Cursors.Hand;
             DispatchButton.FlatStyle = FlatStyle.Popup;
-            DispatchButton.Font = new Font("Candara", 12.1846151F);
+            DispatchButton.Font = new Font("Candara", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             DispatchButton.ForeColor = Color.White;
-            DispatchButton.Location = new Point(424, 34);
+            DispatchButton.Location = new Point(370, 35);
             DispatchButton.Name = "DispatchButton";
             DispatchButton.Size = new Size(124, 32);
             DispatchButton.TabIndex = 6;
@@ -119,7 +119,7 @@
             ProductsGridViewStorekep.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(197, 227, 132);
-            dataGridViewCellStyle1.Font = new Font("Candara", 10.1846151F);
+            dataGridViewCellStyle1.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -129,7 +129,7 @@
             ProductsGridViewStorekep.Columns.AddRange(new DataGridViewColumn[] { ProductName, Category, Quantity, Unit, Price, Status });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(197, 227, 132);
-            dataGridViewCellStyle2.Font = new Font("Candara", 10.1846151F);
+            dataGridViewCellStyle2.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -140,24 +140,9 @@
             ProductsGridViewStorekep.Name = "ProductsGridViewStorekep";
             ProductsGridViewStorekep.RowHeadersVisible = false;
             ProductsGridViewStorekep.RowHeadersWidth = 56;
-            ProductsGridViewStorekep.Size = new Size(659, 346);
+            ProductsGridViewStorekep.Size = new Size(766, 346);
             ProductsGridViewStorekep.TabIndex = 7;
             ProductsGridViewStorekep.CellDoubleClick += ProductsGridViewStorekep_CellDoubleClick;
-            // 
-            // SupplieButton
-            // 
-            SupplieButton.BackColor = Color.DarkOliveGreen;
-            SupplieButton.Cursor = Cursors.Hand;
-            SupplieButton.FlatStyle = FlatStyle.Popup;
-            SupplieButton.Font = new Font("Candara", 12.1846151F);
-            SupplieButton.ForeColor = Color.White;
-            SupplieButton.Location = new Point(554, 34);
-            SupplieButton.Name = "SupplieButton";
-            SupplieButton.Size = new Size(149, 32);
-            SupplieButton.TabIndex = 9;
-            SupplieButton.Text = "Поставка";
-            SupplieButton.UseVisualStyleBackColor = false;
-            SupplieButton.Click += SupplieButton_Click;
             // 
             // ProductName
             // 
@@ -217,12 +202,27 @@
             Status.Name = "Status";
             Status.Width = 125;
             // 
+            // SupplieButton
+            // 
+            SupplieButton.BackColor = Color.DarkOliveGreen;
+            SupplieButton.Cursor = Cursors.Hand;
+            SupplieButton.FlatStyle = FlatStyle.Popup;
+            SupplieButton.Font = new Font("Candara", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SupplieButton.ForeColor = Color.White;
+            SupplieButton.Location = new Point(534, 34);
+            SupplieButton.Name = "SupplieButton";
+            SupplieButton.Size = new Size(149, 32);
+            SupplieButton.TabIndex = 9;
+            SupplieButton.Text = "Поставка";
+            SupplieButton.UseVisualStyleBackColor = false;
+            SupplieButton.Click += SupplieButton_Click;
+            // 
             // CatalogForStorekeepers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(746, 540);
+            ClientSize = new Size(843, 540);
             Controls.Add(SupplieButton);
             Controls.Add(ProductsGridViewStorekep);
             Controls.Add(DispatchButton);

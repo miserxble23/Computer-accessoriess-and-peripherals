@@ -177,7 +177,7 @@
             ProductsGridViewAdmin.Columns.AddRange(new DataGridViewColumn[] { ProductName, Category, Quantity, Unit, Price, PurchasePrice, Status, SupplieDate });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(197, 227, 132);
-            dataGridViewCellStyle2.Font = new Font("Candara", 10.1846151F);
+            dataGridViewCellStyle2.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;

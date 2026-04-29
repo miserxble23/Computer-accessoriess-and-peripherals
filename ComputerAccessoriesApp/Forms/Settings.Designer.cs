@@ -30,6 +30,7 @@
             SettingsLabel = new Label();
             SaveButton = new Button();
             CurrencyBox = new ComboBox();
+            Currency = new Label();
             SuspendLayout();
             // 
             // SettingsLabel
@@ -39,9 +40,9 @@
             SettingsLabel.ForeColor = Color.FromArgb(61, 65, 39);
             SettingsLabel.Location = new Point(73, 9);
             SettingsLabel.Name = "SettingsLabel";
-            SettingsLabel.Size = new Size(210, 49);
+            SettingsLabel.Size = new Size(356, 49);
             SettingsLabel.TabIndex = 1;
-            SettingsLabel.Text = "Настройки";
+            SettingsLabel.Text = "Настройки Валюты";
             // 
             // SaveButton
             // 
@@ -50,7 +51,7 @@
             SaveButton.FlatStyle = FlatStyle.Popup;
             SaveButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
             SaveButton.ForeColor = Color.White;
-            SaveButton.Location = new Point(198, 203);
+            SaveButton.Location = new Point(303, 195);
             SaveButton.Name = "SaveButton";
             SaveButton.Size = new Size(126, 32);
             SaveButton.TabIndex = 3;
@@ -63,17 +64,27 @@
             CurrencyBox.BackColor = Color.FromArgb(212, 222, 149);
             CurrencyBox.Font = new Font("Candara", 14.1846151F);
             CurrencyBox.FormattingEnabled = true;
-            CurrencyBox.Location = new Point(52, 92);
+            CurrencyBox.Location = new Point(176, 112);
             CurrencyBox.Name = "CurrencyBox";
             CurrencyBox.Size = new Size(253, 37);
             CurrencyBox.TabIndex = 4;
+            // 
+            // Currency
+            // 
+            Currency.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Currency.Location = new Point(32, 105);
+            Currency.Name = "Currency";
+            Currency.Size = new Size(128, 37);
+            Currency.TabIndex = 5;
+            Currency.Text = "Валюта";
             // 
             // Settings
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(348, 247);
+            ClientSize = new Size(479, 283);
+            Controls.Add(Currency);
             Controls.Add(CurrencyBox);
             Controls.Add(SaveButton);
             Controls.Add(SettingsLabel);
@@ -91,5 +102,6 @@
         private Label SettingsLabel;
         private Button SaveButton;
         private ComboBox CurrencyBox;
+        private Label Currency;
     }
 }
