@@ -95,7 +95,7 @@
             ExitButton.ForeColor = Color.White;
             ExitButton.Location = new Point(772, 496);
             ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(99, 32);
+            ExitButton.Size = new Size(99, 39);
             ExitButton.TabIndex = 5;
             ExitButton.Text = "Выход";
             ExitButton.UseVisualStyleBackColor = false;
@@ -271,7 +271,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(917, 540);
+            ClientSize = new Size(918, 557);
             Controls.Add(ReportsButton);
             Controls.Add(SettingsButton);
             Controls.Add(NewCardButton);
