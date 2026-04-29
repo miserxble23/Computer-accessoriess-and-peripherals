@@ -64,11 +64,11 @@
             // 
             SearchBoxAdmin.BackColor = Color.FromArgb(212, 222, 149);
             SearchBoxAdmin.BorderStyle = BorderStyle.FixedSingle;
-            SearchBoxAdmin.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            SearchBoxAdmin.Font = new Font("Candara", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
             SearchBoxAdmin.Location = new Point(171, 79);
             SearchBoxAdmin.Name = "SearchBoxAdmin";
             SearchBoxAdmin.PlaceholderText = "  Поиск";
-            SearchBoxAdmin.Size = new Size(429, 32);
+            SearchBoxAdmin.Size = new Size(538, 36);
             SearchBoxAdmin.TabIndex = 3;
             // 
             // SearchButtonAdmin
@@ -76,9 +76,9 @@
             SearchButtonAdmin.BackColor = Color.DarkOliveGreen;
             SearchButtonAdmin.Cursor = Cursors.Hand;
             SearchButtonAdmin.FlatStyle = FlatStyle.Popup;
-            SearchButtonAdmin.Font = new Font("Candara", 12.1846151F);
+            SearchButtonAdmin.Font = new Font("Candara", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SearchButtonAdmin.ForeColor = Color.White;
-            SearchButtonAdmin.Location = new Point(606, 77);
+            SearchButtonAdmin.Location = new Point(772, 79);
             SearchButtonAdmin.Name = "SearchButtonAdmin";
             SearchButtonAdmin.Size = new Size(99, 32);
             SearchButtonAdmin.TabIndex = 4;
@@ -91,9 +91,9 @@
             ExitButton.BackColor = Color.DarkOliveGreen;
             ExitButton.Cursor = Cursors.Hand;
             ExitButton.FlatStyle = FlatStyle.Popup;
-            ExitButton.Font = new Font("Candara", 12.1846151F);
+            ExitButton.Font = new Font("Candara", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ExitButton.ForeColor = Color.White;
-            ExitButton.Location = new Point(606, 496);
+            ExitButton.Location = new Point(772, 496);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(99, 32);
             ExitButton.TabIndex = 5;
@@ -106,11 +106,11 @@
             SupplieButton.BackColor = Color.DarkOliveGreen;
             SupplieButton.Cursor = Cursors.Hand;
             SupplieButton.FlatStyle = FlatStyle.Popup;
-            SupplieButton.Font = new Font("Candara", 12.1846151F);
+            SupplieButton.Font = new Font("Candara", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SupplieButton.ForeColor = Color.White;
-            SupplieButton.Location = new Point(351, 33);
+            SupplieButton.Location = new Point(405, 33);
             SupplieButton.Name = "SupplieButton";
-            SupplieButton.Size = new Size(106, 32);
+            SupplieButton.Size = new Size(120, 32);
             SupplieButton.TabIndex = 6;
             SupplieButton.Text = "Поставка";
             SupplieButton.UseVisualStyleBackColor = false;
@@ -121,9 +121,9 @@
             NewCardButton.BackColor = Color.DarkOliveGreen;
             NewCardButton.Cursor = Cursors.Hand;
             NewCardButton.FlatStyle = FlatStyle.Popup;
-            NewCardButton.Font = new Font("Candara", 12.1846151F);
+            NewCardButton.Font = new Font("Candara", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             NewCardButton.ForeColor = Color.White;
-            NewCardButton.Location = new Point(171, 33);
+            NewCardButton.Location = new Point(183, 33);
             NewCardButton.Name = "NewCardButton";
             NewCardButton.Size = new Size(174, 32);
             NewCardButton.TabIndex = 9;
@@ -136,9 +136,9 @@
             SettingsButton.BackColor = Color.DarkOliveGreen;
             SettingsButton.Cursor = Cursors.Hand;
             SettingsButton.FlatStyle = FlatStyle.Popup;
-            SettingsButton.Font = new Font("Candara", 12.1846151F);
+            SettingsButton.Font = new Font("Candara", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SettingsButton.ForeColor = Color.White;
-            SettingsButton.Location = new Point(463, 33);
+            SettingsButton.Location = new Point(572, 33);
             SettingsButton.Name = "SettingsButton";
             SettingsButton.Size = new Size(137, 32);
             SettingsButton.TabIndex = 10;
@@ -151,9 +151,9 @@
             ReportsButton.BackColor = Color.DarkOliveGreen;
             ReportsButton.Cursor = Cursors.Hand;
             ReportsButton.FlatStyle = FlatStyle.Popup;
-            ReportsButton.Font = new Font("Candara", 12.1846151F);
+            ReportsButton.Font = new Font("Candara", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ReportsButton.ForeColor = Color.White;
-            ReportsButton.Location = new Point(606, 33);
+            ReportsButton.Location = new Point(772, 33);
             ReportsButton.Name = "ReportsButton";
             ReportsButton.Size = new Size(99, 32);
             ReportsButton.TabIndex = 11;
@@ -167,7 +167,7 @@
             ProductsGridViewAdmin.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(197, 227, 132);
-            dataGridViewCellStyle1.Font = new Font("Candara", 10.1846151F);
+            dataGridViewCellStyle1.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -188,7 +188,7 @@
             ProductsGridViewAdmin.Name = "ProductsGridViewAdmin";
             ProductsGridViewAdmin.RowHeadersVisible = false;
             ProductsGridViewAdmin.RowHeadersWidth = 56;
-            ProductsGridViewAdmin.Size = new Size(661, 346);
+            ProductsGridViewAdmin.Size = new Size(827, 346);
             ProductsGridViewAdmin.TabIndex = 8;
             ProductsGridViewAdmin.CellDoubleClick += ProductsGridViewAdmin_CellDoubleClick;
             // 
@@ -271,7 +271,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(746, 540);
+            ClientSize = new Size(917, 540);
             Controls.Add(ReportsButton);
             Controls.Add(SettingsButton);
             Controls.Add(NewCardButton);
