@@ -73,14 +73,24 @@ namespace ComputerAccessoriesApp
 
         private void ProductsGridViewAdmin_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Guid id;
             if (e.RowIndex < 0) return;
+
             var row = ProductsGridViewAdmin.Rows[e.RowIndex];
+            string productName = row.Cells[0].Value.ToString();
+            Guid id = Guid.Empty;
+
             using (var db = new DbContext())
             {
-                var product = db.products.FirstOrDefault(p => p.name == row.Cells[0].Value.ToString());
-                id = product.id;
+                foreach (var p in db.products)
+                {
+                    if (p.name == productName)
+                    {
+                        id = p.id;
+                        break;
+                    }
+                }
             }
+
             CardAdmin form = new CardAdmin(
                 id,
                 row.Cells[0].Value.ToString(),
@@ -93,9 +103,10 @@ namespace ComputerAccessoriesApp
             );
             form.Show();
         }
+
         private void SearchButtonAdmin_Click(object sender, EventArgs e)
         {
-            var search = SearchBoxAdmin.Text;
+            var search = SearchBoxAdmin.Text.ToLower();
 
             using (var db = new DbContext())
             {
@@ -108,14 +119,17 @@ namespace ComputerAccessoriesApp
                     rate = setting.exchange_rate;
                     currencyCode = setting.currency_code;
                 }
+
                 var allProducts = db.products.ToList();
                 var products = new List<object>();
+
                 foreach (var p in allProducts)
                 {
-                    if (p.name.ToLower().Contains(search.ToLower()))
+                    if (p.name.ToLower().Contains(search))
                     {
                         decimal price = currencyCode == "USD" ? Math.Round(p.Price / rate, 2) : p.Price;
                         decimal purchaseprice = currencyCode == "USD" ? Math.Round(p.purchaseprice / rate, 2) : p.purchaseprice;
+
                         products.Add(new
                         {
                             p.name,
