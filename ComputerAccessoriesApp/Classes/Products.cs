@@ -72,6 +72,7 @@ namespace Products
         /// <summary>
         /// Срок актуальности товара в месяцах (задаётся при поставке)
         /// </summary>
+        [Column("validitymonths")]
         public int? ValidityMonths { get; set; }
         public ValidityStatus ValidityStatus
         {

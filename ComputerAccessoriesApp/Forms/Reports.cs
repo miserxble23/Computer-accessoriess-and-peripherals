@@ -23,9 +23,8 @@ namespace ComputerAccessoriesApp
                     p.quantity,
                     p.saleprice,
                     p.purchaseprice,
-                    p.impactsum
+                    impactsum = (p.saleprice - p.purchaseprice) * p.quantity
                 }).ToList();
-                ReportsGridView.DataSource = reports;
             }
         }
         private void ExitButton_Click(object sender, EventArgs e)

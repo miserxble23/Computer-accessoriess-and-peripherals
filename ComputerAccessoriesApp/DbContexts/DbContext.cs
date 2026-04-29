@@ -15,6 +15,6 @@ public class DbContext : Microsoft.EntityFrameworkCore.DbContext
     public DbSet<Supplie> supplies{ get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseNpgsql("Server=localhost;Port=5432;Username=postgres;Password=2307;Database=CAAP_db");
+        optionsBuilder.UseNpgsql("Server=localhost;Port=5432;Username=postgres;Password=Almirchik95;Database=CAAP_db");
     }
 }
