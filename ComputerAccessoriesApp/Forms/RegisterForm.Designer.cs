@@ -39,7 +39,7 @@
             // 
             // RegisterLabel
             // 
-            RegisterLabel.Font = new Font("Candara", 22.1538467F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            RegisterLabel.Font = new Font("Candara", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             RegisterLabel.ForeColor = Color.FromArgb(61, 65, 39);
             RegisterLabel.Location = new Point(0, 0);
             RegisterLabel.Name = "RegisterLabel";
@@ -52,34 +52,34 @@
             // 
             LoginBoxReg.BackColor = Color.FromArgb(212, 222, 149);
             LoginBoxReg.BorderStyle = BorderStyle.FixedSingle;
-            LoginBoxReg.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            LoginBoxReg.Font = new Font("Candara", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
             LoginBoxReg.Location = new Point(47, 117);
             LoginBoxReg.Name = "LoginBoxReg";
             LoginBoxReg.PlaceholderText = "  Введите логин";
-            LoginBoxReg.Size = new Size(252, 32);
+            LoginBoxReg.Size = new Size(252, 36);
             LoginBoxReg.TabIndex = 2;
             // 
             // PasswordBoxReg
             // 
             PasswordBoxReg.BackColor = Color.FromArgb(212, 222, 149);
             PasswordBoxReg.BorderStyle = BorderStyle.FixedSingle;
-            PasswordBoxReg.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PasswordBoxReg.Font = new Font("Candara", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             PasswordBoxReg.Location = new Point(47, 170);
             PasswordBoxReg.Name = "PasswordBoxReg";
             PasswordBoxReg.PasswordChar = '●';
             PasswordBoxReg.PlaceholderText = "  Введите пароль";
-            PasswordBoxReg.Size = new Size(252, 32);
+            PasswordBoxReg.Size = new Size(252, 36);
             PasswordBoxReg.TabIndex = 3;
             // 
             // CodeBoxReg
             // 
             CodeBoxReg.BackColor = Color.FromArgb(212, 222, 149);
             CodeBoxReg.BorderStyle = BorderStyle.FixedSingle;
-            CodeBoxReg.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CodeBoxReg.Font = new Font("Candara", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             CodeBoxReg.Location = new Point(47, 223);
             CodeBoxReg.Name = "CodeBoxReg";
             CodeBoxReg.PlaceholderText = "  Введите код";
-            CodeBoxReg.Size = new Size(252, 32);
+            CodeBoxReg.Size = new Size(252, 36);
             CodeBoxReg.TabIndex = 4;
             // 
             // RegisterButtonReg
@@ -104,7 +104,7 @@
             AuthorizationButtonReg.FlatStyle = FlatStyle.Popup;
             AuthorizationButtonReg.Font = new Font("Candara", 16.0615387F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AuthorizationButtonReg.ForeColor = Color.White;
-            AuthorizationButtonReg.Location = new Point(147, 375);
+            AuthorizationButtonReg.Location = new Point(167, 370);
             AuthorizationButtonReg.Name = "AuthorizationButtonReg";
             AuthorizationButtonReg.Size = new Size(181, 42);
             AuthorizationButtonReg.TabIndex = 6;
@@ -120,7 +120,7 @@
             ExitButton.FlatStyle = FlatStyle.Popup;
             ExitButton.Font = new Font("Candara", 16.0615387F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ExitButton.ForeColor = Color.White;
-            ExitButton.Location = new Point(307, 0);
+            ExitButton.Location = new Point(326, 0);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(41, 42);
             ExitButton.TabIndex = 7;
@@ -133,7 +133,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(348, 460);
+            ClientSize = new Size(366, 454);
             Controls.Add(ExitButton);
             Controls.Add(AuthorizationButtonReg);
             Controls.Add(RegisterButtonReg);
