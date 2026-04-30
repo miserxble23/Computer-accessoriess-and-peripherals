@@ -49,11 +49,11 @@
             SaveButton.BackColor = Color.DarkOliveGreen;
             SaveButton.Cursor = Cursors.Hand;
             SaveButton.FlatStyle = FlatStyle.Popup;
-            SaveButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            SaveButton.Font = new Font("Candara", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
             SaveButton.ForeColor = Color.White;
-            SaveButton.Location = new Point(303, 195);
+            SaveButton.Location = new Point(303, 274);
             SaveButton.Name = "SaveButton";
-            SaveButton.Size = new Size(126, 32);
+            SaveButton.Size = new Size(134, 39);
             SaveButton.TabIndex = 3;
             SaveButton.Text = "Сохранить";
             SaveButton.UseVisualStyleBackColor = false;
@@ -64,7 +64,7 @@
             CurrencyBox.BackColor = Color.FromArgb(212, 222, 149);
             CurrencyBox.Font = new Font("Candara", 14.1846151F);
             CurrencyBox.FormattingEnabled = true;
-            CurrencyBox.Location = new Point(176, 112);
+            CurrencyBox.Location = new Point(176, 126);
             CurrencyBox.Name = "CurrencyBox";
             CurrencyBox.Size = new Size(253, 37);
             CurrencyBox.TabIndex = 4;
@@ -72,18 +72,18 @@
             // Currency
             // 
             Currency.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Currency.Location = new Point(32, 105);
+            Currency.Location = new Point(31, 119);
             Currency.Name = "Currency";
             Currency.Size = new Size(128, 37);
             Currency.TabIndex = 5;
-            Currency.Text = "Валюта";
+            Currency.Text = "Валюта:";
             // 
             // Settings
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(479, 283);
+            ClientSize = new Size(449, 400);
             Controls.Add(Currency);
             Controls.Add(CurrencyBox);
             Controls.Add(SaveButton);

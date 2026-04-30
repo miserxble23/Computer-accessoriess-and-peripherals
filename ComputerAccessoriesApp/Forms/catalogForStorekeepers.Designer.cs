@@ -51,7 +51,7 @@
             AdminLabel.AutoSize = true;
             AdminLabel.Font = new Font("Candara", 22.1538467F);
             AdminLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            AdminLabel.Location = new Point(44, 22);
+            AdminLabel.Location = new Point(44, 9);
             AdminLabel.Name = "AdminLabel";
             AdminLabel.Size = new Size(288, 45);
             AdminLabel.TabIndex = 0;
@@ -61,11 +61,11 @@
             // 
             SearchBoxStorekep.BackColor = Color.FromArgb(212, 222, 149);
             SearchBoxStorekep.BorderStyle = BorderStyle.FixedSingle;
-            SearchBoxStorekep.Font = new Font("Candara", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            SearchBoxStorekep.Location = new Point(44, 81);
+            SearchBoxStorekep.Font = new Font("Candara", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            SearchBoxStorekep.Location = new Point(44, 76);
             SearchBoxStorekep.Name = "SearchBoxStorekep";
             SearchBoxStorekep.PlaceholderText = "  Поиск";
-            SearchBoxStorekep.Size = new Size(288, 36);
+            SearchBoxStorekep.Size = new Size(288, 40);
             SearchBoxStorekep.TabIndex = 3;
             // 
             // SearchButtonStorekep
@@ -75,9 +75,9 @@
             SearchButtonStorekep.FlatStyle = FlatStyle.Popup;
             SearchButtonStorekep.Font = new Font("Candara", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SearchButtonStorekep.ForeColor = Color.White;
-            SearchButtonStorekep.Location = new Point(370, 81);
+            SearchButtonStorekep.Location = new Point(370, 76);
             SearchButtonStorekep.Name = "SearchButtonStorekep";
-            SearchButtonStorekep.Size = new Size(99, 32);
+            SearchButtonStorekep.Size = new Size(115, 41);
             SearchButtonStorekep.TabIndex = 4;
             SearchButtonStorekep.Text = "Найти";
             SearchButtonStorekep.UseVisualStyleBackColor = false;
@@ -105,9 +105,9 @@
             DispatchButton.FlatStyle = FlatStyle.Popup;
             DispatchButton.Font = new Font("Candara", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             DispatchButton.ForeColor = Color.White;
-            DispatchButton.Location = new Point(370, 35);
+            DispatchButton.Location = new Point(508, 77);
             DispatchButton.Name = "DispatchButton";
-            DispatchButton.Size = new Size(124, 32);
+            DispatchButton.Size = new Size(132, 40);
             DispatchButton.TabIndex = 6;
             DispatchButton.Text = "Отгрузка";
             DispatchButton.UseVisualStyleBackColor = false;
@@ -209,9 +209,9 @@
             SupplieButton.FlatStyle = FlatStyle.Popup;
             SupplieButton.Font = new Font("Candara", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SupplieButton.ForeColor = Color.White;
-            SupplieButton.Location = new Point(534, 34);
+            SupplieButton.Location = new Point(662, 76);
             SupplieButton.Name = "SupplieButton";
-            SupplieButton.Size = new Size(149, 32);
+            SupplieButton.Size = new Size(148, 41);
             SupplieButton.TabIndex = 9;
             SupplieButton.Text = "Поставка";
             SupplieButton.UseVisualStyleBackColor = false;

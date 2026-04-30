@@ -81,7 +81,7 @@
             EnterButtonAutho.ForeColor = Color.White;
             EnterButtonAutho.Location = new Point(124, 240);
             EnterButtonAutho.Name = "EnterButtonAutho";
-            EnterButtonAutho.Size = new Size(148, 42);
+            EnterButtonAutho.Size = new Size(156, 48);
             EnterButtonAutho.TabIndex = 0;
             EnterButtonAutho.Text = "Войти";
             EnterButtonAutho.UseVisualStyleBackColor = false;
@@ -94,9 +94,9 @@
             RegisterButtonAutho.FlatStyle = FlatStyle.Popup;
             RegisterButtonAutho.Font = new Font("Candara", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             RegisterButtonAutho.ForeColor = Color.White;
-            RegisterButtonAutho.Location = new Point(105, 322);
+            RegisterButtonAutho.Location = new Point(98, 321);
             RegisterButtonAutho.Name = "RegisterButtonAutho";
-            RegisterButtonAutho.Size = new Size(191, 42);
+            RegisterButtonAutho.Size = new Size(206, 54);
             RegisterButtonAutho.TabIndex = 4;
             RegisterButtonAutho.Text = "Регистрация";
             RegisterButtonAutho.UseVisualStyleBackColor = false;

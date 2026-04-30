@@ -80,7 +80,7 @@
             SearchButtonAdmin.ForeColor = Color.White;
             SearchButtonAdmin.Location = new Point(772, 79);
             SearchButtonAdmin.Name = "SearchButtonAdmin";
-            SearchButtonAdmin.Size = new Size(99, 32);
+            SearchButtonAdmin.Size = new Size(99, 36);
             SearchButtonAdmin.TabIndex = 4;
             SearchButtonAdmin.Text = "Найти";
             SearchButtonAdmin.UseVisualStyleBackColor = false;
@@ -108,9 +108,9 @@
             SupplieButton.FlatStyle = FlatStyle.Popup;
             SupplieButton.Font = new Font("Candara", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SupplieButton.ForeColor = Color.White;
-            SupplieButton.Location = new Point(405, 33);
+            SupplieButton.Location = new Point(398, 33);
             SupplieButton.Name = "SupplieButton";
-            SupplieButton.Size = new Size(120, 32);
+            SupplieButton.Size = new Size(129, 40);
             SupplieButton.TabIndex = 6;
             SupplieButton.Text = "Поставка";
             SupplieButton.UseVisualStyleBackColor = false;
@@ -123,9 +123,9 @@
             NewCardButton.FlatStyle = FlatStyle.Popup;
             NewCardButton.Font = new Font("Candara", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             NewCardButton.ForeColor = Color.White;
-            NewCardButton.Location = new Point(183, 33);
+            NewCardButton.Location = new Point(171, 33);
             NewCardButton.Name = "NewCardButton";
-            NewCardButton.Size = new Size(174, 32);
+            NewCardButton.Size = new Size(179, 40);
             NewCardButton.TabIndex = 9;
             NewCardButton.Text = "Новый товар";
             NewCardButton.UseVisualStyleBackColor = false;
@@ -140,7 +140,7 @@
             SettingsButton.ForeColor = Color.White;
             SettingsButton.Location = new Point(572, 33);
             SettingsButton.Name = "SettingsButton";
-            SettingsButton.Size = new Size(137, 32);
+            SettingsButton.Size = new Size(137, 40);
             SettingsButton.TabIndex = 10;
             SettingsButton.Text = "Настройки";
             SettingsButton.UseVisualStyleBackColor = false;
@@ -155,7 +155,7 @@
             ReportsButton.ForeColor = Color.White;
             ReportsButton.Location = new Point(772, 33);
             ReportsButton.Name = "ReportsButton";
-            ReportsButton.Size = new Size(99, 32);
+            ReportsButton.Size = new Size(99, 40);
             ReportsButton.TabIndex = 11;
             ReportsButton.Text = "Отчёты";
             ReportsButton.UseVisualStyleBackColor = false;
