@@ -64,7 +64,7 @@
             CancelButton.ForeColor = Color.White;
             CancelButton.Location = new Point(579, 376);
             CancelButton.Name = "CancelButton";
-            CancelButton.Size = new Size(91, 41);
+            CancelButton.Size = new Size(108, 41);
             CancelButton.TabIndex = 1;
             CancelButton.Text = "Отмена";
             CancelButton.UseVisualStyleBackColor = false;
@@ -75,18 +75,18 @@
             NameLabel.AutoSize = true;
             NameLabel.Font = new Font("Candara", 16.2769222F);
             NameLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            NameLabel.Location = new Point(37, 62);
+            NameLabel.Location = new Point(13, 72);
             NameLabel.Name = "NameLabel";
-            NameLabel.Size = new Size(131, 35);
+            NameLabel.Size = new Size(138, 35);
             NameLabel.TabIndex = 3;
-            NameLabel.Text = "Название";
+            NameLabel.Text = "Название:";
             // 
             // NameBox
             // 
             NameBox.BackColor = Color.FromArgb(212, 222, 149);
             NameBox.BorderStyle = BorderStyle.FixedSingle;
             NameBox.Font = new Font("Candara", 14.1846151F);
-            NameBox.Location = new Point(213, 63);
+            NameBox.Location = new Point(232, 72);
             NameBox.Multiline = true;
             NameBox.Name = "NameBox";
             NameBox.ReadOnly = true;
@@ -98,18 +98,18 @@
             CategoryLabel.AutoSize = true;
             CategoryLabel.Font = new Font("Candara", 16.2769222F);
             CategoryLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            CategoryLabel.Location = new Point(38, 102);
+            CategoryLabel.Location = new Point(13, 120);
             CategoryLabel.Name = "CategoryLabel";
-            CategoryLabel.Size = new Size(144, 35);
+            CategoryLabel.Size = new Size(151, 35);
             CategoryLabel.TabIndex = 4;
-            CategoryLabel.Text = "Категория";
+            CategoryLabel.Text = "Категория:";
             // 
             // CategoryBox
             // 
             CategoryBox.BackColor = Color.FromArgb(212, 222, 149);
             CategoryBox.BorderStyle = BorderStyle.FixedSingle;
             CategoryBox.Font = new Font("Candara", 14.1846151F);
-            CategoryBox.Location = new Point(213, 103);
+            CategoryBox.Location = new Point(232, 120);
             CategoryBox.Multiline = true;
             CategoryBox.Name = "CategoryBox";
             CategoryBox.ReadOnly = true;
@@ -121,18 +121,18 @@
             QuantityLabel.AutoSize = true;
             QuantityLabel.Font = new Font("Candara", 16.2769222F);
             QuantityLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            QuantityLabel.Location = new Point(38, 142);
+            QuantityLabel.Location = new Point(12, 166);
             QuantityLabel.Name = "QuantityLabel";
-            QuantityLabel.Size = new Size(159, 35);
+            QuantityLabel.Size = new Size(166, 35);
             QuantityLabel.TabIndex = 14;
-            QuantityLabel.Text = "Количество";
+            QuantityLabel.Text = "Количество:";
             // 
             // QuantityBox
             // 
             QuantityBox.BackColor = Color.FromArgb(212, 222, 149);
             QuantityBox.BorderStyle = BorderStyle.FixedSingle;
             QuantityBox.Font = new Font("Candara", 14.1846151F);
-            QuantityBox.Location = new Point(214, 143);
+            QuantityBox.Location = new Point(232, 166);
             QuantityBox.Multiline = true;
             QuantityBox.Name = "QuantityBox";
             QuantityBox.ReadOnly = true;
@@ -144,18 +144,18 @@
             UnitLabel.AutoSize = true;
             UnitLabel.Font = new Font("Candara", 16.2769222F);
             UnitLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            UnitLabel.Location = new Point(38, 182);
+            UnitLabel.Location = new Point(12, 214);
             UnitLabel.Name = "UnitLabel";
-            UnitLabel.Size = new Size(112, 35);
+            UnitLabel.Size = new Size(127, 35);
             UnitLabel.TabIndex = 20;
-            UnitLabel.Text = "Ед. изм.";
+            UnitLabel.Text = "Единица:";
             // 
             // UnitBox
             // 
             UnitBox.BackColor = Color.FromArgb(212, 222, 149);
             UnitBox.BorderStyle = BorderStyle.FixedSingle;
             UnitBox.Font = new Font("Candara", 14.1846151F);
-            UnitBox.Location = new Point(215, 183);
+            UnitBox.Location = new Point(232, 214);
             UnitBox.Multiline = true;
             UnitBox.Name = "UnitBox";
             UnitBox.ReadOnly = true;
@@ -167,18 +167,18 @@
             PriceLabel.AutoSize = true;
             PriceLabel.Font = new Font("Candara", 16.2769222F);
             PriceLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            PriceLabel.Location = new Point(38, 225);
+            PriceLabel.Location = new Point(12, 266);
             PriceLabel.Name = "PriceLabel";
-            PriceLabel.Size = new Size(76, 35);
+            PriceLabel.Size = new Size(200, 35);
             PriceLabel.TabIndex = 7;
-            PriceLabel.Text = "Цена";
+            PriceLabel.Text = "Цена продажи:";
             // 
             // PriceBox
             // 
             PriceBox.BackColor = Color.FromArgb(212, 222, 149);
             PriceBox.BorderStyle = BorderStyle.FixedSingle;
             PriceBox.Font = new Font("Candara", 14.1846151F);
-            PriceBox.Location = new Point(215, 226);
+            PriceBox.Location = new Point(232, 266);
             PriceBox.Multiline = true;
             PriceBox.Name = "PriceBox";
             PriceBox.ReadOnly = true;
@@ -190,18 +190,18 @@
             RelevanceLabel.AutoSize = true;
             RelevanceLabel.Font = new Font("Candara", 16.2769222F);
             RelevanceLabel.ForeColor = Color.FromArgb(61, 65, 39);
-            RelevanceLabel.Location = new Point(37, 265);
+            RelevanceLabel.Location = new Point(12, 317);
             RelevanceLabel.Name = "RelevanceLabel";
-            RelevanceLabel.Size = new Size(181, 35);
+            RelevanceLabel.Size = new Size(101, 35);
             RelevanceLabel.TabIndex = 15;
-            RelevanceLabel.Text = "Актуальность";
+            RelevanceLabel.Text = "Статус:";
             // 
             // RelevanceBox
             // 
             RelevanceBox.BackColor = Color.FromArgb(212, 222, 149);
             RelevanceBox.BorderStyle = BorderStyle.FixedSingle;
             RelevanceBox.Font = new Font("Candara", 14.1846151F);
-            RelevanceBox.Location = new Point(215, 266);
+            RelevanceBox.Location = new Point(232, 318);
             RelevanceBox.Multiline = true;
             RelevanceBox.Name = "RelevanceBox";
             RelevanceBox.ReadOnly = true;

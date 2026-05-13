@@ -51,7 +51,7 @@
             SaveButton.FlatStyle = FlatStyle.Popup;
             SaveButton.Font = new Font("Candara", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
             SaveButton.ForeColor = Color.White;
-            SaveButton.Location = new Point(303, 274);
+            SaveButton.Location = new Point(295, 241);
             SaveButton.Name = "SaveButton";
             SaveButton.Size = new Size(134, 39);
             SaveButton.TabIndex = 3;
@@ -62,7 +62,10 @@
             // CurrencyBox
             // 
             CurrencyBox.BackColor = Color.FromArgb(212, 222, 149);
+            CurrencyBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            CurrencyBox.FlatStyle = FlatStyle.Flat;
             CurrencyBox.Font = new Font("Candara", 14.1846151F);
+            CurrencyBox.ForeColor = Color.Black;
             CurrencyBox.FormattingEnabled = true;
             CurrencyBox.Location = new Point(176, 126);
             CurrencyBox.Name = "CurrencyBox";
@@ -83,11 +86,12 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(449, 400);
+            ClientSize = new Size(449, 402);
             Controls.Add(Currency);
             Controls.Add(CurrencyBox);
             Controls.Add(SaveButton);
             Controls.Add(SettingsLabel);
+            ForeColor = SystemColors.WindowText;
             FormBorderStyle = FormBorderStyle.None;
             Name = "Settings";
             Text = "Settings";

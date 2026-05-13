@@ -9,7 +9,7 @@ namespace ComputerAccessoriesApp
         {
             InitializeComponent();
         }
-        public CardAdmin(Guid id,string name, string category, string stock, string unit, string price, string purchaseprice, DateTime relevancemonth)
+        public CardAdmin(Guid id, string name, string category, string stock, string unit, string price, string purchaseprice, DateTime relevancemonth)
         {
             InitializeComponent();
             this.id = id;
