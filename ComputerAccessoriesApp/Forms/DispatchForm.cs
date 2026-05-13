@@ -159,7 +159,7 @@ namespace ComputerAccessoriesApp
                         quantity = count,
                         saleprice = product.Price,
                         purchaseprice = product.purchaseprice,
-                        impactsum = (product.Price-product.purchaseprice)*count
+                        impactsum = (product.Price - product.purchaseprice) * count
                     };
                     db.shipments.Add(shipment);
                     product.stock -= count;

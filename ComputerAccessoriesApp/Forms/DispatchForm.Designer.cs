@@ -32,6 +32,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             BackButton = new Button();
             SendButton = new Button();
             DispatchLabel = new Label();
@@ -50,6 +51,12 @@
             Quantity = new DataGridViewTextBoxColumn();
             Unit = new DataGridViewTextBoxColumn();
             Price = new DataGridViewTextBoxColumn();
+            buttonforcheck = new Button();
+            buttonfornewbuyers = new Button();
+            buttonforlogistic = new Button();
+            textBoxforbuyers = new TextBox();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
             BasketPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BasketGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DispatchGridView).BeginInit();
@@ -62,9 +69,9 @@
             BackButton.FlatStyle = FlatStyle.Popup;
             BackButton.Font = new Font("Candara", 12.1846151F);
             BackButton.ForeColor = Color.White;
-            BackButton.Location = new Point(590, 424);
+            BackButton.Location = new Point(804, 535);
             BackButton.Name = "BackButton";
-            BackButton.Size = new Size(110, 41);
+            BackButton.Size = new Size(110, 52);
             BackButton.TabIndex = 0;
             BackButton.Text = "Назад";
             BackButton.UseVisualStyleBackColor = false;
@@ -77,9 +84,9 @@
             SendButton.FlatStyle = FlatStyle.Popup;
             SendButton.Font = new Font("Candara", 12.1846151F);
             SendButton.ForeColor = Color.White;
-            SendButton.Location = new Point(11, 424);
+            SendButton.Location = new Point(53, 565);
             SendButton.Name = "SendButton";
-            SendButton.Size = new Size(121, 41);
+            SendButton.Size = new Size(130, 52);
             SendButton.TabIndex = 1;
             SendButton.Text = "Отправить";
             SendButton.UseVisualStyleBackColor = false;
@@ -128,9 +135,9 @@
             BasketPanel.BorderStyle = BorderStyle.FixedSingle;
             BasketPanel.Controls.Add(BasketGridView);
             BasketPanel.Controls.Add(BasketLabel);
-            BasketPanel.Location = new Point(450, 78);
+            BasketPanel.Location = new Point(668, 78);
             BasketPanel.Name = "BasketPanel";
-            BasketPanel.Size = new Size(241, 328);
+            BasketPanel.Size = new Size(318, 427);
             BasketPanel.TabIndex = 5;
             // 
             // BasketGridView
@@ -159,7 +166,7 @@
             BasketGridView.Name = "BasketGridView";
             BasketGridView.RowHeadersVisible = false;
             BasketGridView.RowHeadersWidth = 56;
-            BasketGridView.Size = new Size(200, 250);
+            BasketGridView.Size = new Size(222, 308);
             BasketGridView.TabIndex = 4;
             // 
             // Namee
@@ -203,31 +210,33 @@
             // 
             // DispatchGridView
             // 
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DispatchGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             DispatchGridView.BackgroundColor = Color.FromArgb(197, 227, 132);
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(197, 227, 132);
-            dataGridViewCellStyle3.Font = new Font("Candara", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            DispatchGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            DispatchGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DispatchGridView.Columns.AddRange(new DataGridViewColumn[] { ProductNameColumn, Category, Quantity, Unit, Price });
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(197, 227, 132);
             dataGridViewCellStyle4.Font = new Font("Candara", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            DispatchGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            DispatchGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            DispatchGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DispatchGridView.Columns.AddRange(new DataGridViewColumn[] { ProductNameColumn, Category, Quantity, Unit, Price });
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(197, 227, 132);
+            dataGridViewCellStyle5.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            DispatchGridView.DefaultCellStyle = dataGridViewCellStyle5;
             DispatchGridView.EnableHeadersVisualStyles = false;
             DispatchGridView.Location = new Point(11, 78);
             DispatchGridView.Name = "DispatchGridView";
             DispatchGridView.RowHeadersVisible = false;
             DispatchGridView.RowHeadersWidth = 56;
-            DispatchGridView.Size = new Size(418, 328);
+            DispatchGridView.Size = new Size(477, 449);
             DispatchGridView.TabIndex = 6;
             DispatchGridView.CellContentClick += DispatchGridView_CellContentClick;
             // 
@@ -276,12 +285,90 @@
             Price.Name = "Price";
             Price.Width = 67;
             // 
+            // buttonforcheck
+            // 
+            buttonforcheck.BackColor = Color.DarkOliveGreen;
+            buttonforcheck.FlatStyle = FlatStyle.Popup;
+            buttonforcheck.Font = new Font("Candara", 12.1846151F);
+            buttonforcheck.ForeColor = Color.White;
+            buttonforcheck.Location = new Point(243, 551);
+            buttonforcheck.Name = "buttonforcheck";
+            buttonforcheck.Size = new Size(136, 52);
+            buttonforcheck.TabIndex = 7;
+            buttonforcheck.Text = "Проверка";
+            buttonforcheck.UseVisualStyleBackColor = false;
+            // 
+            // buttonfornewbuyers
+            // 
+            buttonfornewbuyers.BackColor = Color.DarkOliveGreen;
+            buttonfornewbuyers.FlatStyle = FlatStyle.Popup;
+            buttonfornewbuyers.Font = new Font("Candara", 12.1846151F);
+            buttonfornewbuyers.ForeColor = Color.White;
+            buttonfornewbuyers.Location = new Point(437, 551);
+            buttonfornewbuyers.Name = "buttonfornewbuyers";
+            buttonfornewbuyers.Size = new Size(213, 54);
+            buttonfornewbuyers.TabIndex = 8;
+            buttonfornewbuyers.Text = "Новый покупатель";
+            buttonfornewbuyers.UseVisualStyleBackColor = false;
+            // 
+            // buttonforlogistic
+            // 
+            buttonforlogistic.BackColor = Color.DarkOliveGreen;
+            buttonforlogistic.FlatStyle = FlatStyle.Popup;
+            buttonforlogistic.Font = new Font("Candara", 12.1846151F);
+            buttonforlogistic.ForeColor = Color.White;
+            buttonforlogistic.Location = new Point(81, 623);
+            buttonforlogistic.Name = "buttonforlogistic";
+            buttonforlogistic.Size = new Size(153, 52);
+            buttonforlogistic.TabIndex = 9;
+            buttonforlogistic.Text = "Логистика";
+            buttonforlogistic.UseVisualStyleBackColor = false;
+            // 
+            // textBoxforbuyers
+            // 
+            textBoxforbuyers.BackColor = Color.FromArgb(212, 222, 149);
+            textBoxforbuyers.BorderStyle = BorderStyle.FixedSingle;
+            textBoxforbuyers.Font = new Font("Candara", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBoxforbuyers.Location = new Point(288, 623);
+            textBoxforbuyers.Name = "textBoxforbuyers";
+            textBoxforbuyers.PlaceholderText = "Покупатель:";
+            textBoxforbuyers.Size = new Size(151, 36);
+            textBoxforbuyers.TabIndex = 10;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.FromArgb(212, 222, 149);
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.Font = new Font("Candara", 13.8F);
+            textBox1.Location = new Point(499, 632);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Регион:";
+            textBox1.Size = new Size(151, 36);
+            textBox1.TabIndex = 11;
+            // 
+            // textBox2
+            // 
+            textBox2.BackColor = Color.FromArgb(212, 222, 149);
+            textBox2.BorderStyle = BorderStyle.FixedSingle;
+            textBox2.Font = new Font("Candara", 13.8F);
+            textBox2.Location = new Point(742, 639);
+            textBox2.Name = "textBox2";
+            textBox2.PlaceholderText = "Валюта:";
+            textBox2.Size = new Size(151, 36);
+            textBox2.TabIndex = 12;
+            // 
             // DispatchForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(711, 476);
+            ClientSize = new Size(1182, 766);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
+            Controls.Add(textBoxforbuyers);
+            Controls.Add(buttonforlogistic);
+            Controls.Add(buttonfornewbuyers);
+            Controls.Add(buttonforcheck);
             Controls.Add(DispatchGridView);
             Controls.Add(BasketPanel);
             Controls.Add(FindButton);
@@ -322,5 +409,11 @@
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn Unit;
         private DataGridViewTextBoxColumn Price;
+        private Button buttonforcheck;
+        private Button buttonfornewbuyers;
+        private Button buttonforlogistic;
+        private TextBox textBoxforbuyers;
+        private TextBox textBox1;
+        private TextBox textBox2;
     }
 }
