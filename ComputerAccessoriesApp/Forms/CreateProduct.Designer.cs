@@ -104,9 +104,9 @@
             SaveButton.FlatStyle = FlatStyle.Popup;
             SaveButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
             SaveButton.ForeColor = Color.White;
-            SaveButton.Location = new Point(50, 316);
+            SaveButton.Location = new Point(39, 305);
             SaveButton.Name = "SaveButton";
-            SaveButton.Size = new Size(173, 32);
+            SaveButton.Size = new Size(184, 43);
             SaveButton.TabIndex = 20;
             SaveButton.Text = "Сохранить";
             SaveButton.UseVisualStyleBackColor = false;
@@ -119,9 +119,9 @@
             CancelButton.FlatStyle = FlatStyle.Popup;
             CancelButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
             CancelButton.ForeColor = Color.White;
-            CancelButton.Location = new Point(498, 316);
+            CancelButton.Location = new Point(494, 305);
             CancelButton.Name = "CancelButton";
-            CancelButton.Size = new Size(192, 32);
+            CancelButton.Size = new Size(196, 43);
             CancelButton.TabIndex = 21;
             CancelButton.Text = "Отмена";
             CancelButton.UseVisualStyleBackColor = false;
@@ -134,9 +134,9 @@
             ListCategoryButton.FlatStyle = FlatStyle.Popup;
             ListCategoryButton.Font = new Font("Candara", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 204);
             ListCategoryButton.ForeColor = Color.White;
-            ListCategoryButton.Location = new Point(262, 316);
+            ListCategoryButton.Location = new Point(250, 305);
             ListCategoryButton.Name = "ListCategoryButton";
-            ListCategoryButton.Size = new Size(192, 32);
+            ListCategoryButton.Size = new Size(219, 43);
             ListCategoryButton.TabIndex = 22;
             ListCategoryButton.Text = "Список категорий";
             ListCategoryButton.UseVisualStyleBackColor = false;
@@ -168,8 +168,9 @@
             // 
             CategoryBox.BackColor = Color.FromArgb(212, 222, 149);
             CategoryBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            CategoryBox.FlatStyle = FlatStyle.Flat;
             CategoryBox.Font = new Font("Candara", 14.1846151F);
-            CategoryBox.ForeColor = Color.DimGray;
+            CategoryBox.ForeColor = Color.Black;
             CategoryBox.FormattingEnabled = true;
             CategoryBox.Location = new Point(235, 146);
             CategoryBox.Name = "CategoryBox";
