@@ -35,6 +35,9 @@
             label3 = new Label();
             textBox1 = new TextBox();
             button3 = new Button();
+            richTextBoxResult = new RichTextBox();
+            button2 = new Button();
+            button4 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -110,12 +113,53 @@
             button3.Text = "Проверить";
             button3.UseVisualStyleBackColor = false;
             // 
+            // richTextBoxResult
+            // 
+            richTextBoxResult.BackColor = Color.FromArgb(212, 222, 149);
+            richTextBoxResult.BorderStyle = BorderStyle.FixedSingle;
+            richTextBoxResult.Font = new Font("Candara", 16.2F);
+            richTextBoxResult.Location = new Point(182, 365);
+            richTextBoxResult.Name = "richTextBoxResult";
+            richTextBoxResult.ReadOnly = true;
+            richTextBoxResult.Size = new Size(540, 337);
+            richTextBoxResult.TabIndex = 8;
+            richTextBoxResult.Text = "Компания проверена\n\nНалоговая задолженность:\n\nБанкротсво:\n\nДисквалификация:\n\nЧёрные списки:\n";
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.DarkOliveGreen;
+            button2.FlatStyle = FlatStyle.Popup;
+            button2.Font = new Font("Candara", 12.1846151F);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(411, 770);
+            button2.Name = "button2";
+            button2.Size = new Size(129, 36);
+            button2.TabIndex = 9;
+            button2.Text = "Отмена";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.DarkOliveGreen;
+            button4.FlatStyle = FlatStyle.Popup;
+            button4.Font = new Font("Candara", 12.1846151F);
+            button4.ForeColor = Color.White;
+            button4.Location = new Point(593, 770);
+            button4.Name = "button4";
+            button4.Size = new Size(129, 36);
+            button4.TabIndex = 10;
+            button4.Text = "Далее";
+            button4.UseVisualStyleBackColor = false;
+            // 
             // Contactor_Verification
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(982, 607);
+            ClientSize = new Size(932, 838);
+            Controls.Add(button4);
+            Controls.Add(button2);
+            Controls.Add(richTextBoxResult);
             Controls.Add(button3);
             Controls.Add(textBox1);
             Controls.Add(label3);
@@ -125,7 +169,6 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Contactor_Verification";
-            Text = "Contactor_Verification";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -139,5 +182,8 @@
         private Label label3;
         private TextBox textBox1;
         private Button button3;
+        private RichTextBox richTextBoxResult;
+        private Button button2;
+        private Button button4;
     }
 }
