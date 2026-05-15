@@ -65,7 +65,7 @@
             textBoxforcontragent.Font = new Font("Candara", 14.1846151F);
             textBoxforcontragent.Location = new Point(182, 165);
             textBoxforcontragent.Name = "textBoxforcontragent";
-            textBoxforcontragent.Size = new Size(383, 36);
+            textBoxforcontragent.Size = new Size(464, 36);
             textBoxforcontragent.TabIndex = 2;
             // 
             // button1
@@ -74,7 +74,7 @@
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Candara", 12.1846151F);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(593, 165);
+            button1.Location = new Point(670, 165);
             button1.Name = "button1";
             button1.Size = new Size(129, 36);
             button1.TabIndex = 3;
@@ -97,7 +97,7 @@
             textBox1.Font = new Font("Candara", 14.1846151F);
             textBox1.Location = new Point(182, 290);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(383, 36);
+            textBox1.Size = new Size(464, 36);
             textBox1.TabIndex = 6;
             // 
             // button3
@@ -106,7 +106,7 @@
             button3.FlatStyle = FlatStyle.Popup;
             button3.Font = new Font("Candara", 12.1846151F);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(593, 290);
+            button3.Location = new Point(670, 290);
             button3.Name = "button3";
             button3.Size = new Size(129, 36);
             button3.TabIndex = 7;
@@ -121,7 +121,8 @@
             richTextBoxResult.Location = new Point(182, 365);
             richTextBoxResult.Name = "richTextBoxResult";
             richTextBoxResult.ReadOnly = true;
-            richTextBoxResult.Size = new Size(540, 337);
+            richTextBoxResult.ScrollBars = RichTextBoxScrollBars.None;
+            richTextBoxResult.Size = new Size(617, 372);
             richTextBoxResult.TabIndex = 8;
             richTextBoxResult.Text = "Компания проверена\n\nНалоговая задолженность:\n\nБанкротсво:\n\nДисквалификация:\n\nЧёрные списки:\n";
             // 
@@ -131,12 +132,13 @@
             button2.FlatStyle = FlatStyle.Popup;
             button2.Font = new Font("Candara", 12.1846151F);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(411, 770);
+            button2.Location = new Point(517, 770);
             button2.Name = "button2";
             button2.Size = new Size(129, 36);
             button2.TabIndex = 9;
             button2.Text = "Отмена";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button4
             // 
@@ -144,7 +146,7 @@
             button4.FlatStyle = FlatStyle.Popup;
             button4.Font = new Font("Candara", 12.1846151F);
             button4.ForeColor = Color.White;
-            button4.Location = new Point(593, 770);
+            button4.Location = new Point(670, 770);
             button4.Name = "button4";
             button4.Size = new Size(129, 36);
             button4.TabIndex = 10;
@@ -169,6 +171,8 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Contactor_Verification";
+            MouseDown += Contactor_Verification_MouseDown;
+            MouseMove += Contactor_Verification_MouseMove;
             ResumeLayout(false);
             PerformLayout();
         }

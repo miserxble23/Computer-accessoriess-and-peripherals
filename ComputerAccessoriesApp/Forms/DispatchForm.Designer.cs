@@ -322,6 +322,7 @@
             buttonforcheck.TabIndex = 7;
             buttonforcheck.Text = "Проверка";
             buttonforcheck.UseVisualStyleBackColor = false;
+            buttonforcheck.Click += buttonforcheck_Click;
             // 
             // buttonfornewbuyers
             // 
@@ -335,6 +336,7 @@
             buttonfornewbuyers.TabIndex = 8;
             buttonfornewbuyers.Text = "Новый покупатель";
             buttonfornewbuyers.UseVisualStyleBackColor = false;
+            buttonfornewbuyers.Click += buttonfornewbuyers_Click;
             // 
             // buttonforlogistic
             // 
@@ -357,6 +359,7 @@
             textBoxforbuyers.Location = new Point(167, 632);
             textBoxforbuyers.Name = "textBoxforbuyers";
             textBoxforbuyers.PlaceholderText = "Покупатель:";
+            textBoxforbuyers.ReadOnly = true;
             textBoxforbuyers.Size = new Size(151, 36);
             textBoxforbuyers.TabIndex = 10;
             // 
@@ -368,6 +371,7 @@
             textBoxregionf.Location = new Point(352, 631);
             textBoxregionf.Name = "textBoxregionf";
             textBoxregionf.PlaceholderText = "Регион:";
+            textBoxregionf.ReadOnly = true;
             textBoxregionf.Size = new Size(151, 36);
             textBoxregionf.TabIndex = 11;
             // 
@@ -379,6 +383,7 @@
             textBoxcurrencyf.Location = new Point(529, 632);
             textBoxcurrencyf.Name = "textBoxcurrencyf";
             textBoxcurrencyf.PlaceholderText = "Валюта:";
+            textBoxcurrencyf.ReadOnly = true;
             textBoxcurrencyf.Size = new Size(151, 36);
             textBoxcurrencyf.TabIndex = 12;
             // 

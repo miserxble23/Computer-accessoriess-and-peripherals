@@ -5,16 +5,17 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+
 namespace ComputerAccessoriesApp.Forms
 {
-    public partial class Contactor_Verification : Form
+    public partial class New_Buyer : Form
     {
         Point LastPoint;
-        private void Contactor_Verification_MouseDown(object sender, MouseEventArgs e)
+        private void New_Buyer_MouseDown(object sender, MouseEventArgs e)
         {
             LastPoint = new Point(e.X, e.Y);
         }
-        private void Contactor_Verification_MouseMove(object sender, MouseEventArgs e)
+        private void New_Buyer_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -22,14 +23,9 @@ namespace ComputerAccessoriesApp.Forms
                 this.Top += e.Y - LastPoint.Y;
             }
         }
-        public Contactor_Verification()
+        public New_Buyer()
         {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Shipments;
+﻿using ComputerAccessoriesApp.Forms;
+using Shipments;
 
 namespace ComputerAccessoriesApp
 {
@@ -170,6 +171,18 @@ namespace ComputerAccessoriesApp
             LoadProducts();
             var result = new ResultDispatchForm();
             result.ShowDialog();
+        }
+
+        private void buttonforcheck_Click(object sender, EventArgs e)
+        {
+            Contactor_Verification form = new Contactor_Verification();
+            form.ShowDialog();
+        }
+
+        private void buttonfornewbuyers_Click(object sender, EventArgs e)
+        {
+            New_Buyer form = new New_Buyer();
+            form.ShowDialog();
         }
     }
 }
