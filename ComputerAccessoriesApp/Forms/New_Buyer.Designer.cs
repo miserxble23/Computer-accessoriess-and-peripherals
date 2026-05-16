@@ -49,7 +49,7 @@
             // labelnew_buyer
             // 
             labelnew_buyer.Font = new Font("Candara", 24F);
-            labelnew_buyer.Location = new Point(185, 23);
+            labelnew_buyer.Location = new Point(314, 23);
             labelnew_buyer.Name = "labelnew_buyer";
             labelnew_buyer.Size = new Size(364, 70);
             labelnew_buyer.TabIndex = 0;
@@ -58,7 +58,7 @@
             // labelindividual
             // 
             labelindividual.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelindividual.Location = new Point(209, 93);
+            labelindividual.Location = new Point(341, 93);
             labelindividual.Name = "labelindividual";
             labelindividual.Size = new Size(315, 60);
             labelindividual.TabIndex = 1;
@@ -78,7 +78,7 @@
             // 
             labelname.AutoSize = true;
             labelname.Font = new Font("Segoe UI", 16.2F);
-            labelname.Location = new Point(86, 315);
+            labelname.Location = new Point(79, 315);
             labelname.Name = "labelname";
             labelname.Size = new Size(72, 38);
             labelname.TabIndex = 3;
@@ -88,7 +88,7 @@
             // 
             labelsurname.AutoSize = true;
             labelsurname.Font = new Font("Segoe UI", 16.2F);
-            labelsurname.Location = new Point(86, 446);
+            labelsurname.Location = new Point(79, 446);
             labelsurname.Name = "labelsurname";
             labelsurname.Size = new Size(135, 38);
             labelsurname.TabIndex = 4;
@@ -99,9 +99,9 @@
             textBoxforlastname.BackColor = Color.FromArgb(212, 222, 149);
             textBoxforlastname.BorderStyle = BorderStyle.FixedSingle;
             textBoxforlastname.Font = new Font("Candara", 14.1846151F);
-            textBoxforlastname.Location = new Point(86, 248);
+            textBoxforlastname.Location = new Point(86, 253);
             textBoxforlastname.Name = "textBoxforlastname";
-            textBoxforlastname.Size = new Size(265, 36);
+            textBoxforlastname.Size = new Size(409, 36);
             textBoxforlastname.TabIndex = 5;
             // 
             // textBoxforsurname
@@ -109,9 +109,9 @@
             textBoxforsurname.BackColor = Color.FromArgb(212, 222, 149);
             textBoxforsurname.BorderStyle = BorderStyle.FixedSingle;
             textBoxforsurname.Font = new Font("Candara", 14.1846151F);
-            textBoxforsurname.Location = new Point(86, 506);
+            textBoxforsurname.Location = new Point(548, 506);
             textBoxforsurname.Name = "textBoxforsurname";
-            textBoxforsurname.Size = new Size(265, 36);
+            textBoxforsurname.Size = new Size(416, 36);
             textBoxforsurname.TabIndex = 6;
             // 
             // textBoxforname
@@ -121,13 +121,13 @@
             textBoxforname.Font = new Font("Candara", 14.1846151F);
             textBoxforname.Location = new Point(86, 370);
             textBoxforname.Name = "textBoxforname";
-            textBoxforname.Size = new Size(265, 36);
+            textBoxforname.Size = new Size(409, 36);
             textBoxforname.TabIndex = 7;
             // 
             // labelforINN
             // 
             labelforINN.Font = new Font("Segoe UI", 16.2F);
-            labelforINN.Location = new Point(471, 315);
+            labelforINN.Location = new Point(548, 315);
             labelforINN.Name = "labelforINN";
             labelforINN.Size = new Size(78, 38);
             labelforINN.TabIndex = 8;
@@ -136,7 +136,7 @@
             // labelforSNILS
             // 
             labelforSNILS.Font = new Font("Segoe UI", 16.2F);
-            labelforSNILS.Location = new Point(471, 446);
+            labelforSNILS.Location = new Point(545, 446);
             labelforSNILS.Name = "labelforSNILS";
             labelforSNILS.Size = new Size(111, 38);
             labelforSNILS.TabIndex = 9;
@@ -145,7 +145,7 @@
             // labelforpassport
             // 
             labelforpassport.Font = new Font("Segoe UI", 16.2F);
-            labelforpassport.Location = new Point(471, 195);
+            labelforpassport.Location = new Point(548, 195);
             labelforpassport.Name = "labelforpassport";
             labelforpassport.Size = new Size(278, 38);
             labelforpassport.TabIndex = 10;
@@ -156,20 +156,22 @@
             textBox1.BackColor = Color.FromArgb(212, 222, 149);
             textBox1.BorderStyle = BorderStyle.FixedSingle;
             textBox1.Font = new Font("Candara", 14.1846151F);
-            textBox1.Location = new Point(471, 248);
+            textBox1.Location = new Point(548, 253);
+            textBox1.MaxLength = 10;
             textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Введите сирию и номер";
-            textBox1.Size = new Size(265, 36);
+            textBox1.PlaceholderText = "Введите сирию и номер без пробела";
+            textBox1.Size = new Size(416, 36);
             textBox1.TabIndex = 11;
+            textBox1.KeyPress += textBoxPassport_KeyPress;
             // 
             // textBox2
             // 
             textBox2.BackColor = Color.FromArgb(212, 222, 149);
             textBox2.BorderStyle = BorderStyle.FixedSingle;
             textBox2.Font = new Font("Candara", 14.1846151F);
-            textBox2.Location = new Point(471, 370);
+            textBox2.Location = new Point(548, 370);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(265, 36);
+            textBox2.Size = new Size(416, 36);
             textBox2.TabIndex = 12;
             // 
             // textBox3
@@ -177,9 +179,9 @@
             textBox3.BackColor = Color.FromArgb(212, 222, 149);
             textBox3.BorderStyle = BorderStyle.FixedSingle;
             textBox3.Font = new Font("Candara", 14.1846151F);
-            textBox3.Location = new Point(471, 506);
+            textBox3.Location = new Point(86, 506);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(265, 36);
+            textBox3.Size = new Size(416, 36);
             textBox3.TabIndex = 13;
             // 
             // buttonforkeep
@@ -201,19 +203,20 @@
             buttonforcancel.FlatStyle = FlatStyle.Popup;
             buttonforcancel.Font = new Font("Candara", 12.1846151F);
             buttonforcancel.ForeColor = Color.White;
-            buttonforcancel.Location = new Point(607, 614);
+            buttonforcancel.Location = new Point(835, 597);
             buttonforcancel.Name = "buttonforcancel";
             buttonforcancel.Size = new Size(129, 36);
             buttonforcancel.TabIndex = 15;
             buttonforcancel.Text = "Отмена";
             buttonforcancel.UseVisualStyleBackColor = false;
+            buttonforcancel.Click += buttonforcancel_Click;
             // 
             // New_Buyer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(890, 681);
+            ClientSize = new Size(1030, 737);
             Controls.Add(buttonforcancel);
             Controls.Add(buttonforkeep);
             Controls.Add(textBox3);

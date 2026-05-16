@@ -86,7 +86,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(186, 192, 149);
-            ClientSize = new Size(449, 402);
+            ClientSize = new Size(463, 410);
             Controls.Add(Currency);
             Controls.Add(CurrencyBox);
             Controls.Add(SaveButton);

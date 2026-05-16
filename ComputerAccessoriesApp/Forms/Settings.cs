@@ -4,7 +4,6 @@
     {
         Form parentForm;
         Point LastPoint;
-
         public Settings(Form parentForm)
         {
             InitializeComponent();
