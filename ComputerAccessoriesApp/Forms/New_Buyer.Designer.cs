@@ -39,9 +39,9 @@
             labelforINN = new Label();
             labelforSNILS = new Label();
             labelforpassport = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            textBoxforpassport = new TextBox();
+            textBoxforINN = new TextBox();
+            textBoxforSNILS = new TextBox();
             buttonforkeep = new Button();
             buttonforcancel = new Button();
             SuspendLayout();
@@ -109,8 +109,9 @@
             textBoxforsurname.BackColor = Color.FromArgb(212, 222, 149);
             textBoxforsurname.BorderStyle = BorderStyle.FixedSingle;
             textBoxforsurname.Font = new Font("Candara", 14.1846151F);
-            textBoxforsurname.Location = new Point(548, 506);
+            textBoxforsurname.Location = new Point(86, 501);
             textBoxforsurname.Name = "textBoxforsurname";
+            textBoxforsurname.PlaceholderText = "При наличии";
             textBoxforsurname.Size = new Size(416, 36);
             textBoxforsurname.TabIndex = 6;
             // 
@@ -151,38 +152,42 @@
             labelforpassport.TabIndex = 10;
             labelforpassport.Text = "Паспортные данные";
             // 
-            // textBox1
+            // textBoxforpassport
             // 
-            textBox1.BackColor = Color.FromArgb(212, 222, 149);
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Candara", 14.1846151F);
-            textBox1.Location = new Point(548, 253);
-            textBox1.MaxLength = 10;
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Введите сирию и номер без пробела";
-            textBox1.Size = new Size(416, 36);
-            textBox1.TabIndex = 11;
-            textBox1.KeyPress += textBoxPassport_KeyPress;
+            textBoxforpassport.BackColor = Color.FromArgb(212, 222, 149);
+            textBoxforpassport.BorderStyle = BorderStyle.FixedSingle;
+            textBoxforpassport.Font = new Font("Candara", 14.1846151F);
+            textBoxforpassport.Location = new Point(548, 253);
+            textBoxforpassport.MaxLength = 10;
+            textBoxforpassport.Name = "textBoxforpassport";
+            textBoxforpassport.PlaceholderText = "Введите серию и номер без пробела";
+            textBoxforpassport.Size = new Size(416, 36);
+            textBoxforpassport.TabIndex = 11;
+            textBoxforpassport.KeyPress += textBoxPassport_KeyPress;
             // 
-            // textBox2
+            // textBoxforINN
             // 
-            textBox2.BackColor = Color.FromArgb(212, 222, 149);
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Candara", 14.1846151F);
-            textBox2.Location = new Point(548, 370);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(416, 36);
-            textBox2.TabIndex = 12;
+            textBoxforINN.BackColor = Color.FromArgb(212, 222, 149);
+            textBoxforINN.BorderStyle = BorderStyle.FixedSingle;
+            textBoxforINN.Font = new Font("Candara", 14.1846151F);
+            textBoxforINN.Location = new Point(548, 370);
+            textBoxforINN.MaxLength = 12;
+            textBoxforINN.Name = "textBoxforINN";
+            textBoxforINN.Size = new Size(416, 36);
+            textBoxforINN.TabIndex = 12;
+            textBoxforINN.KeyPress += textBox2forINN_KeyPress;
             // 
-            // textBox3
+            // textBoxforSNILS
             // 
-            textBox3.BackColor = Color.FromArgb(212, 222, 149);
-            textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.Font = new Font("Candara", 14.1846151F);
-            textBox3.Location = new Point(86, 506);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(416, 36);
-            textBox3.TabIndex = 13;
+            textBoxforSNILS.BackColor = Color.FromArgb(212, 222, 149);
+            textBoxforSNILS.BorderStyle = BorderStyle.FixedSingle;
+            textBoxforSNILS.Font = new Font("Candara", 14.1846151F);
+            textBoxforSNILS.Location = new Point(545, 501);
+            textBoxforSNILS.MaxLength = 11;
+            textBoxforSNILS.Name = "textBoxforSNILS";
+            textBoxforSNILS.Size = new Size(416, 36);
+            textBoxforSNILS.TabIndex = 13;
+            textBoxforSNILS.KeyPress += textBoxforSNILS_KeyPress;
             // 
             // buttonforkeep
             // 
@@ -196,6 +201,7 @@
             buttonforkeep.TabIndex = 14;
             buttonforkeep.Text = "Сохранить";
             buttonforkeep.UseVisualStyleBackColor = false;
+            buttonforkeep.Click += buttonforkeep_Click;
             // 
             // buttonforcancel
             // 
@@ -219,9 +225,9 @@
             ClientSize = new Size(1030, 737);
             Controls.Add(buttonforcancel);
             Controls.Add(buttonforkeep);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxforSNILS);
+            Controls.Add(textBoxforINN);
+            Controls.Add(textBoxforpassport);
             Controls.Add(labelforpassport);
             Controls.Add(labelforSNILS);
             Controls.Add(labelforINN);
@@ -255,9 +261,9 @@
         private Label labelforINN;
         private Label labelforSNILS;
         private Label labelforpassport;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox textBoxforpassport;
+        private TextBox textBoxforINN;
+        private TextBox textBoxforSNILS;
         private Button buttonforkeep;
         private Button buttonforcancel;
     }

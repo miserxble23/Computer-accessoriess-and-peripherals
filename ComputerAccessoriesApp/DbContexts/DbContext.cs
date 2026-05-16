@@ -5,6 +5,7 @@ using Categories;
 using CurrencySettings;
 using Shipments;
 using Supplies;
+using ComputerAccessoriesApp.Classes;
 public class DbContext : Microsoft.EntityFrameworkCore.DbContext
 {
     public DbSet<Product> products { get; set; }
@@ -13,6 +14,7 @@ public class DbContext : Microsoft.EntityFrameworkCore.DbContext
     public DbSet<CurrencySetting> currencysettings{  get; set; }
     public DbSet<Shipment> shipments{ get; set; }
     public DbSet<Supplie> supplies{ get; set; }
+    public DbSet<Buyer> buyers{ get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseNpgsql("Server=localhost;Port=5432;Username=postgres;Password=Almirchik95;Database=CAAP_db");
